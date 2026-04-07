@@ -1,0 +1,12 @@
+@use "./base.scss";
+
+// put your custom CSS here!
+.callout[data-callout="danger"] .callout-title {
+  font-size: 1.75rem;
+  color: var(--primary); 
+}
+
+.callout-icon {
+  display: none !important;
+  size: 0;
+}
