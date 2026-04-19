@@ -3,7 +3,9 @@ title: Code Red
 ---
 Delta Green is a covert group inside the United States federal government. Its mission is to investigate, contain, and conceal unnatural events, because the unnatural is real and it kills. The world of Delta Green is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. Sometimes those powers bleed through into our world and destroy every- thing they touch.
 
-*This is a long running dnd campaign that has been going for several years, each session gets a "mission report", I encourage you read them!*
+*This is a long running dnd(dungeons and dragons ) campaign that has been going for several years, each session gets a "mission report", I encourage you read them!*
+
+*Note: This is a work of fiction*
 > [!danger]- <img width=auto height=16px src="red_icon.png" style="margin: 0"> Rules and Character Sheets
 > * [Rule Book](https://drive.google.com/file/d/1W9C5KGsTEMV-eJ3NJrSMtyKMdkrzk6hQ/view?usp=sharing)
 > * [Pre-gen character sheets](https://www.theredactedfiles.com/?page_id=2607)
