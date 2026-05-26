@@ -6,38 +6,6 @@ Delta Green is a covert group inside the United States federal government. Its m
 *This is a long running dnd(dungeons and dragons ) campaign that has been going for several years, each session gets a "mission report", I encourage you read them!*
 
 
-<div  class="chart-container">
-<!-- chart.xkcd renders inside an svg element -->
-<svg   class="radar-chart-dark"></svg>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
-<script>
-  const svg = document.querySelector('.radar-chart-dark');
-
-  new chartXkcd.Radar(svg, {
-    title: 'My Actual vs. Perceived Tech Skills',
-    data: {
-      // The skills/attributes you are measuring
-      labels: ['JavaScript', 'CSS/Flexbox', 'Git/GitHub', 'SQL/Databases', 'StackOverflowing', 'Debugging'],
-      datasets: [{
-        label: 'Confidence Level',
-        data: [85, 90, 75, 60, 99, 80],
-      }, {
-        label: 'Actual Competence',
-        data: [40, 15, 20, 45, 95, 30],
-      }]
-    },
-    options: {
-      showLabels: true,
-      // You can customize the color palette if you want to spice things up
-      // dataColors: ['#333333', '#ff0000'] 
-      strokeColor: 'white',
-      backgroundColor: 'black',
-    }
-  });
-</script>
-
 
 *Note: This is a work of fiction*
 > [!danger]- <img width=auto height=16px src="red_icon.png" style="margin: 0"> Rules and Character Sheets
