@@ -31,30 +31,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Quartz uses git history for "Last Modified" dates
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22 
-
-      - name: Install Dependencies
-        run: npm ci
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      # This step actually generates the ./public folder that you upload next
-      - name: Build Quartz Site
-        run: npx quartz build
-
+      - name: List files in the workspace
+        run: ls
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload the generated static files
+          # Upload entire repository
           path: './public'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
