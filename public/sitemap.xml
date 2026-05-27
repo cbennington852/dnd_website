@@ -1,9 +1,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>https://localhost/8080/</loc>
-    <lastmod>2026-05-26T21:18:11.000Z</lastmod>
-  </url><url>
     <loc>https://localhost/8080/classes/character-sheet</loc>
-    <lastmod>2026-05-27T01:40:23.000Z</lastmod>
+    <lastmod>2026-05-27T18:48:57.000Z</lastmod>
   </url><url>
     <loc>https://localhost/8080/classes/close-combat-specialist</loc>
     <lastmod>2026-05-26T21:13:02.000Z</lastmod>
@@ -23,12 +20,6 @@
     <loc>https://localhost/8080/classes/scholar-of-mushroom</loc>
     <lastmod>2026-05-26T21:13:02.000Z</lastmod>
   </url><url>
-    <loc>https://localhost/8080/items--and--gear/</loc>
-    <lastmod>2026-05-26T21:13:02.000Z</lastmod>
-  </url><url>
-    <loc>https://localhost/8080/planes-of-existance/</loc>
-    <lastmod>2026-05-26T21:13:02.000Z</lastmod>
-  </url><url>
     <loc>https://localhost/8080/core-rules/</loc>
     <lastmod>2026-05-26T21:13:02.000Z</lastmod>
   </url><url>
@@ -38,15 +29,24 @@
     <loc>https://localhost/8080/free-missions/thing</loc>
     <lastmod>2026-05-26T21:13:02.000Z</lastmod>
   </url><url>
-    <loc>https://localhost/8080/weapons/</loc>
+    <loc>https://localhost/8080/items--and--gear/</loc>
     <lastmod>2026-05-26T21:13:02.000Z</lastmod>
   </url><url>
     <loc>https://localhost/8080/monsters/</loc>
     <lastmod>2026-05-26T21:13:02.000Z</lastmod>
   </url><url>
+    <loc>https://localhost/8080/planes-of-existance/</loc>
+    <lastmod>2026-05-26T21:13:02.000Z</lastmod>
+  </url><url>
+    <loc>https://localhost/8080/weapons/</loc>
+    <lastmod>2026-05-26T21:13:02.000Z</lastmod>
+  </url><url>
+    <loc>https://localhost/8080/</loc>
+    <lastmod>2026-05-26T21:18:11.000Z</lastmod>
+  </url><url>
     <loc>https://localhost/8080/classes/</loc>
-    <lastmod>2026-05-27T18:43:42.837Z</lastmod>
+    <lastmod>2026-05-27T19:06:03.073Z</lastmod>
   </url><url>
     <loc>https://localhost/8080/tags/</loc>
-    <lastmod>2026-05-27T18:43:42.837Z</lastmod>
+    <lastmod>2026-05-27T19:06:03.073Z</lastmod>
   </url></urlset>
