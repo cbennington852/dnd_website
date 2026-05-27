@@ -196,6 +196,9 @@ table {
 .btn-form {
   font-family: var(--fontFamily);
   color: var(--dark);
+  align-items: center; /* Centers vertically */
+  justify-content: center;
+  display: flex;
   background-color : black;
   border-radius : 15px;
   font-size : medium
@@ -242,13 +245,10 @@ table {
 }
 
 </style>
-
-<button id=clear-local-data-button type="button" >Clear Character Sheet</button>
   <div class="divider-sheet"><h3>General Skills</h3></div>
   <div class="grid-container">
     <div class="column">
       <label for="username">Agent Codename:</label>
-      <br>
       <input type="text"  name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
     </div>
     <div class="column">
@@ -259,7 +259,6 @@ table {
   <div class="grid-container">
     <div class="column">
       <label for="username">Employer:</label>
-      <br>
       <input type="text"  name="employer" placeholder="Example: CIA , FBI , etc.">
     </div>
     <div class="column">
@@ -270,7 +269,6 @@ table {
   <div class="grid-container-3">
     <div class="column">
       <label for="username">Sex:</label>
-      <br>
       <input type="text"  name="sex" placeholder="Example : Male">
     </div>
     <div class="column">
@@ -342,8 +340,8 @@ table {
       <tr class="detail-row">
         <td><label class="detail-label" for="law">Law:</label></td>
         <td><input class="detail-input" type="number" id="law" name="law" value="0" min="0" max="100"></td>
-        <td><label class="detail-label" for="search">Search:</label></td>
-        <td><input class="detail-input" type="number" id="search" name="search" value="0" min="0" max="100"></td>
+        <td><label class="detail-label" for="search_dnd_thing">Search:</label></td>
+        <td><input class="detail-input" type="number" id="search" name="search_dnd_thing" value="0" min="0" max="100"></td>
         <td><label class="detail-label" for="demolitions">Demolitions:</label></td>
         <td><input class="detail-input" type="number" id="demolitions" name="demolitions" value="0" min="0" max="100"></td>
       </tr>
@@ -450,27 +448,27 @@ table {
       <div class="form-grid">
         <div class="input-group">
           <label for="stat-strength">Strength</label>
-          <input type="number" id="stat-strength" name="strength" value="10">
+          <input type="number" id="stat-strength" name="strength" value="50">
         </div>
         <div class="input-group">
           <label for="stat-constitution">Constitution</label>
-          <input type="number" id="stat-constitution" name="constitution" value="10">
+          <input type="number" id="stat-constitution" name="constitution" value="50">
         </div>
         <div class="input-group">
           <label for="stat-dexterity">Dexterity</label>
-          <input type="number" id="stat-dexterity" name="dexterity" value="10">
+          <input type="number" id="stat-dexterity" name="dexterity" value="50">
         </div>
         <div class="input-group">
           <label for="stat-intelligence">Intelligence</label>
-          <input type="number" id="stat-intelligence" name="intelligence" value="10">
+          <input type="number" id="stat-intelligence" name="intelligence" value="50">
         </div>
         <div class="input-group">
           <label for="stat-willpower">Willpower</label>
-          <input type="number" id="stat-willpower" name="willpower" value="10">
+          <input type="number" id="stat-willpower" name="willpower" value="50">
         </div>
         <div class="input-group">
           <label for="stat-charisma">Charisma</label>
-          <input type="number" id="stat-charisma" name="charisma" value="10">
+          <input type="number" id="stat-charisma" name="charisma" value="50">
         </div>
       </div>
       <div class="modal-actions">
@@ -479,13 +477,82 @@ table {
     </form>
   </div>
 </div>
+
+<button  id=clear-local-data-button style="font-size : small;" class="btn-form" type="button" onclick=export_char_sheet(); ><img  src='./export.png' >Download Character Sheet as  JSON</button>
+<button  id=clear-local-data-button class="btn-form" type="button" >Erase Character Sheet</button>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
 <script>
+function export_char_sheet () {
+  saveAllInputs();
+  let temp_data = localStorage.getItem('characterSheetDataDONOTDELETE');
+  let temp_data_parsed = JSON.parse(temp_data);
+  console.log(temp_data_parsed['agent_codename']);
+  saveFile(temp_data , temp_data_parsed['agent_codename']);
+}
+async function saveFile(obj , suggested_name) {
+  const jsonString = JSON.stringify(obj, null, 2);
+  const fileName =  suggested_name +'.json';
+  // Check if the modern File System Access API is supported
+  if ('showSaveFilePicker' in window) {
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: fileName,
+        types: [{
+          description: 'JSON Files',
+          accept: { 'application/json': ['.json'] },
+        }],
+      });
+      const writable = await handle.createWritable();
+      await writable.write(jsonString);
+      await writable.close();
+      return; // Success! Exit the function.
+    } catch (err) {
+      // User rejected the picker or an actual error occurred
+      if (err.name !== 'AbortError') {
+        console.error("Save failed:", err);
+      }
+      return;
+    }
+  }
+  console.warn("showSaveFilePicker not supported. Using secure fallback download method.");
+  const blob = new Blob([jsonString], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = fileName;
+  // Crucial for Firefox / CSP environments: 
+  // Ensure the element is hidden but technically visible in the DOM tree before clicking
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  try {
+    // Method A: Standard click with an explicit MouseEvent (more trusted by browsers)
+    const clickEvent = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
+    link.dispatchEvent(clickEvent);
+  } catch (e) {
+    // Method B: If dispatching fails, force a direct window location shift as a last resort
+    window.location.href = url; 
+  }
+  // Clean up the DOM and memory
+  setTimeout(() => {
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }, 100);
+}
+const currentURL = window.location.href;
+console.log(currentURL); 
+// All of this code "Contenutes to run" even after a page change!!!
 if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require('node-localstorage').LocalStorage;
   localStorage = new LocalStorage('./scratch');
 }
-console.log(localStorage.getItem('formData'));
+console.log(localStorage.getItem('characterSheetDataDONOTDELETE'));
 let coreStatsData = [85, 90, 75, 60, 75, 40]; // Example Values if not loading correctly
 function load_core_stats_data() {
   const coreStats = [
@@ -548,15 +615,12 @@ function update_pips() {
   for (let i = 0; starting_current_health > i; i++) {
     pips_list[i].className = 'pip active';
   }
-  pips = document.querySelectorAll('.pip');
 }
-var pips = document.querySelectorAll('.pip');
-const maxHealth = pips.length;
 let currentHealth = starting_current_health;
 function updateHealth(new_health) {
   const pips = document.querySelectorAll('.pip');
   // Calculate how many pips should be active based on percentage
-  const activeCount = new_health //Math.ceil((healthPercentage / 100) * maxHealth);
+  const activeCount = new_health 
   pips.forEach((pip, index) => {
     if (activeCount > index ) {
       pip.classList.add('active');
@@ -604,10 +668,10 @@ function saveAllInputs() {
     }
   });
   // Convert the object to a string and save
-  localStorage.setItem('formData', JSON.stringify(data));
+  localStorage.setItem('characterSheetDataDONOTDELETE', JSON.stringify(data));
 }
 function loadInputsFromMemory() {
-  const savedData = localStorage.getItem('formData');
+  const savedData = localStorage.getItem('characterSheetDataDONOTDELETE');
   if (savedData) {
       const data = JSON.parse(savedData);
       // Loop through the keys of the saved object
@@ -629,10 +693,24 @@ function loadInputsFromMemory() {
 window.addEventListener('load', () => {
   loadInputsFromMemory();
 });
-// Runs a save every 60 seconds.
+// Horrible way to handle those a links n'stuff
+let previousURL = "";
 setInterval(() => {
-  saveAllInputs();
-}, 60000); 
+  const currentURL = window.location.href;
+  console.log(previousURL + " -> " + currentURL);
+  if (previousURL.includes("character-sheet") && currentURL.includes("character-sheet")) {
+    saveAllInputs();
+    update_pips();
+    updateHealth(currentHealth);
+  }
+  else if ((!previousURL.includes("character-sheet")) && currentURL.includes("character-sheet")) {
+    loadInputsFromMemory();
+  }
+  else {
+    // do nothing
+  }
+  previousURL = currentURL;
+}, 500); // twice per second. 
 // Saves when the page is closed or when click on a link. 
 window.addEventListener('beforeunload', (event) => {
   saveAllInputs();
@@ -641,8 +719,9 @@ const myBtn = document.getElementById('save-testing');
 const myBtn2 = document.getElementById('print-local-data');
 const myBtn3 = document.getElementById('clear-local-data-button');
 myBtn3.addEventListener('click', function(event) {
-  localStorage.clear();
-  loadInputsFromMemory();
+  document.querySelectorAll('input, select, textarea').forEach(input => {
+    input.value = "";
+  });
 });
 const modal = document.getElementById('editModal');
 const openModalBtn = document.getElementById('openModalBtn');

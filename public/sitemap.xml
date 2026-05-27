@@ -1,4 +1,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://cbennington852.github.io/dnd_website/</loc>
+    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/core-rules/</loc>
+    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
+  </url><url>
     <loc>https://cbennington852.github.io/dnd_website/classes/character-sheet</loc>
     <lastmod>2026-05-27T19:37:00.000Z</lastmod>
   </url><url>
@@ -20,7 +26,13 @@
     <loc>https://cbennington852.github.io/dnd_website/classes/scholar-of-mushroom</loc>
     <lastmod>2026-05-27T19:37:00.000Z</lastmod>
   </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/core-rules/</loc>
+    <loc>https://cbennington852.github.io/dnd_website/items--and--gear/</loc>
+    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/weapons/</loc>
+    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/</loc>
     <lastmod>2026-05-27T19:37:00.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/</loc>
@@ -29,24 +41,12 @@
     <loc>https://cbennington852.github.io/dnd_website/free-missions/thing</loc>
     <lastmod>2026-05-27T19:37:00.000Z</lastmod>
   </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/items--and--gear/</loc>
-    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
-  </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/monsters/</loc>
-    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
-  </url><url>
     <loc>https://cbennington852.github.io/dnd_website/planes-of-existance/</loc>
     <lastmod>2026-05-27T19:37:00.000Z</lastmod>
   </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/weapons/</loc>
-    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
-  </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/</loc>
-    <lastmod>2026-05-27T19:37:00.000Z</lastmod>
-  </url><url>
     <loc>https://cbennington852.github.io/dnd_website/classes/</loc>
-    <lastmod>2026-05-27T19:51:30.975Z</lastmod>
+    <lastmod>2026-05-27T21:41:05.783Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/tags/</loc>
-    <lastmod>2026-05-27T19:51:30.975Z</lastmod>
+    <lastmod>2026-05-27T21:41:05.783Z</lastmod>
   </url></urlset>
