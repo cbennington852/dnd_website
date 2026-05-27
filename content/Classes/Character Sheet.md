@@ -138,19 +138,6 @@ th, td {
     inset 2px 2px 0px #421720;
 }
 
-.health-button {
-  background-color : red;
-  border-radius : 0;
-  border-color : black;
-  font-size : large;
-  border-width: 4px;
-  border-style: solid;
-  font-family: 'Press Start 2P', monospace;
-  color: white;
-  image-rendering: pixelated;
-  filter: blur(1px) contrast(150%);
-
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -169,6 +156,10 @@ input[type=number] {
   width : 100%;
 }
 
+#current-health {
+  border : none;
+  width: 1.2rem;
+}
 
 table {
   width: 95%;
@@ -190,47 +181,105 @@ table {
 .table-input {
   padding : 0;
 }
+#openModalBtn {
+  display: flex;
+  align-items: center; /* Centers vertically */
+  justify-content: center;
+  cursor: pointer;
+  background-color : black;
+  font-family: var(--fontFamily);
+  width: auto;
+  border : none;
+  color: var(--dark);
+}
+
+.btn-form {
+  font-family: var(--fontFamily);
+  color: var(--dark);
+  background-color : black;
+  border-radius : 15px;
+  font-size : medium
+}
+
+/* Background overlay (hidden by default) */
+.modal-overlay {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+}
+
+/* The actual popup box */
+.modal-content {
+  background-color: #2a2a2a;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+  border-radius : 15px;
+
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 </style>
 
-<button id=save-testing type="button" >Save Testing!</button>
-<button id=print-local_data type="button" >Print saved data</button>
-<form id=characterSheet>
+<button id=clear-local-data-button type="button" >Clear Character Sheet</button>
   <div class="divider-sheet"><h3>General Skills</h3></div>
   <div class="grid-container">
     <div class="column">
       <label for="username">Agent Codename:</label>
       <br>
-      <input type="text" id="username" name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
+      <input type="text"  name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
     </div>
     <div class="column">
       <label for="username">Profession Rank (If applicable):</label>
-    <input type="text" id="username" name="profession_rank" placeholder="Example : N/A , Captain">
+    <input type="text"  name="profession_rank" placeholder="Example : N/A , Captain">
     </div>
   </div>
   <div class="grid-container">
     <div class="column">
       <label for="username">Employer:</label>
       <br>
-      <input type="text" id="username" name="employer" placeholder="Example: CIA , FBI , etc.">
+      <input type="text"  name="employer" placeholder="Example: CIA , FBI , etc.">
     </div>
     <div class="column">
       <label for="username">Nationality:</label>
-    <input type="text" id="username" name="nationality" placeholder="Example : United states of america">
+    <input type="text"  name="nationality" placeholder="Example : United states of america">
     </div>
   </div>
   <div class="grid-container-3">
     <div class="column">
       <label for="username">Sex:</label>
       <br>
-      <input type="text" id="username" name="sex" placeholder="Example : Male">
+      <input type="text"  name="sex" placeholder="Example : Male">
     </div>
     <div class="column">
       <label for="username">Age & DOB:</label>
-    <input type="text" id="username" name="age_and_dob" placeholder="Example : 19 , August 17th 2004">
+    <input type="text"  name="age_and_dob" placeholder="Example : 19 , August 17th 2004">
     </div>
     <div class="column">
       <label for="username">Education:</label>
-      <input type="text" id="username" name="education" placeholder="Example : B.S. International Relations">
+      <input type="text"  name="education" placeholder="Example : B.S. International Relations">
     </div>
   </div>
   <div class="grid-container">
@@ -238,17 +287,18 @@ table {
       <div  class="chart-container">
         <svg class="radar-chart-dark"></svg>
       </div>
+      <button id="openModalBtn"> <img src='./pencil.png'><span>Edit Core Stats</span></button>
     </div>
     <div class="column">
       <div id="health-bar" class="health-bar">
-        <span id="health-indicator" > - / - hp  </span>
+        <span> <input id=current-health type="number"  name="current_health" placeholder=""><span id=second-part-health> / - hp  </span></span>
+        <span class="health-bar" id=pips-area>
         <!-- <div class="pip active"></div>
         <div class="pip active"></div>
         <div class="pip active"></div>
         <div class="pip active"></div>
         <div class="pip active"></div> -->
-        <button class="health-button" onclick="takeDamage()" id="take-damage">-</button>
-        <button class="health-button" onclick="restoreHealth()" >+</button>
+        </span>
       </div>
       <div class="grid-container-3">
         <div class="column">
@@ -263,17 +313,17 @@ table {
         </div>
         <div class="column">
           <label for="username">Current Sanity:</label>
-          <input type="number" id="current_sanity" name="username" placeholder="">
+          <input type="number"  name="current_sanity" placeholder="">
         </div>
         <div class="column">
           <label for="username">Breaking Point:</label>
-          <input type="number" id="breaking_point" name="username" placeholder="">
+          <input type="number"  name="breaking_point" placeholder="">
         </div>
       </div>
       <label for="comments">Physical Description:</label>
-      <textarea id="comments" name="physical_description" rows="4" cols="50"></textarea>
+      <textarea  name="physical_description" rows="4" cols="50"></textarea>
       <label for="comments">Mental Disorders:</label>
-      <textarea id="comments" name="mental_disorders" rows="4" cols="50"></textarea>
+      <textarea  name="mental_disorders" rows="4" cols="50"></textarea>
     </div>
   </div>
   <div class="divider-sheet"><h3>Detailed Skills</h3></div>
@@ -340,7 +390,7 @@ table {
         <td><label class="detail-label" for="melee">Melee:</label></td>
         <td><input class="detail-input" type="number" id="melee" name="melee" value="0" min="0" max="100"></td>
         <td><label class="detail-label" for="financial-literacy">Financial Literacy:</label></td>
-        <td><input class="detail-input" type="number" id="financial-literacy" name="financial_literacy" value="0" min="0" max="100"></td>
+        <td><input class="detail-input" type="number"  name="financial_literacy" value="0" min="0" max="100"></td>
       </tr>
     </tbody>
   </table>
@@ -386,125 +436,81 @@ table {
         </tbody>
       </table>
       <label for="comments">Inventory:</label>
-      <textarea id="comments" name="inventory" rows="4" cols="50"></textarea>
+      <textarea  name="inventory" rows="4" cols="50"></textarea>
     </div>
     <div class="column">
       <label for="comments">Class Information:</label>
-      <textarea style="width: 100%; height: 100%" id="comments" name="class_info" rows="8" cols="100"></textarea>
+      <textarea style="width: 100%; height: 100%"  name="class_info" rows="8" cols="100"></textarea>
     </div>
-</form>
-<script>
-const healthIndicator = document.querySelector('#health-indicator');
-// Name of health info is healthInfo
-const starting_max_health = localstorage.getKey("max_health");
-const starting_current_health = localstorage.getKey("current_health");
-if (starting_max_health == null || starting_current_health == null) {
-  starting_max_health = 20;
-  starting_current_health = 15; // default values so it functions
-}
-const healthBar = document.querySelector('#health-bar')
-var pips_list = [];
-for (let i = 0; starting_max_health > i; i++) {
-  const newElement = document.createElement('div');
-  newElement.className = "pip";
-  pips_list.push(newElement);
-  healthBar.appendChild(newElement);
-}
-for (let i = 0; starting_current_health > i; i++) {
-  pips_list[i].className = 'pip active';
-}
-const pips = document.querySelectorAll('.pip');
-const maxHealth = pips.length;
-let currentHealth = starting_current_health;
-healthIndicator.textContent = currentHealth + " / " + maxHealth + " hp";
-function updateHealth(healthPercentage) {
-  const pips = document.querySelectorAll('.pip');
-  // Calculate how many pips should be active based on percentage
-  const activeCount = Math.ceil((healthPercentage / 100) * maxHealth);
-  pips.forEach((pip, index) => {
-    if (activeCount > index ) {
-      pip.classList.add('active');
-    } else {
-      pip.classList.remove('active');
-    }
-  });
-  currentHealth = activeCount;
-  if (10 > currentHealth)  {
-  healthIndicator.textContent = "\u00A0" + currentHealth + " / " + maxHealth + " hp";
-  }
-  else {
-  healthIndicator.textContent = "" + currentHealth + " / " + maxHealth + " hp";
-  }
-}
-// Example: Taking damage
-function takeDamage() {
-  if (currentHealth > 0) {
-    currentHealth -= 1;
-    updateHealth((currentHealth / maxHealth) * 100);
-  }
-}
-form.addEventListener('submit', function(event) {
-  // This line prevents the default form submission/page reload
-  event.preventDefault();
-  // You can now handle the form data here
-  console.log("Form submitted without reload!");
-});
-function restoreHealth() {
-  if (maxHealth > currentHealth) {
-    currentHealth += 1;
-    updateHealth((currentHealth / maxHealth) * 100);
-  }
-}
-// SAVING FORM TO LOCAL STORAGE:
-// NOTE: We can make this a savable JSON later for sharing!
-const form = document.querySelector('#characterSheet');
-function save_sheet_locally() {
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    localStorage.setItem('savedFormData', JSON.stringify(data));
-    // Saving health data.
-    localstorage.setKey("max_health" , maxHealth);
-    localstorage.setKey("current_health" , currentHealth);
-    alert('Form saved locally!');
-}
-// Automatically loads the form data from storage.
-// This may need a timeout later? 
-window.addEventListener('load', () => {
-    const savedData = localStorage.getItem('savedFormData');
-    if (savedData) {
-        const data = JSON.parse(savedData);
-        // Loop through the object and set field values
-        Object.keys(data).forEach(key => {
-            const input = form.querySelector(`[name="${key}"]`);
-            if (input) {
-                input.value = data[key];
-            }
-        });
-    }
-});
-const myBtn = document.getElementById('save-testing');
-const myBtn2 = document.getElementById('print-local-data');
-myBtn.addEventListener('click', function(event) {
-  event.preventDefault(); // This stops the form from submitting
-  save_sheet_locally();
-});
-myBtn2.addEventListener('click', function(event) {
-  event.preventDefault(); // This stops the form from submitting
-  console.log('Button clicked, but form not submitted!');
-  console.log(localStorage.getItem("savedFormData"));
-});
-</script>
+    <!-- labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Willpower (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'], -->
+<div id="editModal" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Edit Core Stats</h2>
+    <form id="editForm">
+      <div class="form-grid">
+        <div class="input-group">
+          <label for="stat-strength">Strength</label>
+          <input type="number" id="stat-strength" name="strength" value="10">
+        </div>
+        <div class="input-group">
+          <label for="stat-constitution">Constitution</label>
+          <input type="number" id="stat-constitution" name="constitution" value="10">
+        </div>
+        <div class="input-group">
+          <label for="stat-dexterity">Dexterity</label>
+          <input type="number" id="stat-dexterity" name="dexterity" value="10">
+        </div>
+        <div class="input-group">
+          <label for="stat-intelligence">Intelligence</label>
+          <input type="number" id="stat-intelligence" name="intelligence" value="10">
+        </div>
+        <div class="input-group">
+          <label for="stat-willpower">Willpower</label>
+          <input type="number" id="stat-willpower" name="willpower" value="10">
+        </div>
+        <div class="input-group">
+          <label for="stat-charisma">Charisma</label>
+          <input type="number" id="stat-charisma" name="charisma" value="10">
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" id="saveBtn" class="btn-form">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
 <script>
+if (typeof localStorage === "undefined" || localStorage === null) {
+  var LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+console.log(localStorage.getItem('formData'));
+let coreStatsData = [85, 90, 75, 60, 75, 40]; // Example Values if not loading correctly
+function load_core_stats_data() {
+  const coreStats = [
+    "strength",
+    "constitution",
+    "dexterity",
+    "intelligence",
+    "willpower",
+    "charisma"
+  ];
+  for (let x = 0; x < coreStats.length; x++) {
+    const input = document.querySelector(`[name="${coreStats[x]}"]`);
+    if (input) {
+      coreStatsData[x] = input.value;
+    }
+  }
   const svg = document.querySelector('.radar-chart-dark');
   new chartXkcd.Radar(svg, {
     title: '',
     data: {
       // The skills/attributes you are measuring
-      labels: ['Strength (85)', 'Durability (90)', 'Dexterity (75)', 'Intelligence (60)', 'WillPower (75)', 'Charisma (40)'],
+      labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Willpower (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'],
       datasets: [{
         label: 'Melee Specialist',
-        data: [85, 90, 75, 60, 75, 40],
+        data: coreStatsData,
       },
       {
           label: 'Maximum Possible',
@@ -520,6 +526,141 @@ myBtn2.addEventListener('click', function(event) {
       backgroundColor: 'black',
     }
   });
+}
+// Name of health info is healthInfo
+let starting_max_health = localStorage.getItem("max_health");
+let starting_current_health = localStorage.getItem("current_health");
+if (starting_max_health == null || starting_current_health == null) {
+  starting_max_health = 20;
+  starting_current_health = 15; // default values so it functions
+}
+const healthBar = document.querySelector('#health-bar');
+var pips_list = [];
+function update_pips() {
+  const pipsArea = document.querySelector('#pips-area');
+  pipsArea.replaceChildren();
+  for (let i = 0; (coreStatsData[1]/5) > i; i++) {
+    const newElement = document.createElement('div');
+    newElement.className = "pip";
+    pips_list.push(newElement);
+    pipsArea.appendChild(newElement);
+  }
+  for (let i = 0; starting_current_health > i; i++) {
+    pips_list[i].className = 'pip active';
+  }
+  pips = document.querySelectorAll('.pip');
+}
+var pips = document.querySelectorAll('.pip');
+const maxHealth = pips.length;
+let currentHealth = starting_current_health;
+function updateHealth(new_health) {
+  const pips = document.querySelectorAll('.pip');
+  // Calculate how many pips should be active based on percentage
+  const activeCount = new_health //Math.ceil((healthPercentage / 100) * maxHealth);
+  pips.forEach((pip, index) => {
+    if (activeCount > index ) {
+      pip.classList.add('active');
+    } else {
+      pip.classList.remove('active');
+    }
+  });
+  const secondHalfHealth = document.querySelector('#second-part-health');
+  currentHealth = activeCount;
+  secondHalfHealth.textContent = " / " + (coreStatsData[1]/5) + " hp ";
+}
+//update health pips on type
+let currentHealthInput = document.querySelector('#current-health')
+currentHealthInput.addEventListener('input', (event) => {
+    // This runs on every keystroke
+    console.log("typeing!!!!");
+    const typedText = event.target.value; 
+    if (Number.isInteger(Number(typedText))) {
+      new_health = parseInt(typedText , 10);
+      console.log("hello@ is int!");
+      if ((0 > new_health)) { 
+        updateHealth(0);
+        currentHealthInput.textContent = 0;
+      }
+      else if (new_health > coreStatsData[1]/5) {
+        updateHealth(coreStatsData[1]/5);
+        currentHealthInput.textContent = coreStatsData[1]/5;
+      }
+      else {
+        updateHealth(new_health);
+      }
+    }
+});
+// SAVING FORM TO LOCAL STORAGE:
+// NOTE: We can make this a savable JSON later for sharing!
+function saveAllInputs() {
+  const inputs = document.querySelectorAll('input, select, textarea');
+  const data = {};
+  inputs.forEach(input => {
+    // Only save if the element has an ID or Name to use as a key
+    if (input.id || input.name) {
+      const key =  input.name;
+      // Handle checkboxes specifically
+      data[key] = input.type === 'checkbox' ? input.checked : input.value;
+    }
+  });
+  // Convert the object to a string and save
+  localStorage.setItem('formData', JSON.stringify(data));
+}
+function loadInputsFromMemory() {
+  const savedData = localStorage.getItem('formData');
+  if (savedData) {
+      const data = JSON.parse(savedData);
+      // Loop through the keys of the saved object
+      Object.keys(data).forEach(key => {
+          // Find the specific input by its name attribute anywhere in the document
+          const input = document.querySelector(`[name="${key}"]`);
+          if (input) {
+              input.value = data[key];
+          }
+      });
+      //Handling the Health Bar
+      currentHealth = data['current_health'];
+      update_pips();
+      updateHealth(currentHealth);
+      load_core_stats_data();
+  }
+}
+// Runs when the page is loading. 
+window.addEventListener('load', () => {
+  loadInputsFromMemory();
+});
+// Runs a save every 60 seconds.
+setInterval(() => {
+  saveAllInputs();
+}, 60000); 
+// Saves when the page is closed or when click on a link. 
+window.addEventListener('beforeunload', (event) => {
+  saveAllInputs();
+});
+const myBtn = document.getElementById('save-testing');
+const myBtn2 = document.getElementById('print-local-data');
+const myBtn3 = document.getElementById('clear-local-data-button');
+myBtn3.addEventListener('click', function(event) {
+  localStorage.clear();
+  loadInputsFromMemory();
+});
+const modal = document.getElementById('editModal');
+const openModalBtn = document.getElementById('openModalBtn');
+const editForm = document.getElementById('editForm');
+openModalBtn.addEventListener('click', () => {
+  modal.style.display = 'flex'; // Triggers flex centering layout
+});
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+// 4. Handle form submission (Save Changes)
+editForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Stop page from reloading
+  modal.style.display = 'none';
+  load_core_stats_data();
+});
 </script>
 
 
