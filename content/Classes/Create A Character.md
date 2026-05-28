@@ -5,7 +5,7 @@
     #shell {
       display: grid;
       grid-template-rows: auto 1fr auto;
-      height: 90vh;
+      /* height: 90vh; */
     }
 
     header, footer {
@@ -38,7 +38,11 @@
         font-size : x-large;
     }
 
-    #viewport { overflow: hidden; }
+    #viewport { 
+        overflow-x: hidden;
+        overflow-y: auto;
+
+     }
 
     #pages-track {
       display: flex;
@@ -63,6 +67,50 @@
     .item.active { background: #454545; font-weight: bold; }
 
     #detail { flex: 1; padding: 24px; overflow-y: auto; }
+
+    .core-stats-grid {
+        display: grid;
+        /* Creates 6 equal columns taking up 1 fraction of space each */
+        grid-template-columns: repeat(6, 1fr); 
+        gap: 10px;
+    }
+
+    .core-stat-spinner {
+        font-family: var(--fontFamily);
+        color: var(--dark);
+        align-items: center; /* Centers vertically */
+        justify-content: center;
+        display: flex;
+        background-color : black;
+        font-size : large;
+    }
+
+    .core-adjuster-button {
+        font-family: var(--fontFamily);
+        color: var(--dark);
+        align-items: center; /* Centers vertically */
+        justify-content: center;
+        display: flex;
+        background-color : black;
+        border-radius : 15px;
+        font-size : medium
+    }
+
+    /* Target the spin buttons in Chrome, Safari, and Edge */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+    /* This turns off the default browser rendering */
+    -webkit-appearance: none; 
+    
+    /* Now you can apply custom styles! */
+    background-color: #3498db;
+    opacity: 1; /* Override default hover-only visibility */
+    
+    /* Give it some shape */
+    width: 20px;
+    height: 100%;
+    }
+
   </style>
 </head>
 <body>
@@ -81,10 +129,21 @@
             <main id="detail"><p>Select an item to view details.</p></main>
         </div>
       </div>      
-      <div >
+      <div style=" display: flex; flex-direction: column; justify-content: center;" >
         <h1>Core Stats</h1>
-        <div  class="chart-container">
+        <div class="chart-container">
             <svg class="radar-chart-dark"></svg>
+        </div>
+        <div>
+            <p id="num-points-remaining-indicator" style="text-align: center" > Points: 100 </p>
+        </div>
+        <div id=core-stats-selector class="core-stats-grid" >
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
         </div>
       </div>
       <div >
@@ -424,29 +483,87 @@
     const sidebar = document.getElementById('sidebar');
     const detail = document.getElementById('detail');
     const svg = document.querySelector('.radar-chart-dark');
-    let coreStatsData = [85, 90, 75, 60, 75, 40]; // Example Values if not loading correctly
-    new chartXkcd.Radar(svg, {
-        title: '',
-        data: {
-        // The skills/attributes you are measuring
-        labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Power (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'],
-        datasets: [{
-            label: 'Melee Specialist',
-            data: coreStatsData,
-        },
-        {
-            label: 'Maximum Possible',
-            // Set every value to your desired max value (e.g., 100)
-            data: [100, 100, 100, 100, 100, 100], 
-            }]
-        },
-        options: {
-        showLabels: true,
-        // You can customize the color palette if you want to spice things up
-        dataColors: ['#ff0000', '#000000'], 
-        strokeColor: 'white',
-        backgroundColor: 'black',
+    const numPointsRemainingIndicator = document.querySelector("#num-points-remaining-indicator");
+    let coreStatsData = [50, 50, 50, 50, 50, 50]; // Example Values if not loading correctly
+    let currentNumberOfPoints = 60; // default number of points to play with
+    function updateCoreSkillsRadar() {
+        new chartXkcd.Radar(svg, {
+            title: '',
+            data: {
+            // The skills/attributes you are measuring
+            labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Power (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'],
+            datasets: [{
+                label: 'Melee Specialist',
+                data: coreStatsData,
+            },
+            {
+                label: 'Maximum Possible',
+                // Set every value to your desired max value (e.g., 100)
+                data: [100, 100, 100, 100, 100, 100], 
+                }]
+            },
+            options: {
+            showLabels: true,
+            // You can customize the color palette if you want to spice things up
+            dataColors: ['#ff0000', '#000000'], 
+            strokeColor: 'white',
+            backgroundColor: 'black',
+            }
+        });
+        numPointsRemainingIndicator.textContent = "Current Points : " + currentNumberOfPoints;
+    }
+    updateCoreSkillsRadar();
+    function adjustCoreStat(core_stat_idx , direction) {
+        const suggested_value = coreStatsData[core_stat_idx] + (5 * direction);
+        const suggested_num_pts = currentNumberOfPoints + (5 * direction * -1);
+        if ((suggested_num_pts < 0) || (suggested_value < 40) || (suggested_value > 80)) {
+            return;
         }
+        else {
+            coreStatsData[core_stat_idx] = suggested_value;
+            currentNumberOfPoints = suggested_num_pts;
+            updateCoreSkillsRadar();
+        }
+    }
+    const coreStatNames = ["Strength" , "Constitution" , "Dexterity" , "Intelligence" , "Power" , "Charisma"];
+    const coreStatsSelector = document.querySelector("#core-stats-selector");
+    Array.from(coreStatsSelector.children).forEach((item , index) => {
+        const increment_button = document.createElement('button');
+        const decrement_button = document.createElement('button');
+        const label = document.createElement('p');
+        label.textContent = coreStatNames[index];
+        increment_button.textContent = "+";
+        decrement_button.textContent = "-";
+        increment_button.className = "core-stat-spinner";
+        decrement_button.className = "core-stat-spinner";
+        let holdTimer;
+        let holdTimer2;
+        let button_time = 70;
+        increment_button.addEventListener('mousedown', () => {
+            holdTimer = setInterval(() => {
+                adjustCoreStat(index , 1);
+            }, button_time); 
+        });
+        increment_button.addEventListener('mouseup', () => {
+            clearTimeout(holdTimer);
+        });
+        increment_button.addEventListener('mouseleave', () => {
+            clearTimeout(holdTimer);
+        });
+        decrement_button.addEventListener('mousedown', () => {
+            holdTimer2 = setInterval(() => {
+                adjustCoreStat(index , -1);
+            }, button_time); 
+        });
+        decrement_button.addEventListener('mouseup', () => {
+            clearTimeout(holdTimer2);
+        });
+        decrement_button.addEventListener('mouseleave', () => {
+            clearTimeout(holdTimer2);
+        });
+        item.appendChild(label);
+        item.appendChild(increment_button);
+        item.appendChild(decrement_button);
     });
     items.forEach(item => {
         const el = document.createElement('div');
