@@ -138,6 +138,32 @@ th, td {
     inset 2px 2px 0px #421720;
 }
 
+/* Individual health pips */
+.wip {
+  width: 0.5vw;
+  height: 24px;
+  box-sizing: border-box;
+}
+
+/* Active/Filled health pips (Red Retro Palette) */
+.wip.active {
+  background-color: #f06237; /* Bright 8-bit red */
+  
+  /* Internal pixel shading for a pseudo-3D look */
+  box-shadow: 
+    inset -2px -2px 0px #a30022, /* Dark red bottom/right shadow */
+    inset 2px 2px 0px #ff6687;   /* Light red top/left highlight */
+}
+
+/* Inactive/Empty health pips (Dimmed/Drained look) */
+.wip:not(.active) {
+  background-color: #82341c; /* Deep, muted burgundy */
+  
+  /* Internal pixel shading for an empty slot */
+  box-shadow: 
+    inset -2px -2px 0px #140307, 
+    inset 2px 2px 0px #421720;
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -151,12 +177,12 @@ input[type=number] {
 }
 
 .divider-sheet {
-  background-color : grey;
+  background-color : #4f4f4f;
   min-height : 1vh;
   width : 100%;
 }
 
-#current-health {
+.current-health {
   border : none;
   width: 1.2rem;
 }
@@ -181,7 +207,9 @@ table {
 .table-input {
   padding : 0;
 }
-#openModalBtn {
+
+
+.borderless-button-charsheet {
   display: flex;
   align-items: center; /* Centers vertically */
   justify-content: center;
@@ -238,6 +266,16 @@ table {
   margin-bottom: 25px;
 }
 
+.char-sheet-card {
+  background-color : black;
+  border : white 2px solid;
+}
+
+.char-sheet-card-selected {
+  background-color : white;
+  border : white 3px solid;
+}
+
 /* Smooth fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
@@ -245,6 +283,10 @@ table {
 }
 
 </style>
+  <div style="display: flex" >
+    <button class="borderless-button-charsheet" id="switchSheetsBtn"> <img width=20px; src='../red_icon.png'> Switch Character Sheet</button>
+    <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><img  src='./export.png' >Download Character Sheet as  JSON</button>
+  </div>
   <div class="divider-sheet"><h3>General Skills</h3></div>
   <div class="grid-container">
     <div class="column">
@@ -285,17 +327,27 @@ table {
       <div  class="chart-container">
         <svg class="radar-chart-dark"></svg>
       </div>
-      <button id="openModalBtn"> <img src='./pencil.png'><span>Edit Core Stats</span></button>
+      <button class="borderless-button-charsheet" id="openModalBtn"> <img src='./pencil.png'><span>Edit Core Stats</span></button>
     </div>
     <div class="column">
       <div id="health-bar" class="health-bar">
-        <span> <input id=current-health type="number"  name="current_health" placeholder=""><span id=second-part-health> / - hp  </span></span>
+        <span> <input id=current-health type="number" class="current-health"   name="current_health" placeholder=""><span id=second-part-health> / - hp  </span></span>
         <span class="health-bar" id=pips-area>
         <!-- <div class="pip active"></div>
         <div class="pip active"></div>
         <div class="pip active"></div>
         <div class="pip active"></div>
         <div class="pip active"></div> -->
+        </span>
+      </div>
+      <div id="willpower-bar" class="health-bar">
+        <span> <input id=current-willpower class="current-health"  type="number"  name="current_willpower" placeholder=""><span id=second-part-willpower> / - wp  </span></span>
+        <span  class="health-bar" id=pips-area-willpower>
+        <div class="wip active"></div>
+        <div  class="wip active"></div>
+        <div class="wip active"></div>
+        <div  class="wip active"></div>
+        <div  class="wip active"></div>
         </span>
       </div>
       <div class="grid-container-3">
@@ -348,7 +400,7 @@ table {
       <!-- Row 3 -->
       <tr class="detail-row">
         <td><label class="detail-label" for="computer-science">Computer Science:</label></td>
-        <td><input class="detail-input" type="number" id="computer-science" name="computer_science" value="0" min="0" max="100"></td>
+        <td><input class="detail-input" type="number" id="computer-science" name="computer science" value="0" min="0" max="100"></td>
         <td><label class="detail-label" for="stealth">Stealth:</label></td>
         <td><input class="detail-input" type="number" id="stealth" name="stealth" value="0" min="0" max="100"></td>
         <td><label class="detail-label" for="dodge">Dodge:</label></td>
@@ -387,8 +439,8 @@ table {
         <td><input class="detail-input" type="number" id="unnatural" name="unnatural" value="0" min="0" max="100"></td>
         <td><label class="detail-label" for="melee">Melee:</label></td>
         <td><input class="detail-input" type="number" id="melee" name="melee" value="0" min="0" max="100"></td>
-        <td><label class="detail-label" for="financial-literacy">Financial Literacy:</label></td>
-        <td><input class="detail-input" type="number"  name="financial_literacy" value="0" min="0" max="100"></td>
+        <td><label class="detail-label" for="financial-literacy">Finance:</label></td>
+        <td><input class="detail-input" type="number"  name="finance" value="0" min="0" max="100"></td>
       </tr>
     </tbody>
   </table>
@@ -435,6 +487,39 @@ table {
       </table>
       <label for="comments">Inventory:</label>
       <textarea  name="inventory" rows="4" cols="50"></textarea>
+      <table>
+        <thead>
+          <tr>
+            <th>Spell Name</th>
+            <th>Description</th>
+            <th>Willpower Cost</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1 -->
+          <tr>
+            <td><input class="table-input" type="text" name="ability_1_name" ></td>
+            <td><input class="table-input" type="text" name="ability_1_desc" ></td>
+            <td><input class="table-input" type="text" name="ability_1_wp" ></td>
+            <td><input class="table-input" type="text" name="ability_1_diff" ></td>
+          </tr>
+          <!-- Row 2 -->
+          <tr>
+            <td><input class="table-input" type="text" name="ability_2_name" ></td>
+            <td><input class="table-input" type="text" name="ability_2_desc" ></td>
+            <td><input class="table-input" type="text" name="ability_2_wp" ></td>
+            <td><input class="table-input" type="text" name="ability_2_diff" ></td>
+          </tr>
+          <!-- Row 3 -->
+          <tr>
+            <td><input class="table-input" type="text" name="ability_3_name" ></td>
+            <td><input class="table-input" type="text" name="ability_3_desc" ></td>
+            <td><input class="table-input" type="text" name="ability_3_wp" ></td>
+            <td><input class="table-input" type="text" name="ability_3_diff" ></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="column">
       <label for="comments">Class Information:</label>
@@ -463,8 +548,8 @@ table {
           <input type="number" id="stat-intelligence" name="intelligence" value="50">
         </div>
         <div class="input-group">
-          <label for="stat-willpower">Willpower</label>
-          <input type="number" id="stat-willpower" name="willpower" value="50">
+          <label for="stat-willpower">Power</label>
+          <input type="number" id="stat-willpower" name="power" value="50">
         </div>
         <div class="input-group">
           <label for="stat-charisma">Charisma</label>
@@ -477,17 +562,96 @@ table {
     </form>
   </div>
 </div>
-
-<button  id=clear-local-data-button style="font-size : small;" class="btn-form" type="button" onclick=export_char_sheet(); ><img  src='./export.png' >Download Character Sheet as  JSON</button>
 <button  id=clear-local-data-button class="btn-form" type="button" >Erase Character Sheet</button>
+
+
+<div id="switchSheetsOverlay" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Switch Character Sheet</h2>
+    <form id="editForm">
+      <div class="form-grid">
+        <!--Other sheets here-->
+        <div class="selector-container">
+          <div class="char-sheet-card" data-value="TTRPGCharSheet0"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet1"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet2"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet3"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet4"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet5"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet6"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet7"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet8"></div>
+          <div class="char-sheet-card" data-value="TTRPGCharSheet9"></div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" id="selectSheetBtn" class="btn-form">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
 <script>
+/*
+MULTIPLE SHEETS PLAN:
+- 1. Have 10 preset keys pointing to sheet json.
+- 2. Have a localStorage key "characterSheetData", which points to those preset keys.
+- 3. Button to open and manage character sheets. 
+*/
+let currentCharSheetKey = localStorage.getItem("currentCharSheetKey");
+if (!currentCharSheetKey) {
+  currentCharSheetKey = "TTRPGCharSheet0";
+}
+const cards = document.querySelectorAll('.char-sheet-card');
+let tempCharSheetKey = currentCharSheetKey;
+function updateCardDisplay() {
+  cards.forEach(card => {
+    const keyName = card.getAttribute('data-value');
+    let displayText = "---";
+    if (localStorage.getItem(keyName)) {
+      const cardCharSheet = JSON.parse(localStorage.getItem(keyName));
+      if (cardCharSheet.hasOwnProperty("agent_codename")) {
+        displayText = cardCharSheet["agent_codename"];
+      }
+      else {
+        displayText = "Unnamed Agent";
+      }
+    }
+    else {
+      displayText = "Empty Slot";
+    }
+    card.textContent = displayText;
+  });
+}
+updateCardDisplay();
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        console.log("Clicked!");
+        saveCharSheet();
+        updateCardDisplay();
+        cards.forEach(c => {
+          // render the text in form of sheet agent name.
+          c.className = 'char-sheet-card';
+        });
+        card.className = 'char-sheet-card-selected';
+        tempCharSheetKey = card.getAttribute('data-value');
+    });
+});
+document.querySelector("#selectSheetBtn").addEventListener('click' , () => {
+  saveCharSheet();
+  currentCharSheetKey = tempCharSheetKey;
+  localStorage.setItem("currentCharSheetKey" , tempCharSheetKey);
+  clearCharSheet();
+  loadInputsFromMemory();
+});
 function export_char_sheet () {
   saveAllInputs();
-  let temp_data = localStorage.getItem('characterSheetDataDONOTDELETE');
+  let temp_data = localStorage.getItem(currentCharSheetKey);
   let temp_data_parsed = JSON.parse(temp_data);
   console.log(temp_data_parsed['agent_codename']);
   saveFile(temp_data , temp_data_parsed['agent_codename']);
@@ -552,7 +716,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   var LocalStorage = require('node-localstorage').LocalStorage;
   localStorage = new LocalStorage('./scratch');
 }
-console.log(localStorage.getItem('characterSheetDataDONOTDELETE'));
+console.log(localStorage.getItem(currentCharSheetKey));
 let coreStatsData = [85, 90, 75, 60, 75, 40]; // Example Values if not loading correctly
 function load_core_stats_data() {
   const coreStats = [
@@ -560,7 +724,7 @@ function load_core_stats_data() {
     "constitution",
     "dexterity",
     "intelligence",
-    "willpower",
+    "power",
     "charisma"
   ];
   for (let x = 0; x < coreStats.length; x++) {
@@ -574,7 +738,7 @@ function load_core_stats_data() {
     title: '',
     data: {
       // The skills/attributes you are measuring
-      labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Willpower (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'],
+      labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Power (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'],
       datasets: [{
         label: 'Melee Specialist',
         data: coreStatsData,
@@ -597,13 +761,17 @@ function load_core_stats_data() {
 // Name of health info is healthInfo
 let starting_max_health = localStorage.getItem("max_health");
 let starting_current_health = localStorage.getItem("current_health");
+let starting_current_willpower = localStorage.getItem("current_willpower");
 if (starting_max_health == null || starting_current_health == null) {
   starting_max_health = 20;
   starting_current_health = 15; // default values so it functions
+  starting_current_willpower = 10;
 }
 const healthBar = document.querySelector('#health-bar');
 var pips_list = [];
+var wips_list = [];
 function update_pips() {
+  // Handle the health things
   const pipsArea = document.querySelector('#pips-area');
   pipsArea.replaceChildren();
   for (let i = 0; (coreStatsData[1]/5) > i; i++) {
@@ -615,12 +783,25 @@ function update_pips() {
   for (let i = 0; starting_current_health > i; i++) {
     pips_list[i].className = 'pip active';
   }
+  // Willpower.
+  const wipsArea = document.querySelector('#pips-area-willpower');
+  wipsArea.replaceChildren();
+  for (let i = 0; (coreStatsData[4]/5) > i; i++) {
+    const newElement = document.createElement('div');
+    newElement.className = "wip";
+    wips_list.push(newElement);
+    wipsArea.appendChild(newElement);
+  }
+  for (let i = 0; starting_current_willpower > i; i++) {
+    wips_list[i].className = 'wip active';
+  }
 }
-let currentHealth = starting_current_health;
+let currentWillpower = starting_current_willpower;
+let currentHealth= starting_current_health;
 function updateHealth(new_health) {
   const pips = document.querySelectorAll('.pip');
   // Calculate how many pips should be active based on percentage
-  const activeCount = new_health 
+  const activeCount = new_health;
   pips.forEach((pip, index) => {
     if (activeCount > index ) {
       pip.classList.add('active');
@@ -631,6 +812,20 @@ function updateHealth(new_health) {
   const secondHalfHealth = document.querySelector('#second-part-health');
   currentHealth = activeCount;
   secondHalfHealth.textContent = " / " + (coreStatsData[1]/5) + " hp ";
+}
+function updateWillpower(new_willpower) {
+  const pips = document.querySelectorAll('.wip');
+  // Calculate how many pips should be active based on percentage
+  pips.forEach((pip, index) => {
+    if (new_willpower > index ) {
+      pip.classList.add('active');
+    } else {
+      pip.classList.remove('active');
+    }
+  });
+  const secondHalfHealth = document.querySelector('#second-part-willpower');
+  currentWillpower = new_willpower;
+  secondHalfHealth.textContent = " / " + (coreStatsData[4]/5) + " wp ";
 }
 //update health pips on type
 let currentHealthInput = document.querySelector('#current-health')
@@ -654,6 +849,15 @@ currentHealthInput.addEventListener('input', (event) => {
       }
     }
 });
+let currentWillpowerInput = document.querySelector('#current-willpower');
+currentWillpowerInput.addEventListener('input', (event) => {
+    // This runs on every keystroke
+    const typedText = event.target.value; 
+    if (Number.isInteger(Number(typedText))) {
+      new_health = parseInt(typedText , 10);
+      updateWillpower(new_health);
+    }
+});
 // SAVING FORM TO LOCAL STORAGE:
 // NOTE: We can make this a savable JSON later for sharing!
 function saveAllInputs() {
@@ -668,10 +872,10 @@ function saveAllInputs() {
     }
   });
   // Convert the object to a string and save
-  localStorage.setItem('characterSheetDataDONOTDELETE', JSON.stringify(data));
+  localStorage.setItem(currentCharSheetKey, JSON.stringify(data));
 }
 function loadInputsFromMemory() {
-  const savedData = localStorage.getItem('characterSheetDataDONOTDELETE');
+  const savedData = localStorage.getItem(currentCharSheetKey);
   if (savedData) {
       const data = JSON.parse(savedData);
       // Loop through the keys of the saved object
@@ -684,10 +888,18 @@ function loadInputsFromMemory() {
       });
       //Handling the Health Bar
       currentHealth = data['current_health'];
+      currentWillpower = data['current_willpower'];
       update_pips();
       updateHealth(currentHealth);
+      updateWillpower(currentWillpower);
       load_core_stats_data();
   }
+}
+function saveCharSheet() {
+  saveAllInputs();
+  update_pips();
+  updateHealth(currentHealth);
+  updateWillpower(currentWillpower);
 }
 // Runs when the page is loading. 
 window.addEventListener('load', () => {
@@ -699,12 +911,13 @@ setInterval(() => {
   const currentURL = window.location.href;
   console.log(previousURL + " -> " + currentURL);
   if (previousURL.includes("character-sheet") && currentURL.includes("character-sheet")) {
-    saveAllInputs();
-    update_pips();
-    updateHealth(currentHealth);
+    saveCharSheet();
   }
   else if ((!previousURL.includes("character-sheet")) && currentURL.includes("character-sheet")) {
     loadInputsFromMemory();
+    registerPopupModal('editModal' , 'openModalBtn', 'editForm');
+    registerPopupModal('switchSheetsOverlay' , 'switchSheetsBtn', 'saveBtn');
+    updateCardDisplay();
   }
   else {
     // do nothing
@@ -718,28 +931,35 @@ window.addEventListener('beforeunload', (event) => {
 const myBtn = document.getElementById('save-testing');
 const myBtn2 = document.getElementById('print-local-data');
 const myBtn3 = document.getElementById('clear-local-data-button');
-myBtn3.addEventListener('click', function(event) {
-  document.querySelectorAll('input, select, textarea').forEach(input => {
+function clearCharSheet() {
+document.querySelectorAll('input, select, textarea').forEach(input => {
     input.value = "";
   });
+} 
+myBtn3.addEventListener('click', function(event) {
+  clearCharSheet();
 });
-const modal = document.getElementById('editModal');
-const openModalBtn = document.getElementById('openModalBtn');
-const editForm = document.getElementById('editForm');
-openModalBtn.addEventListener('click', () => {
-  modal.style.display = 'flex'; // Triggers flex centering layout
-});
-window.addEventListener('click', (event) => {
-  if (event.target === modal) {
+function registerPopupModal(modalId , openModelButtonId , modalSubmissionButtonId) {
+  const modal = document.getElementById(modalId);
+  const openModalBtn = document.getElementById(openModelButtonId);
+  const editForm = document.getElementById(modalSubmissionButtonId);
+  openModalBtn.addEventListener('click', () => {
+    modal.style.display = 'flex'; // Triggers flex centering layout
+  });
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+  editForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Stop page from reloading
     modal.style.display = 'none';
-  }
-});
-// 4. Handle form submission (Save Changes)
-editForm.addEventListener('submit', (e) => {
-  e.preventDefault(); // Stop page from reloading
-  modal.style.display = 'none';
-  load_core_stats_data();
-});
+    load_core_stats_data();
+  });
+}
+
+
+
 </script>
 
 

@@ -1,83 +1,194 @@
-<style>
-  /* Base trigger button styling */
-#openModalBtn {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point Distribution Interface</title>
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+        }
 
-/* Background overlay (hidden by default) */
-.modal-overlay {
-  display: none; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
 
-/* The actual popup box */
-.modal-content {
-  background-color: #2a2a2a;
-  padding: 30px;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.3s ease;
-}
+        .container {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 500px;
+        }
 
-/* Smooth fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+        h2 {
+            margin-top: 0;
+            text-align: center;
+            color: var(--primary-color);
+        }
 
-</style>
+        .pool-display {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            padding: 10px;
+            background-color: #e0e7ff;
+            border-radius: 8px;
+            color: var(--primary-color);
+        }
 
+        .slider-group {
+            margin-bottom: 1.5rem;
+        }
 
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
 
+        .slider-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
+        input[type="range"] {
+            flex-grow: 1;
+            accent-color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        input[type="range"]:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .value-display {
+            font-family: monospace;
+            font-size: 1.1rem;
+            width: 25px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Character Allocation</h2>
+    <div class="pool-display">
+        Remaining Points: <span id="pool-counter">100</span>
+    </div>
+
+    <div id="sliders-container">
+        </div>
+</div>
 
 <script>
-  // Get DOM Elements
-const modal = document.getElementById('editModal');
-const openModalBtn = document.getElementById('openModalBtn');
-const cancelBtn = document.getElementById('cancelBtn');
-const editForm = document.getElementById('editForm');
+    // Configuration
+    const MIN_VALUE = 40;
+    const MAX_VALUE = 80;
+    const STARTING_POOL = 100; 
+    const numValues = 6;
 
-// 1. Open the popup when the main button is clicked
-openModalBtn.addEventListener('click', () => {
-  modal.style.display = 'flex'; // Triggers flex centering layout
-});
+    // Track the current state of each slider (initialized to the minimum)
+    let values = Array(numValues).fill(MIN_VALUE);
+    let remainingPool = STARTING_POOL;
 
-// 2. Close the popup when clicking 'Cancel'
-cancelBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
+    const container = document.getElementById('sliders-container');
+    const poolCounter = document.getElementById('pool-counter');
 
-// 3. Optional: Close the popup if clicking outside the modal box
-window.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-});
+    // 1. Initialize the Interface
+    function init() {
+        poolCounter.textContent = remainingPool;
 
-// 4. Handle form submission (Save Changes)
-editForm.addEventListener('submit', (e) => {
-  e.preventDefault(); // Stop page from reloading
-  
-  // Quick way to collect all form fields data
-  const formData = new FormData(editForm);
-  const updatedData = Object.fromEntries(formData.entries());
-  
-  // At this point, 'updatedData' is an object containing your 6 fields
-  console.log('Saved Data:', updatedData);
-  
-  // Close the modal after saving
-  modal.style.display = 'none';
-});
+        for (let i = 0; i < numValues; i++) {
+            const group = document.createElement('div');
+            group.className = 'slider-group';
+
+            group.innerHTML = `
+                <div class="slider-label">
+                    <span>Value ${i + 1}</span>
+                    <span class="value-display" id="val-display-${i}">${MIN_VALUE}</span>
+                </div>
+                <div class="slider-wrapper">
+                    <input 
+                        type="range" 
+                        id="slider-${i}" 
+                        min="${MIN_VALUE}" 
+                        max="${MAX_VALUE}" 
+                        value="${MIN_VALUE}"
+                        data-index="${i}"
+                    >
+                </div>
+            `;
+            container.appendChild(group);
+        }
+
+        // Add event listener to the container (Event Delegation)
+        container.addEventListener('input', handleSliderInput);
+        updateSliders();
+    }
+
+    // 2. Handle Slider Movement
+    function handleSliderInput(e) {
+        if (!e.target.matches('input[type="range"]')) return;
+
+        const index = parseInt(e.target.dataset.index);
+        const newValue = parseInt(e.target.value);
+        const oldValue = values[index];
+        
+        // Calculate the difference from the previous position
+        const diff = newValue - oldValue;
+
+        if (remainingPool - diff >= 0) {
+            // If we have enough points, update the value and deduct from pool
+            values[index] = newValue;
+            remainingPool -= diff;
+        } else {
+            // If the user tries to pull past the limit, force slider back to max legal position
+            const allowedIncrease = remainingPool;
+            values[index] += allowedIncrease;
+            remainingPool = 0;
+        }
+
+        updateSliders();
+    }
+
+    // 3. Sync UI with JavaScript State
+    function updateSliders() {
+        poolCounter.textContent = remainingPool;
+
+        values.forEach((val, i) => {
+            const slider = document.getElementById(`slider-${i}`);
+            const display = document.getElementById(`val-display-${i}`);
+            
+            // Update the HTML values
+            slider.value = val;
+            display.textContent = val;
+
+            // Prevent user from increasing a slider if the pool is empty
+            // But still allow them to decrease it
+            slider.max = Math.min(MAX_VALUE, val + remainingPool);
+        });
+    }
+
+    // Start the app
+    init();
 </script>
+
+</body>
+</html>
