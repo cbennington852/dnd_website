@@ -10,24 +10,24 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Thu, 28 May 2026 21:54:51 GMT</pubDate>
+    <pubDate>Thu, 28 May 2026 23:25:09 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Thu, 28 May 2026 21:54:51 GMT</pubDate>
+    <pubDate>Thu, 28 May 2026 23:25:09 GMT</pubDate>
+  </item><item>
+    <title>Create A Character</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
+    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* width : 40vw; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
+    <pubDate>Thu, 28 May 2026 21:55:30 GMT</pubDate>
   </item><item>
     <title>Character Sheet</title>
     <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
     <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
-    <pubDate>Thu, 28 May 2026 20:35:11 GMT</pubDate>
-  </item><item>
-    <title>Create A Character</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
-    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* height: 90vh; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
     <pubDate>Thu, 28 May 2026 20:35:11 GMT</pubDate>
   </item><item>
     <title>Close combat specialist</title>
@@ -42,28 +42,28 @@
     <description><![CDATA[ Delta Green is a covert group inside the United States federal government. ]]></description>
     <pubDate>Wed, 27 May 2026 19:37:00 GMT</pubDate>
   </item><item>
-    <title>Gunslinger</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/gunslinger</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/gunslinger</guid>
-    <description><![CDATA[ 1. Quick draw Add half your firearms stat to your dex when rolling quickdraw. Example: 80% Firearms 50% Dextarity ~(90%) Quick Draw 2. ]]></description>
-    <pubDate>Wed, 27 May 2026 19:37:00 GMT</pubDate>
-  </item><item>
-    <title>Medic</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/medic</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/medic</guid>
+    <title>Core Rules</title>
+    <link>https://cbennington852.github.io/dnd_website/core-rules/</link>
+    <guid>https://cbennington852.github.io/dnd_website/core-rules/</guid>
     <description><![CDATA[  ]]></description>
     <pubDate>Wed, 27 May 2026 19:37:00 GMT</pubDate>
   </item><item>
-    <title>Prepper</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/prepper</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/prepper</guid>
-    <description><![CDATA[ 1. Tinker Artillery, Demolitions, and Heavy Weapons rolls can be replaced with INT rolls 2. Stat Buff +10% (2 pts) to any base stat. ]]></description>
+    <title>Free Missions</title>
+    <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
+    <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
+    <description><![CDATA[  ]]></description>
     <pubDate>Wed, 27 May 2026 19:37:00 GMT</pubDate>
   </item><item>
-    <title>Scholar of The Machine</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/scholar-of-the-machine</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/scholar-of-the-machine</guid>
-    <description><![CDATA[ 1. Dive into the machine +50% to unnatural. Your willpower can be reduced to 1 before you feel any effects. Gain a new action: Concentration on Spell. ]]></description>
+    <title>thing</title>
+    <link>https://cbennington852.github.io/dnd_website/free-missions/thing</link>
+    <guid>https://cbennington852.github.io/dnd_website/free-missions/thing</guid>
+    <description><![CDATA[ asasd. ]]></description>
+    <pubDate>Wed, 27 May 2026 19:37:00 GMT</pubDate>
+  </item><item>
+    <title>Items &amp; Gear</title>
+    <link>https://cbennington852.github.io/dnd_website/items--and--gear/</link>
+    <guid>https://cbennington852.github.io/dnd_website/items--and--gear/</guid>
+    <description><![CDATA[  ]]></description>
     <pubDate>Wed, 27 May 2026 19:37:00 GMT</pubDate>
   </item>
     </channel>

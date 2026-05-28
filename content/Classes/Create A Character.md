@@ -5,7 +5,7 @@
     #shell {
       display: grid;
       grid-template-rows: auto 1fr auto;
-      /* height: 90vh; */
+      /* width : 40vw; */
     }
 
     header, footer {
@@ -41,23 +41,25 @@
     #viewport { 
         overflow-x: hidden;
         overflow-y: auto;
-
      }
 
     #pages-track {
       display: flex;
       height: 100%;
       transition: transform .35s ease;
+
     }
 
     #pages-track > div {
       flex: 0 0 100%;
-      padding: 40px;
-      overflow-y: auto;
+      /* border: purple 3px solid; */
+      overflow: auto;
+      overflow-wrap: break-word;
+
     }
 
     .skill-list {
-        padding-left: 60px; 
+        /* padding-left: 60px;  */
     }
 
     #sidebar { width: 200px; border-right: 1px solid #ccc; overflow-y: auto; }
@@ -111,6 +113,51 @@
     height: 100%;
     }
 
+    .grid-container {
+  display: grid;
+  /* Creates two equal columns using 'fr' units */
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; /* Optional: adds space between the two columns */
+}
+.grid-container-3 {
+  display: grid;
+  /* Creates two equal columns using 'fr' units */
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 20px; /* Optional: adds space between the two columns */
+}
+
+.detailed-skill {
+  padding: 2px;
+  display: flex;
+}
+
+.column {
+  padding: 2px;
+  display: flex;
+  flex-direction: column; /* This forces the items to stack vertically */
+}
+
+input , textarea {
+  background: black;
+  font-family: var(--fontFamily);
+  color: var(--dark);
+  font-size : medium;
+  min-height : 5vh;
+
+  width: 100%; /* Ensures the input fills the width of the column */
+}
+
+input:focus,textarea:focus {
+  background: black;
+  outline: 2px solid red;
+}
+
+label {
+  display: block;
+  font-size : small;
+  margin-bottom: 5px; /* Adds space between label and input */
+}
+
   </style>
 </head>
 <body>
@@ -124,7 +171,7 @@
       <!-- Add or remove pages here — each <div> is a page -->
       <div >
         <h1>Profession</h1>
-        <div style="display: flex;">
+        <div  style="display: flex;">
             <nav id="sidebar"></nav>
             <main id="detail"><p>Select an item to view details.</p></main>
         </div>
@@ -152,7 +199,43 @@
       </div>
       <div >
         <h1>Identification Information</h1>
-        <p>This is the third page.</p>
+        <div class="divider-sheet"><h3>General Skills</h3></div>
+        <div class="grid-container">
+            <div class="column">
+            <label for="username">Agent Codename:</label>
+            <input type="text"  name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
+            </div>
+            <div class="column">
+            <label for="username">Profession Rank (If applicable):</label>
+            <input type="text"  name="profession_rank" placeholder="Example : N/A , Captain">
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="column">
+            <label for="username">Employer:</label>
+            <input type="text"  name="employer" placeholder="Example: CIA , FBI , etc.">
+            </div>
+            <div class="column">
+            <label for="username">Nationality:</label>
+            <input type="text"  name="nationality" placeholder="Example : United states of america">
+            </div>
+        </div>
+        <div class="grid-container-3">
+            <div class="column">
+            <label for="username">Sex:</label>
+            <input type="text"  name="sex" placeholder="Example : Male">
+            </div>
+            <div class="column">
+            <label for="username">Age & DOB:</label>
+            <input type="text"  name="age_and_dob" placeholder="Example : 19 , August 17th 2004">
+            </div>
+            <div class="column">
+            <label for="username">Education:</label>
+            <input type="text"  name="education" placeholder="Example : B.S. International Relations">
+            </div>
+        </div>
+        <label for="comments">Physical Description:</label>
+        <textarea  name="physical_description" rows="4" cols="50"></textarea>
       </div>
       <div >
         <h1>Class</h1>
@@ -192,7 +275,7 @@
     });
     function goTo(idx) {
       current = Math.max(0, Math.min(idx, total - 1));
-      const pageWidth = headerElem.offsetWidth + counter.offsetWidth + 35; // That 35 is a magic number
+      const pageWidth = viewPort.offsetWidth; // That 35 is a magic number
       // I found it myself, not sure why it needs this offset.....
       console.log(pageWidth);
       console.log(viewPort.offsetWidth);

@@ -1,194 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Point Distribution Interface</title>
-    <style>
-        :root {
-            --primary-color: #4f46e5;
-            --bg-color: #f3f4f6;
-            --card-bg: #ffffff;
-            --text-color: #1f2937;
-        }
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-page</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+    html, body { height: 100%; overflow: hidden; font-family: sans-serif; }
 
-        .container {
-            background-color: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            width: 100%;
-            max-width: 500px;
-        }
+    #shell {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+    }
 
-        h2 {
-            margin-top: 0;
-            text-align: center;
-            color: var(--primary-color);
-        }
+    header, footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    footer { border-top: 1px solid #ddd; border-bottom: none; }
 
-        .pool-display {
-            text-align: center;
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            padding: 10px;
-            background-color: #e0e7ff;
-            border-radius: 8px;
-            color: var(--primary-color);
-        }
+    #dots { display: flex; gap: 6px; }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+    }
+    .dot.active { background: #333; }
 
-        .slider-group {
-            margin-bottom: 1.5rem;
-        }
+    #viewport { overflow: hidden; }
 
-        .slider-label {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
+    #pages-track {
+      display: flex;
+      height: 100%;
+      transition: transform .35s ease;
+    }
 
-        .slider-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        input[type="range"] {
-            flex-grow: 1;
-            accent-color: var(--primary-color);
-            cursor: pointer;
-        }
-
-        input[type="range"]:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .value-display {
-            font-family: monospace;
-            font-size: 1.1rem;
-            width: 25px;
-            text-align: right;
-        }
-    </style>
+    #pages-track > div {
+      flex: 0 0 100%;
+      padding: 40px;
+      overflow-y: auto;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Character Allocation</h2>
-    <div class="pool-display">
-        Remaining Points: <span id="pool-counter">100</span>
-    </div>
+<div id="shell">
 
-    <div id="sliders-container">
-        </div>
+  <header>
+    <span id="page-counter">1 / 3</span>
+    <div id="dots"><button class="dot active"></button><button class="dot"></button><button class="dot"></button></div>
+  </header>
+
+  <div id="viewport">
+    <div id="pages-track" style="transform: translateX(0%);">
+
+      <!-- Add or remove pages here — each <div> is a page -->
+
+      <div style="border : purple 2px solid;" >
+        <h1>Page One</h1>
+        <p>This is the first page. Add anything you want in here.</p>
+      </div>
+
+      <div style="border : purple 2px solid;">
+        <h1>Page Two</h1>
+        <p>This is the second page.</p>
+      </div style="border : purple 2px solid;">
+
+      <div>
+        <h1>Page Three</h1>
+        <p>This is the third page.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <button id="btn-prev" disabled="">← Prev</button>
+    <button id="btn-next">Next →</button>
+  </footer>
+
 </div>
 
 <script>
-    // Configuration
-    const MIN_VALUE = 40;
-    const MAX_VALUE = 80;
-    const STARTING_POOL = 100; 
-    const numValues = 6;
+  (() => {
+    const track   = document.getElementById('pages-track');
+    const pages   = Array.from(track.children);
+    const dotsEl  = document.getElementById('dots');
+    const counter = document.getElementById('page-counter');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
 
-    // Track the current state of each slider (initialized to the minimum)
-    let values = Array(numValues).fill(MIN_VALUE);
-    let remainingPool = STARTING_POOL;
+    let current = 0;
+    const total = pages.length;
 
-    const container = document.getElementById('sliders-container');
-    const poolCounter = document.getElementById('pool-counter');
+    const dots = pages.map((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'dot';
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+      return d;
+    });
 
-    // 1. Initialize the Interface
-    function init() {
-        poolCounter.textContent = remainingPool;
-
-        for (let i = 0; i < numValues; i++) {
-            const group = document.createElement('div');
-            group.className = 'slider-group';
-
-            group.innerHTML = `
-                <div class="slider-label">
-                    <span>Value ${i + 1}</span>
-                    <span class="value-display" id="val-display-${i}">${MIN_VALUE}</span>
-                </div>
-                <div class="slider-wrapper">
-                    <input 
-                        type="range" 
-                        id="slider-${i}" 
-                        min="${MIN_VALUE}" 
-                        max="${MAX_VALUE}" 
-                        value="${MIN_VALUE}"
-                        data-index="${i}"
-                    >
-                </div>
-            `;
-            container.appendChild(group);
-        }
-
-        // Add event listener to the container (Event Delegation)
-        container.addEventListener('input', handleSliderInput);
-        updateSliders();
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, total - 1));
+      track.style.transform = `translateX(-${current * 100}%)`;
+      counter.textContent = `${current + 1} / ${total}`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      btnPrev.disabled = current === 0;
+      btnNext.disabled = current === total - 1;
     }
 
-    // 2. Handle Slider Movement
-    function handleSliderInput(e) {
-        if (!e.target.matches('input[type="range"]')) return;
+    btnPrev.addEventListener('click', () => goTo(current - 1));
+    btnNext.addEventListener('click', () => goTo(current + 1));
 
-        const index = parseInt(e.target.dataset.index);
-        const newValue = parseInt(e.target.value);
-        const oldValue = values[index];
-        
-        // Calculate the difference from the previous position
-        const diff = newValue - oldValue;
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') goTo(current + 1);
+      if (e.key === 'ArrowLeft')  goTo(current - 1);
+    });
 
-        if (remainingPool - diff >= 0) {
-            // If we have enough points, update the value and deduct from pool
-            values[index] = newValue;
-            remainingPool -= diff;
-        } else {
-            // If the user tries to pull past the limit, force slider back to max legal position
-            const allowedIncrease = remainingPool;
-            values[index] += allowedIncrease;
-            remainingPool = 0;
-        }
+    let touchStartX = 0;
+    document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    document.addEventListener('touchend',   e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
 
-        updateSliders();
-    }
-
-    // 3. Sync UI with JavaScript State
-    function updateSliders() {
-        poolCounter.textContent = remainingPool;
-
-        values.forEach((val, i) => {
-            const slider = document.getElementById(`slider-${i}`);
-            const display = document.getElementById(`val-display-${i}`);
-            
-            // Update the HTML values
-            slider.value = val;
-            display.textContent = val;
-
-            // Prevent user from increasing a slider if the pool is empty
-            // But still allow them to decrease it
-            slider.max = Math.min(MAX_VALUE, val + remainingPool);
-        });
-    }
-
-    // Start the app
-    init();
+    goTo(0);
+  })();
 </script>
 
-</body>
-</html>
+
+</body></html>
