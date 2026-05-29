@@ -11,8 +11,5 @@ A Delta green specialist focusing mostly on melee abilities.
 Once per session, when taking damage greater than a d4, reduce that damage to a d4
 ## 5. Lethal blow
 On a successful critical strike, roll again.
-## 6. Razors Edge
-Creation of a custom melee weapon
-* 30% more accurate
-or
-* 1d6 more damaging
+## 6. Adrenaline Burst
+Once per session, upon being downed, you character can get back up for two turns, during which they can attack, run, or do any action they please. Once those turns are expended, they will 

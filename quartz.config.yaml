@@ -13,12 +13,22 @@ configuration:
     - templates
     - .obsidian
   theme:
+    js:
+      src: "/custom.js"
+      loadTime: "afterDOMReady"
+      contentType: "external"
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
       header: Special Elite
       body: Syne Mono
       code: IBM Plex Mono
+      # header: IBM Plex Mono
+      # body: Courier Prime 
+      # code: IBM Plex Mono
+      # header: Schibsted Grotesk
+      # body: Source Sans Pro
+      # code: IBM Plex Mono
     colors:
       lightMode:
         light: "#000000"         # Black background

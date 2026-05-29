@@ -66,13 +66,20 @@
         /* padding-left: 60px;  */
     }
 
+    /*NOTE: Below is for the proffession descirpiton*/
     #sidebar { width: 200px; border-right: 1px solid #ccc; overflow-y: auto; }
-
     .item { padding: 12px 16px; cursor: pointer; }
     .item:hover { background: #2a2a2a; }
     .item.active { background: #454545; font-weight: bold; }
-
     #detail { flex: 1; padding: 24px; overflow-y: auto; }
+
+    /*NOTE: Below is for the class descirpiton*/
+    #class_selection_sidebar { width: 200px; border-right: 1px solid #ccc; overflow-y: auto; }
+    .class_selection_item { padding: 12px 16px; cursor: pointer; }
+    .class_selection_item:hover { background: #2a2a2a; }
+    .class_selection_item.active { background: #454545; font-weight: bold; }
+    #class_selection_detail { flex: 1; padding: 24px; overflow-y: auto; }
+
 
     .core-stats-grid {
         display: grid;
@@ -87,21 +94,12 @@
         align-items: center; /* Centers vertically */
         justify-content: center;
         display: flex;
+        cursor : pointer;
         border : none;
         background-color : black;
         font-size : large;
     }
 
-    .core-adjuster-button {
-        font-family: var(--fontFamily);
-        color: var(--dark);
-        align-items: center; /* Centers vertically */
-        justify-content: center;
-        display: flex;
-        background-color : black;
-        border-radius : 15px;
-        font-size : medium
-    }
 
     /* Target the spin buttons in Chrome, Safari, and Edge */
     input[type="number"]::-webkit-inner-spin-button,
@@ -164,34 +162,58 @@ label {
   margin-bottom: 5px; /* Adds space between label and input */
 }
 
-.card-container {
-    gap: 20px;
-    margin: 20px auto;
-    overflow: auto;
-    max-height: 100vh;
+table {
+  width: 95%;
+  border-collapse: collapse;
 }
 
-/* Base card styling */
-.card {
-    background: #191919;
-    padding: 20px;
-    border-radius: 8px;
-    margin : 20px;
-    box-shadow: 0 4px 6px rgba(150, 150, 150, 0.1);
-    transition: transform 0.2s, border-color 0.2s;
-    cursor: pointer;
-    border: 2px solid transparent;
+
+.detail-row {
+  padding: 8px;
+  vertical-align: middle; /* Centers label and input vertically inside the cell */
 }
 
-/* Hover effect */
-.card:hover {
-    transform: translateY(-5px);
+/* Optional: Gives your inputs a uniform width */
+.detail-boost-button {
+  width: 3vw;
+  padding : 0;
+  background-color: black;
+    font-family: var(--fontFamily);
+    color: var(--dark);
+  font-size : large;
+
+}
+.detail-boost-button:hover {
+  width: 3vw;
+  padding : 0;
+  background-color: #424242;
+  font-size : large;
+    font-family: var(--fontFamily);
+    color: var(--dark);
 }
 
-/* Active/Selected state managed by JavaScript */
-.card.active {
-    border-color: #ff0000;
-    background-color: #303030;
+.detail-boost-button.active {
+  width: 3vw;
+  padding : 0;
+  background-color: black;
+    font-family: var(--fontFamily);
+    color: var(--dark);
+  font-size : large;
+    border: red 2px solid;
+}
+.detail-boost-button:hover.active {
+  width: 3vw;
+  padding : 0;
+  background-color: #424242;
+  font-size : large;
+    border: red 2px solid;
+
+    font-family: var(--fontFamily);
+    color: var(--dark);
+}
+
+.table-input {
+  padding : 0;
 }
 
   </style>
@@ -270,12 +292,83 @@ label {
         </div>
       </div>
       <div >
-        <h1>Class</h1>
-        <p>Later!!!</p>
+        <h1>Class Selection</h1>
+        <div style="display: flex; ">
+            <nav id="class_selection_sidebar"></nav>
+            <main id="class_selection_detail"><p>Select an profession to view details.</p></main>
+        </div>
       </div>
       <div >
         <h1>Detailed Stats</h1>
-        <p>This is the third page.</p>
+        <p>Select which stats you would like to boost.</p>
+        <p style="text-align : center; font-size : large;" id=number-of-boosts-label >Number of Boosts Left: -</p>
+        <table>
+            <tbody>
+            <!-- Row 1 -->
+            <tr class="detail-row">
+                <td><label class="detail-label" for="history">History:</label></td>
+                <td><button class="detail-boost-button" type="number" id="history" name="history" ></td>
+                <td><label class="detail-label" for="drive">Drive:</label></td>
+                <td><button class="detail-boost-button" type="number" id="drive" name="drive" ></td>
+                <td><label class="detail-label" for="pilot">Pilot:</label></td>
+                <td><button class="detail-boost-button" type="number" id="pilot" name="pilot" ></td>
+            </tr>
+            <!-- Row 2 -->
+            <tr class="detail-row">
+                <td><label class="detail-label" for="law">Law:</label></td>
+                <td><button class="detail-boost-button" type="number" id="law" name="law" ></td>
+                <td><label class="detail-label" for="search">Search:</label></td>
+                <td><button class="detail-boost-button" type="number" id="search" name="search" ></td>
+                <td><label class="detail-label" for="demolitions">Demolitions:</label></td>
+                <td><button class="detail-boost-button" type="number" id="demolitions" name="demolitions" ></td>
+            </tr>
+            <!-- Row 3 -->
+            <tr class="detail-row">
+                <td><label class="detail-label" for="computer-science">Computer Science:</label></td>
+                <td><button class="detail-boost-button" type="number" id="computer-science" name="computer science" ></td>
+                <td><label class="detail-label" for="stealth">Stealth:</label></td>
+                <td><button class="detail-boost-button" type="number" id="stealth" name="stealth" ></td>
+                <td><label class="detail-label" for="dodge">Dodge:</label></td>
+                <td><button class="detail-boost-button" type="number" id="dodge" name="dodge" ></td>
+            </tr>
+            <!-- Row 4 -->
+            <tr class="detail-row">
+                <td><label class="detail-label" for="science">Science:</label></td>
+                <td><button class="detail-boost-button" type="number" id="science" name="science" ></td>
+                <td><label class="detail-label" for="alertness">Alertness:</label></td>
+                <td><button class="detail-boost-button" type="number" id="alertness" name="alertness" ></td>
+                <td><label class="detail-label" for="bureaucracy">Bureaucracy:</label></td>
+                <td><button class="detail-boost-button" type="number" id="bureaucracy" name="bureaucracy" ></td>
+            </tr>
+            <!-- Row 5 -->
+            <tr class="detail-row">
+                <td><label class="detail-label" for="engineering">Engineering:</label></td>
+                <td><button class="detail-boost-button" type="number" id="engineering" name="engineering" ></td>
+                <td><label class="detail-label" for="firearms">Firearms:</label></td>
+                <td><button class="detail-boost-button" type="number" id="firearms" name="firearms" ></td>
+                <td><label class="detail-label" for="criminology">Criminology:</label></td>
+                <td><button class="detail-boost-button" type="number" id="criminology" name="criminology" ></td>
+            </tr>
+            <!-- Row 6 -->
+            <tr class="detail-row">
+                <td><label class="detail-label" for="forensics">Forensics:</label></td>
+                <td><button class="detail-boost-button" type="number" id="forensics" name="forensics" ></td>
+                <td><label class="detail-label" for="first-aid">First Aid:</label></td>
+                <td><button class="detail-boost-button" type="number" id="first-aid" name="first_aid" ></td>
+                <td><label class="detail-label" for="psychotherapy">Psychotherapy:</label></td>
+                <td><button class="detail-boost-button" type="number" id="psychotherapy" name="psychotherapy" ></td>
+            </tr>
+            <!-- Row 7 -->
+            <tr class="detail-row">
+                <td><label class="detail-label" for="unnatural">Unnatural:</label></td>
+                <td><button class="detail-boost-button" type="number" id="unnatural" name="unnatural" ></td>
+                <td><label class="detail-label" for="melee">Melee:</label></td>
+                <td><button class="detail-boost-button" type="number" id="melee" name="melee" ></td>
+                <td><label class="detail-label" for="financial-literacy">Finance:</label></td>
+                <td><button class="detail-boost-button" type="number"  name="finance" ></td>
+            </tr>
+            </tbody>
+        </table>
       </div>
       <div >
         <h1>Save your character sheet</h1>
@@ -385,6 +478,10 @@ label {
                 key_name: "first_aid",
                 percent : 35
             },
+            {
+                key_name: "finance",
+                percent : 25
+            },
         ]
         },
         {
@@ -428,6 +525,10 @@ label {
                 key_name: "forensics",
                 percent : 35
             },
+            {
+                key_name: "finance",
+                percent : 25
+            },
         ]
         },
         {
@@ -467,6 +568,10 @@ label {
                 key_name: "first_aid",
                 percent : 35
             },
+            {
+                key_name: "finance",
+                percent : 20
+            },
         ]
         },
         {
@@ -498,6 +603,10 @@ label {
                 key_name: "firearms",
                 percent : 40
             },
+            {
+                key_name: "finance",
+                percent : 50
+            },
         ]
         },
          {
@@ -528,6 +637,10 @@ label {
             {
                 key_name: "alertness",
                 percent : 40
+            },
+            {
+                key_name: "finance",
+                percent : 60
             },
         ]
         },
@@ -565,6 +678,10 @@ label {
                 key_name: "alertness",
                 percent : 60
             },
+            {
+                key_name: "finance",
+                percent : 50
+            },
         ]
         },
         {
@@ -594,6 +711,10 @@ label {
             },
             {
                 key_name: "alertness",
+                percent : 60
+            },
+            {
+                key_name: "finance",
                 percent : 60
             },
         ]
@@ -700,9 +821,11 @@ label {
         item.appendChild(curr_value_indicator);
         item.appendChild(decrement_button);
     });
-    items.forEach(item => {
-        const el = document.createElement('div');
+    // NOTE: This is for the profession selection
+    items.forEach((item , index) => {
+        let el = document.createElement('div');
         el.className = 'item';
+        el.dataset.index = index;
         el.innerHTML = `<strong>${item.title}</strong><br><small>${item.sub}</small>`;
         el.addEventListener('click', () => {
             document.querySelectorAll('.item').forEach(n => n.classList.remove('active'));
@@ -729,8 +852,149 @@ label {
             </tbody>
             </table>`
             detail.innerHTML = tableHTML;
+            reRenderDetailedStatsButtons();
         });
         sidebar.appendChild(el);
+    });
+    //Class Selection Sidebar:
+    const class_selection_sidebar = document.getElementById('class_selection_sidebar');
+    const class_selection_detail = document.getElementById('class_selection_detail');
+    const class_selection_data = [
+        {
+        title: "Gunslinger",
+        sub: "Assault",
+        body: `A swift and lethal master of firearms, the gunslinger dominates the battlefield through precision, speed, and killing power. Gunslingers often shoot first, ask questions later, and then finish it off with more shooting. 
+        \n\n Generally Speaking, Gunslinger agents are the most damaging of any of the classes. This class is best paired with a Prepper, who can provide them with higher level firearms. `,
+        href: "/classes/gunslinger",
+        data_slug : "classes/gunslinger"
+        },
+        {
+        title: "Close Combat Specialist",
+        sub: "Defense",
+        body: `A specialist focusing mostly on hand-to-hand combat. It takes a lot of courage to go toe to toe with monsters, so these agents are among the most resected... and the most frequently injured. \n\n
+        Close combat specialists are often the most durable of than any other class. Fulfilling the male urge to be indestructible. This allows close combat specialists to rush into danger with a minimal fear of dying.`,
+        href: "/classes/close-combat-specialist",
+        data_slug : "classes/close-combat-specialist"
+        },
+        {
+        title: "Prepper",
+        sub: "All Around",
+        body: `Initially, this was classified as a form of hoarding. Excepting instead of hoarding things like newspapers, these agents would hoard high-power rifles, explosives, and armour. \n\nPrepper agents generally have access to a significantly larger arsenal of military gear, high-grade armor, and heavy weaponry than any other class. While other classes rely on specialized or minimalist loadouts, the Prepper functions as a walking armory, keeping a massive surplus of combat-ready supplies on hand for almost any engagement.`,
+        href: "/classes/prepper",
+        data_slug : "classes/prepper",
+        },
+        {
+        title: "Scholar of Mushroom",
+        sub: "Magic",
+        body: `Curiosity and a need to understand is what has driven humanity to create great gifts. We should use those gifts to help others \n\n Scholars of mushroom would be classified as a support class, they specialize in mind control, teleportation, and knowledge in the unnatural. They are often the first to uncover secrets and have a dark convoluted past.  `,
+        href: "/classes/scholar-of-mushroom",
+        data_slug : "classes/scholar-of-mushroom",
+        },
+        {
+        title: "Scholar of The Great Machine",
+        sub: "Magic",
+        body: `We live in a machine, it takes us in, and spits us out. It's time to make that machine work for us. \n\n The silliest of all of the classes. Classified more into support, with the ability to create storage (great for dead bodies!) and the ability to create animated objects that can do tasks for you.   `,
+        href: "/classes/scholar-of-the-great-machine",
+        data_slug : "classes/scholar-of-the-great-machine",
+        },
+        /*
+        It would be cool to have a stretchy monster class!!!
+        Like Jake from adventure time, but different?
+        */
+    ];
+    const BASE_DETAILED_STATS = {
+        history: 0,
+        drive: 30,
+        pilot: 0,
+        law: 0,
+        search: 0,
+        demolitions: 0,
+        "computer science": 0,
+        stealth: 10,
+        dodge: 30,
+        science: 0,
+        alertness: 30,
+        bureaucracy: 10,
+        engineering: 0,
+        firearms: 20,
+        criminology: 0,
+        forensics: 0,
+        first_aid: 15,
+        psychotherapy: 5,
+        unnatural: 0,
+        melee: 30,
+        finance: 10
+    };
+    let number_of_boosts = 3;
+    function reRenderDetailedStatsButtons() {
+        let current_stats = structuredClone(BASE_DETAILED_STATS);
+        // 3. Apply profession stats with things. 
+        // 3.1 get the current profession selected.
+        const divObject = document.querySelector('.item.active');
+        console.log("divObject" + divObject);
+        const jsonObjectIndex = divObject.dataset.index;
+        const selectedProfession = items[jsonObjectIndex];
+        const stats_to_apply = selectedProfession['skills'];
+        for (const [stat_name , value] of Object.entries(current_stats)) {
+            stats_to_apply.forEach(stat => {
+                if (stat.key_name == stat_name) {
+                    current_stats[stat_name] = Math.max(value , stat.percent);
+                }
+            });
+        }
+        const detailsBoostButtons = document.querySelectorAll(".detail-boost-button");
+          detailsBoostButtons.forEach((button) => {
+            let name = button.getAttribute('name');
+            if (current_stats.hasOwnProperty(name)) {
+                if (button.classList.contains("active")) {
+                    button.textContent = Math.min(current_stats[name] + 30 , 80);
+                }
+                else {
+                    button.textContent = current_stats[name];
+                }
+            }
+        });
+        const numberBoostsLabel = document.querySelector("#number-of-boosts-label");
+        numberBoostsLabel.textContent = "Number of Boosts Left: " + number_of_boosts;
+    }
+    document.querySelectorAll(".detail-boost-button").forEach((button) => {
+        // add the event listenerf
+        button.addEventListener('click' , () => {
+            if (button.classList.contains("active")) {
+                number_of_boosts += 1;
+                button.classList.remove("active");
+            }
+            else {
+                if (number_of_boosts > 0) {
+                    button.classList.add("active");
+                    number_of_boosts -= 1;
+                }
+            }
+            reRenderDetailedStatsButtons();
+        });
+    });
+    // 4. For each button if clicked, have it toggle on or off, have stats reflect that, and stuff. 
+    class_selection_data.forEach((item , index) => {
+        let el = document.createElement('div');
+        el.className = 'class_selection_item';
+        el.dataset.index = index;
+        el.innerHTML = `<strong>${item.title}</strong><br><small>${item.sub}</small>`;
+        el.addEventListener('click', () => {
+            document.querySelectorAll('.class_selection_item').forEach(n => n.classList.remove('active'));
+            el.classList.add('active');
+            let tableHTML = "";
+            tableHTML += `<h2>${item.title}</h2><p><em>${item.sub}</em></p><hr>` +
+                item.body.split('\n\n').map(p => `<p>${p}</p>`).join('');
+            tableHTML += `<a target="_blank" href="${item.href}" class="internal internal-link" data-slug="${item.data_slug}">${item.title} Class Details</a>`;
+            // Below is example a link taken from element inspector. Should intigrate with wuartz 5. 
+            // NOTE: This does not provide the hover for some reason. Look into this laterrrrr.
+            /*
+            <a href="/classes/gunslinger" class="internal internal-link" data-slug="classes/gunslinger">Gunslinger</a>
+            */
+            class_selection_detail.innerHTML = tableHTML;
+            // FOr now this can be a summary with link to full document. 
+        });
+        class_selection_sidebar.appendChild(el);
     });
   })();
 </script>

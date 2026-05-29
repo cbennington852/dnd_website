@@ -44,3 +44,40 @@ export async function fetchCanonical(url: URL): Promise<Response> {
   const [_, redirect] = text.match(canonicalRegex) ?? []
   return redirect ? fetch(`${new URL(redirect, url)}`) : res
 }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// BELOW IS CODE WRITTEN BY CHARLES BENNINGTON
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+Disclaimer: 
+  The components system was complicated, and I couldn't really figure it out. All I wanted to do 
+  was run a few scripts on the website so I could make my forms. I couldn't figure out how to 
+  "register a script" either. So I will simply be bolting my code into this util.ts file. 
+*/
+
+function run_on_page_load() {
+  const currentUrl = window.location.href;
+  if (currentUrl.includes("character-sheet")) {
+    //
+    console.log("Hello + ");
+    console.log(document.scripts);
+    const scripts = document.scripts;
+    const my_scripts = document.querySelectorAll(".on-load-run-script-charlesbennington");
+    my_scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        Array.from(oldScript.attributes).forEach(attr => {
+            newScript.setAttribute(attr.name, attr.value);
+        });
+        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+        document.body.appendChild(newScript);
+        newScript.parentNode.removeChild(newScript);
+    });
+
+  }
+}
+
+// Listen to both navigation events
+document.addEventListener("nav", run_on_page_load);
+// document.addEventListener("render", run_on_page_load);

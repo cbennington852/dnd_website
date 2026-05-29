@@ -268,23 +268,31 @@ table {
 
 .char-sheet-card {
   background-color : black;
-  padding : 10px;
+  width: 100%;
+
 }
 
 .char-sheet-card:hover {
   background-color : #3c3c3c;
-  padding : 10px;
   border: red 1px solid;
+  width: 100%;
+
 
 }
 
 .selector-container {
-
+  list-style-type: none; /* Removes the dots */
+  padding: 0;            /* Optional: Removes indentation */
+  margin: 0;  
+  width: 100%;
 }
 
 .char-sheet-card-selected {
   background-color : #535454;
-  padding : 10px;
+  width: 100%;
+  padding-top : 10px;
+  padding-bottom:10px;
+
 }
 
 /* Smooth fade-in animation */
@@ -580,7 +588,7 @@ table {
   <div class="modal-content">
     <h2>Switch Character Sheet</h2>
     <form id="editForm">
-      <div class="form-grid">
+      <div style="display: flex; justify-content: center;" class="form-grid">
         <!--Other sheets here-->
         <ul class="selector-container">
           <li class="char-sheet-card" data-value="TTRPGCharSheet0"></li>
@@ -606,8 +614,8 @@ table {
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
-<script>
+<script class="on-load-run-script-charlesbennington" src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+<script class="on-load-run-script-charlesbennington">
 /*
 MULTIPLE SHEETS PLAN:
 - 1. Have 10 preset keys pointing to sheet json.
@@ -923,6 +931,7 @@ setInterval(() => {
   console.log(previousURL + " -> " + currentURL);
   if (previousURL.includes("character-sheet") && currentURL.includes("character-sheet")) {
     saveCharSheet();
+    updateCardDisplay();
   }
   else if ((!previousURL.includes("character-sheet")) && currentURL.includes("character-sheet")) {
     loadInputsFromMemory();
