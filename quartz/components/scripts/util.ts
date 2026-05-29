@@ -56,28 +56,38 @@ Disclaimer:
   was run a few scripts on the website so I could make my forms. I couldn't figure out how to 
   "register a script" either. So I will simply be bolting my code into this util.ts file. 
 */
+// We need to check if these scripts are running already.
+// var current_running_scripts = [];
+var history_of_pages_we_have_been = [];
+
+// function execute_script(oldScript) {
+//   const oldScriptJson = JSON.stringify(oldScript);
+//   current_running_scripts.forEach(curr_script => {
+//     console.log(curr_script);
+//     console.log(oldScriptJson);
+//     if (oldScriptJson === curr_script) {
+//       return;
+//     }
+//   });
+//   const newScript = document.createElement("script");
+//   Array.from(oldScript.attributes).forEach(attr => {
+//       newScript.setAttribute(attr.name, attr.value);
+//   });
+//   current_running_scripts.push(JSON.stringify(oldScript));
+//   newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+//   document.body.appendChild(newScript);
+//   newScript.parentNode.removeChild(newScript);
+// }
 
 function run_on_page_load() {
   const currentUrl = window.location.href;
-  if (currentUrl.includes("character-sheet")) {
-    //
-    console.log("Hello + ");
-    console.log(document.scripts);
-    const scripts = document.scripts;
-    const my_scripts = document.querySelectorAll(".on-load-run-script-charlesbennington");
-    my_scripts.forEach(oldScript => {
-        const newScript = document.createElement("script");
-        Array.from(oldScript.attributes).forEach(attr => {
-            newScript.setAttribute(attr.name, attr.value);
-        });
-        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-        document.body.appendChild(newScript);
-        newScript.parentNode.removeChild(newScript);
-    });
-
+  history_of_pages_we_have_been.push(currentUrl);
+  console.log(history_of_pages_we_have_been);
+  if ((currentUrl.includes("character-sheet") || (currentUrl.includes("create-a-character"))) && (history_of_pages_we_have_been.length > 1)) {
+    location.reload();
   }
 }
 
 // Listen to both navigation events
 document.addEventListener("nav", run_on_page_load);
-// document.addEventListener("render", run_on_page_load);
+document.addEventListener("render", run_on_page_load);

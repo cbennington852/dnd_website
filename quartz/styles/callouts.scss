@@ -94,7 +94,7 @@
     --color: #db4242;
     --border: #db424244;
     --bg: #db424210;
-    --callout-icon: var(--callout-icon-failure);
+    --callout-icon: none;
   }
 
   &[data-callout="bug"] {
@@ -102,7 +102,9 @@
   }
 
   &[data-callout="danger"] {
-    --callout-icon: var(--callout-icon-danger);
+    .callout-icon {
+      opacity: 0.0; /* Makes it 40% visible */
+    }
   }
 
   &[data-callout="example"] {

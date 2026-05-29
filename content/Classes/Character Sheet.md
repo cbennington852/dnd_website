@@ -614,8 +614,8 @@ table {
 
 
 
-<script class="on-load-run-script-charlesbennington" src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
-<script class="on-load-run-script-charlesbennington">
+<script data-position=0  class="on-load-run-script-charlesbennington" src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+<script data-position=1 class="on-load-run-script-charlesbennington">
 /*
 MULTIPLE SHEETS PLAN:
 - 1. Have 10 preset keys pointing to sheet json.
@@ -977,7 +977,6 @@ function registerPopupModal(modalId , openModelButtonId , modalSubmissionButtonI
     load_core_stats_data();
   });
 }
-
 
 
 </script>

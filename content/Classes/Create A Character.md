@@ -381,8 +381,8 @@ table {
     <button class="navigation-buttons" id="btn-prev">← Prev</button>
     <button class="navigation-buttons" id="btn-next">Next →</button>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
-<script>
+<script data-position=0  class="on-load-run-script-charlesbennington" src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+<script data-position=1  class="on-load-run-script-charlesbennington" >
   (() => {
     const track   = document.getElementById('pages-track');
     const pages   = Array.from(track.children);
