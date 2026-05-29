@@ -55,7 +55,11 @@
       /* border: purple 3px solid; */
       overflow: auto;
       overflow-wrap: break-word;
+      max-height : 80vh;
 
+    }
+
+    .radar-chart-dark {
     }
 
     .skill-list {
@@ -203,11 +207,28 @@ label {
       <!-- Add or remove pages here — each <div> is a page -->
       <div >
         <h1>Profession</h1>
-        <div style="display: flex;">
+        <div style="display: flex; ">
             <nav id="sidebar"></nav>
             <main id="detail"><p>Select an profession to view details.</p></main>
         </div>
       </div>      
+      <div >
+        <h1>Employment Information</h1>
+        <div style="max-width : 90%;">
+             <div class="column">
+            <label for="username">Profession Rank (If applicable):</label>
+            <input type="text"  name="profession_rank" placeholder="Example : N/A , Captain">
+            </div>
+            <div class="column">
+            <label for="username">Employer:</label>
+            <input type="text"  name="employer" placeholder="Example: CIA New Jersey Branch Office , Smith County Sheriffs Office , etc.">
+            </div>
+            <div class="column">
+            <label for="username">Nationality:</label>
+            <input type="text"  name="nationality" placeholder="Example : United states of america">
+            </div>
+        </div>
+      </div>  
       <div style=" display: flex; flex-direction: column; justify-content: center;" >
         <h1>Core Stats</h1>
         <div class="chart-container">
@@ -228,26 +249,8 @@ label {
       <div >
         <h1>Identification Information</h1>
         <div style="max-width : 90%;">
-            <div class="grid-container">
-                <div class="column">
-                <label for="username">Agent Codename:</label>
-                <input type="text"  name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
-                </div>
-                <div class="column">
-                <label for="username">Profession Rank (If applicable):</label>
-                <input type="text"  name="profession_rank" placeholder="Example : N/A , Captain">
-                </div>
-            </div>
-            <div class="grid-container">
-                <div class="column">
-                <label for="username">Employer:</label>
-                <input type="text"  name="employer" placeholder="Example: CIA , FBI , etc.">
-                </div>
-                <div class="column">
-                <label for="username">Nationality:</label>
-                <input type="text"  name="nationality" placeholder="Example : United states of america">
-                </div>
-            </div>
+            <label for="username">Agent Codename:</label>
+            <input type="text"  name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
             <div class="grid-container-3">
                 <div class="column">
                 <label for="username">Sex:</label>
@@ -263,7 +266,7 @@ label {
                 </div>
             </div>
             <label for="comments">Physical Description:</label>
-            <textarea  name="physical_description" rows="4" cols="50"></textarea>
+            <textarea  name="physical_description" rows="4" cols="200"></textarea>
         </div>
       </div>
       <div >

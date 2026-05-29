@@ -10,25 +10,25 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 29 May 2026 03:03:39 GMT</pubDate>
+    <pubDate>Fri, 29 May 2026 03:19:09 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 29 May 2026 03:03:39 GMT</pubDate>
-  </item><item>
-    <title>Create A Character</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
-    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* width : 40vw; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
-    <pubDate>Thu, 28 May 2026 23:25:48 GMT</pubDate>
+    <pubDate>Fri, 29 May 2026 03:19:09 GMT</pubDate>
   </item><item>
     <title>Character Sheet</title>
     <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
     <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
-    <pubDate>Thu, 28 May 2026 20:35:11 GMT</pubDate>
+    <pubDate>Fri, 29 May 2026 03:04:26 GMT</pubDate>
+  </item><item>
+    <title>Create A Character</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
+    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* width : 40vw; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
+    <pubDate>Fri, 29 May 2026 03:04:26 GMT</pubDate>
   </item><item>
     <title>Close combat specialist</title>
     <link>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</link>
