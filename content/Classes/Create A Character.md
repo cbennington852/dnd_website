@@ -1,5 +1,5 @@
-
   <style>
+
 
 
     #shell {
@@ -83,6 +83,7 @@
         align-items: center; /* Centers vertically */
         justify-content: center;
         display: flex;
+        border : none;
         background-color : black;
         font-size : large;
     }
@@ -113,16 +114,17 @@
     height: 100%;
     }
 
-    .grid-container {
+.grid-container {
+
   display: grid;
   /* Creates two equal columns using 'fr' units */
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 20px; /* Optional: adds space between the two columns */
 }
 .grid-container-3 {
   display: grid;
   /* Creates two equal columns using 'fr' units */
-  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px; /* Optional: adds space between the two columns */
 }
 
@@ -143,7 +145,7 @@ input , textarea {
   color: var(--dark);
   font-size : medium;
   min-height : 5vh;
-
+  margin : 10px;
   width: 100%; /* Ensures the input fills the width of the column */
 }
 
@@ -156,6 +158,36 @@ label {
   display: block;
   font-size : small;
   margin-bottom: 5px; /* Adds space between label and input */
+}
+
+.card-container {
+    gap: 20px;
+    margin: 20px auto;
+    overflow: auto;
+    max-height: 100vh;
+}
+
+/* Base card styling */
+.card {
+    background: #191919;
+    padding: 20px;
+    border-radius: 8px;
+    margin : 20px;
+    box-shadow: 0 4px 6px rgba(150, 150, 150, 0.1);
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Active/Selected state managed by JavaScript */
+.card.active {
+    border-color: #ff0000;
+    background-color: #303030;
 }
 
   </style>
@@ -171,9 +203,9 @@ label {
       <!-- Add or remove pages here — each <div> is a page -->
       <div >
         <h1>Profession</h1>
-        <div  style="display: flex;">
+        <div style="display: flex;">
             <nav id="sidebar"></nav>
-            <main id="detail"><p>Select an item to view details.</p></main>
+            <main id="detail"><p>Select an profession to view details.</p></main>
         </div>
       </div>      
       <div style=" display: flex; flex-direction: column; justify-content: center;" >
@@ -182,7 +214,7 @@ label {
             <svg class="radar-chart-dark"></svg>
         </div>
         <div>
-            <p id="num-points-remaining-indicator" style="text-align: center" > Points: 100 </p>
+            <p id="num-points-remaining-indicator" style="text-align: center; font-size : x-large;" > Points: 100 </p>
         </div>
         <div id=core-stats-selector class="core-stats-grid" >
             <div class="column"></div>
@@ -194,51 +226,52 @@ label {
         </div>
       </div>
       <div >
-        <h1>Detailed Stats</h1>
-        <p>This is the third page.</p>
-      </div>
-      <div >
         <h1>Identification Information</h1>
-        <div class="divider-sheet"><h3>General Skills</h3></div>
-        <div class="grid-container">
-            <div class="column">
-            <label for="username">Agent Codename:</label>
-            <input type="text"  name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
+        <div style="max-width : 90%;">
+            <div class="grid-container">
+                <div class="column">
+                <label for="username">Agent Codename:</label>
+                <input type="text"  name="agent_codename" placeholder="Example: Agent Hemlock, Agent Cotton, etc.">
+                </div>
+                <div class="column">
+                <label for="username">Profession Rank (If applicable):</label>
+                <input type="text"  name="profession_rank" placeholder="Example : N/A , Captain">
+                </div>
             </div>
-            <div class="column">
-            <label for="username">Profession Rank (If applicable):</label>
-            <input type="text"  name="profession_rank" placeholder="Example : N/A , Captain">
+            <div class="grid-container">
+                <div class="column">
+                <label for="username">Employer:</label>
+                <input type="text"  name="employer" placeholder="Example: CIA , FBI , etc.">
+                </div>
+                <div class="column">
+                <label for="username">Nationality:</label>
+                <input type="text"  name="nationality" placeholder="Example : United states of america">
+                </div>
             </div>
+            <div class="grid-container-3">
+                <div class="column">
+                <label for="username">Sex:</label>
+                <input type="text"  name="sex" placeholder="Example : Male">
+                </div>
+                <div class="column">
+                <label for="username">Age & DOB:</label>
+                <input type="text"  name="age_and_dob" placeholder="Example : 19 , August 17th 2004">
+                </div>
+                <div class="column">
+                <label for="username">Education:</label>
+                <input type="text"  name="education" placeholder="Example : B.S. International Relations">
+                </div>
+            </div>
+            <label for="comments">Physical Description:</label>
+            <textarea  name="physical_description" rows="4" cols="50"></textarea>
         </div>
-        <div class="grid-container">
-            <div class="column">
-            <label for="username">Employer:</label>
-            <input type="text"  name="employer" placeholder="Example: CIA , FBI , etc.">
-            </div>
-            <div class="column">
-            <label for="username">Nationality:</label>
-            <input type="text"  name="nationality" placeholder="Example : United states of america">
-            </div>
-        </div>
-        <div class="grid-container-3">
-            <div class="column">
-            <label for="username">Sex:</label>
-            <input type="text"  name="sex" placeholder="Example : Male">
-            </div>
-            <div class="column">
-            <label for="username">Age & DOB:</label>
-            <input type="text"  name="age_and_dob" placeholder="Example : 19 , August 17th 2004">
-            </div>
-            <div class="column">
-            <label for="username">Education:</label>
-            <input type="text"  name="education" placeholder="Example : B.S. International Relations">
-            </div>
-        </div>
-        <label for="comments">Physical Description:</label>
-        <textarea  name="physical_description" rows="4" cols="50"></textarea>
       </div>
       <div >
         <h1>Class</h1>
+        <p>Later!!!</p>
+      </div>
+      <div >
+        <h1>Detailed Stats</h1>
         <p>This is the third page.</p>
       </div>
       <div >
@@ -563,6 +596,16 @@ label {
         ]
         },
     ];
+    const cards = document.querySelectorAll('.card');
+    // Add a click event listener to each card
+    cards.forEach(card => {
+        card.addEventListener('click', (event) => {
+            cards.forEach( (curr_card) =>  {
+            curr_card.classList.remove('active');
+            });
+            card.classList.add('active');
+        });
+    });
     const sidebar = document.getElementById('sidebar');
     const detail = document.getElementById('detail');
     const svg = document.querySelector('.radar-chart-dark');
@@ -613,9 +656,12 @@ label {
     Array.from(coreStatsSelector.children).forEach((item , index) => {
         const increment_button = document.createElement('button');
         const decrement_button = document.createElement('button');
+        const curr_value_indicator = document.createElement('p');
         const label = document.createElement('p');
+        curr_value_indicator.style = "text-align : center";
         label.textContent = coreStatNames[index];
         increment_button.textContent = "+";
+        curr_value_indicator.textContent = coreStatsData[index];
         decrement_button.textContent = "-";
         increment_button.className = "core-stat-spinner";
         decrement_button.className = "core-stat-spinner";
@@ -625,6 +671,7 @@ label {
         increment_button.addEventListener('mousedown', () => {
             holdTimer = setInterval(() => {
                 adjustCoreStat(index , 1);
+                curr_value_indicator.textContent = coreStatsData[index];
             }, button_time); 
         });
         increment_button.addEventListener('mouseup', () => {
@@ -636,6 +683,7 @@ label {
         decrement_button.addEventListener('mousedown', () => {
             holdTimer2 = setInterval(() => {
                 adjustCoreStat(index , -1);
+                curr_value_indicator.textContent = coreStatsData[index];
             }, button_time); 
         });
         decrement_button.addEventListener('mouseup', () => {
@@ -646,6 +694,7 @@ label {
         });
         item.appendChild(label);
         item.appendChild(increment_button);
+        item.appendChild(curr_value_indicator);
         item.appendChild(decrement_button);
     });
     items.forEach(item => {

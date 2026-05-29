@@ -268,12 +268,23 @@ table {
 
 .char-sheet-card {
   background-color : black;
-  border : white 2px solid;
+  padding : 10px;
+}
+
+.char-sheet-card:hover {
+  background-color : #3c3c3c;
+  padding : 10px;
+  border: red 1px solid;
+
+}
+
+.selector-container {
+
 }
 
 .char-sheet-card-selected {
-  background-color : white;
-  border : white 3px solid;
+  background-color : #535454;
+  padding : 10px;
 }
 
 /* Smooth fade-in animation */
@@ -571,18 +582,18 @@ table {
     <form id="editForm">
       <div class="form-grid">
         <!--Other sheets here-->
-        <div class="selector-container">
-          <div class="char-sheet-card" data-value="TTRPGCharSheet0"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet1"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet2"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet3"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet4"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet5"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet6"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet7"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet8"></div>
-          <div class="char-sheet-card" data-value="TTRPGCharSheet9"></div>
-        </div>
+        <ul class="selector-container">
+          <li class="char-sheet-card" data-value="TTRPGCharSheet0"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet1"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet2"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet3"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet4"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet5"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet6"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet7"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet8"></li>
+          <li class="char-sheet-card" data-value="TTRPGCharSheet9"></li>
+        </ul>
       </div>
       <div class="modal-actions">
         <button type="submit" id="selectSheetBtn" class="btn-form">Save Changes</button>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Card List</title>
+</head>
+<style>
+/* Create a responsive grid layout */
+.card-container {
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+
+}
+
+/* Base card styling */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin : 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Active/Selected state managed by JavaScript */
+.card.active {
+    border-color: #007bff;
+    background-color: #e6f2ff;
+}
+</style>
+<body>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Card One</h3>
+            <p>This is some minimal description text for the first card.</p>
+        </div>
+        <div class="card">
+            <h3>Card Two</h3>
+            <p>This is some minimal description text for the second card.</p>
+        </div>
+        <div class="card">
+            <h3>Card Three</h3>
+            <p>This is some minimal description text for the third card.</p>
+        </div>
+    </div>
+
+</body>
+<script>
+// Select all elements with the class 'card'
+const cards = document.querySelectorAll('.card');
+
+// Add a click event listener to each card
+cards.forEach(card => {
+    card.addEventListener('click', (event) => {
+        cards.forEach( (curr_card) =>  {
+          curr_card.classList.remove('active');
+
+        });
+        card.classList.add('active');
+    });
+});
+
+</script>
+</html>
