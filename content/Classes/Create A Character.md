@@ -372,7 +372,24 @@ table {
       </div>
       <div >
         <h1>Save your character sheet</h1>
-        <p>This is the third page.</p>
+            <div style="display: flex; justify-content: center;" class="form-grid">
+                <!--Other sheets here-->
+                <ul class="selector-container">
+                <li class="char-sheet-card" data-value="TTRPGCharSheet0"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet1"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet2"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet3"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet4"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet5"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet6"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet7"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet8"></li>
+                <li class="char-sheet-card" data-value="TTRPGCharSheet9"></li>
+                </ul>
+            </div>
+            <div class="modal-actions">
+                <button type="submit" id="selectSheetBtn" class="btn-form">Save Changes</button>
+            </div>
       </div>
     </div>
   </div>
@@ -995,6 +1012,83 @@ table {
             // FOr now this can be a summary with link to full document. 
         });
         class_selection_sidebar.appendChild(el);
+    });
+    const charSheetCards = document.querySelectorAll('.char-sheet-card');
+    // We'lll have it save then update the current key.
+    function updateCardDisplay() {
+    charSheetCards.forEach(card => {
+        const keyName = card.getAttribute('data-value');
+        let displayText = "---";
+        if (localStorage.getItem(keyName)) {
+        const cardCharSheet = JSON.parse(localStorage.getItem(keyName));
+        if (cardCharSheet.hasOwnProperty("agent_codename")) {
+            displayText = cardCharSheet["agent_codename"];
+        }
+        else {
+            displayText = "Unnamed Agent";
+        }
+        }
+        else {
+        displayText = "Empty Slot";
+        }
+        card.textContent = displayText;
+    });
+    }
+    function getNewCharSheetObject() {
+        // 1. Scan all name inputs and grab.
+        const inputs = document.querySelectorAll('input, select, textarea');
+        const data = {};
+        inputs.forEach(input => {
+            // Only save if the element has an ID or Name to use as a key
+            if (input.id || input.name) {
+            const key =  input.name;
+            // Handle checkboxes specifically
+            data[key] = input.type === 'checkbox' ? input.checked : input.value;
+            }
+        });
+        // 2. Scan and grab all detail boost buttons and grab.
+        const detailsBoostButtons = document.querySelectorAll(".detail-boost-button");
+        detailsBoostButtons.forEach(curr_button => {
+            const key =  curr_button.name;
+            data[key] = curr_button.textContent;
+        });
+        console.log(data);
+        // 3. Grab the classname and replace the class detail with it. 
+        data['class_info'] = document.querySelector(".class_selection_item.active").textContent;
+        // 4. Grab core stats and add those. 
+        data['strength'] = coreStatsData[0];
+        data['constitution'] = coreStatsData[1];
+        data['dexterity'] = coreStatsData[2];
+        data['intelligence'] = coreStatsData[3];
+        data['power'] = coreStatsData[4];
+        data['charisma'] = coreStatsData[5];
+        data['current_health'] = coreStatsData[1]/5;
+        data['current_willpower'] = coreStatsData[4]/5;
+        data['current_sanity'] = data['power'];
+        data['breaking_point'] = data['power'] / (data['power']/5);
+        data['inventory'] = "Cell Phone, Wallet, Drivers License, Car Keys."
+        // 6. serializing and saving the json as a string.
+        return JSON.stringify(data);
+    }
+    updateCardDisplay();
+    /*
+    Ability to draw charicter usig a mouse. 
+    */
+    charSheetCards.forEach(card => {
+        card.addEventListener('click', () => {
+            updateCardDisplay();
+            card.className = 'char-sheet-card-selected';
+            const keyName = card.getAttribute('data-value');
+            // Start gathering the charicter infor.
+            const charSheet = getNewCharSheetObject();
+            console.log("");
+            localStorage.setItem(keyName , charSheet);
+            localStorage.setItem("currentCharSheetKey" , keyName);
+            // swap to the char sheet.
+            window.location.href = "/classes/character-sheet";
+        });
+    });
+    document.querySelector("#selectSheetBtn").addEventListener('click' , ()=> {
     });
   })();
 </script>

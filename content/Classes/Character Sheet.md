@@ -268,6 +268,7 @@ table {
 
 .char-sheet-card {
   background-color : black;
+  min-height : 20px;
   width: 100%;
 
 }
@@ -275,6 +276,8 @@ table {
 .char-sheet-card:hover {
   background-color : #3c3c3c;
   border: red 1px solid;
+  min-height : 20px;
+
   width: 100%;
 
 
@@ -295,6 +298,40 @@ table {
 
 }
 
+@media print {
+  html, body, section {
+    -webkit-print-color-adjust: exact !important; /* Safari and Chrome/Edge */
+    print-color-adjust: exact !important;         /* Modern standard Firefox/Spec */
+  }
+  /* 1. Force each section onto its own page */
+  section {
+    display: block;
+    clear: both;
+    
+    /* Modern standard */
+    break-before: page; 
+    
+    /* Legacy fallbacks for older browsers/renderers */
+    page-break-before: always; 
+  }
+  /* 2. Optional: Prevent a blank page at the very beginning */
+  section:first-of-type {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* 3. Keep your rule to prevent awkward splits inside the section if it's small */
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Hide interactive or unnecessary web elements */
+  .left.sidebar, .right.sidebar, div.popover-hint, button, nav, footer {
+    display: none !important;
+  }
+}
+
 /* Smooth fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
@@ -304,8 +341,9 @@ table {
 </style>
   <div style="display: flex" >
     <button class="borderless-button-charsheet" id="switchSheetsBtn"> <img width=20px; src='../red_icon.png'> Switch Character Sheet</button>
-    <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><img  src='./export.png' >Download Character Sheet as  JSON</button>
+    <button class="borderless-button-charsheet" onclick="window.print()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M640-640v-120H320v120h-80v-200h480v200h-80Zm-480 80h640-640Zm560 100q17 0 28.5-11.5T760-500q0-17-11.5-28.5T720-540q-17 0-28.5 11.5T680-500q0 17 11.5 28.5T720-460Zm-80 260v-160H320v160h320Zm80 80H240v-160H80v-240q0-51 35-85.5t85-34.5h560q51 0 85.5 34.5T880-520v240H720v160Zm80-240v-160q0-17-11.5-28.5T760-560H200q-17 0-28.5 11.5T160-520v160h80v-80h480v80h80Z"/></svg>Print Sheet</button>
   </div>
+  <section>
   <div class="divider-sheet"><h3>General Skills</h3></div>
   <div class="grid-container">
     <div class="column">
@@ -395,6 +433,8 @@ table {
       <textarea  name="mental_disorders" rows="4" cols="50"></textarea>
     </div>
   </div>
+  </section>
+  <section>
   <div class="divider-sheet"><h3>Detailed Skills</h3></div>
   <table>
     <tbody>
@@ -463,6 +503,8 @@ table {
       </tr>
     </tbody>
   </table>
+  </section>
+  <section>
   <div class="divider-sheet"><h3>Possessions & Class</h3></div>
   <div class="grid-container">
     <div class="column">
@@ -487,20 +529,20 @@ table {
             <td><input class="table-input" type="text" name="weapon_1_radius" value="-"></td>
           </tr>
           <tr class="weapon-row">
-            <td><input class="table-input text-input" type="text" name="weapon_2" value="Rifle"></td>
-            <td><input class="table-input" type="text" name="weapon_2_range" value="100m"></td>
-            <td><input class="table-input" type="text" name="weapon_2_damage" value="2D8"></td>
-            <td><input class="table-input" type="number" name="weapon_2_ap" value="1" min="0"></td>
-            <td><input class="table-input" type="number" name="weapon_2_lethal" value="10" min="0" max="100"></td>
-            <td><input class="table-input" type="text" name="weapon_2_radius" value="-"></td>
+            <td><input class="table-input text-input" type="text" name="weapon_2" ></td>
+            <td><input class="table-input" type="text" name="weapon_2_range" ></td>
+            <td><input class="table-input" type="text" name="weapon_2_damage" ></td>
+            <td><input class="table-input" type="number" name="weapon_2_ap" min="0"></td>
+            <td><input class="table-input" type="number" name="weapon_2_lethal"  min="0" max="100"></td>
+            <td><input class="table-input" type="text" name="weapon_2_radius" ></td>
           </tr>
           <tr class="weapon-row">
-            <td><input class="table-input text-input" type="text" name="weapon_3" value="Grenade"></td>
-            <td><input class="table-input" type="text" name="weapon_3_range" value="Throw"></td>
-            <td><input class="table-input" type="text" name="weapon_3_damage" value="3D6"></td>
-            <td><input class="table-input" type="number" name="weapon_3_ap" value="0" min="0"></td>
-            <td><input class="table-input" type="number" name="weapon_3_lethal" value="15" min="0" max="100"></td>
-            <td><input class="table-input" type="text" name="weapon_3_radius" value="5m"></td>
+            <td><input class="table-input text-input" type="text" name="weapon_3" ></td>
+            <td><input class="table-input" type="text" name="weapon_3_range" ></td>
+            <td><input class="table-input" type="text" name="weapon_3_damage" ></td>
+            <td><input class="table-input" type="number" name="weapon_3_ap"  min="0"></td>
+            <td><input class="table-input" type="number" name="weapon_3_lethal"  min="0" max="100"></td>
+            <td><input class="table-input" type="text" name="weapon_3_radius" ></td>
           </tr>
         </tbody>
       </table>
@@ -544,6 +586,11 @@ table {
       <label for="comments">Class Information:</label>
       <textarea style="width: 100%; height: 100%"  name="class_info" rows="8" cols="100"></textarea>
     </div>
+  </section>
+  <div style="display : flex;" >
+   <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>Download Character Sheet as  JSON</button>
+    <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>Upload Character Sheet as JSON</button>
+  </div>
     <!-- labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Willpower (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'], -->
 <div id="editModal" class="modal-overlay">
   <div class="modal-content">
@@ -581,7 +628,7 @@ table {
     </form>
   </div>
 </div>
-<button  id=clear-local-data-button class="btn-form" type="button" >Erase Character Sheet</button>
+
 
 
 <div id="switchSheetsOverlay" class="modal-overlay">
