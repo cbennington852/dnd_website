@@ -10,31 +10,31 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:22 GMT</pubDate>
+    <pubDate>Sun, 31 May 2026 14:36:59 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:22 GMT</pubDate>
-  </item><item>
-    <title>new_index</title>
-    <link>https://cbennington852.github.io/dnd_website/new_index</link>
-    <guid>https://cbennington852.github.io/dnd_website/new_index</guid>
-    <description><![CDATA[ HERE WE WILL HAVE SOME SORT OF P5js element that is moving and grooving. Oh, also a summary with some cool text. ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:21 GMT</pubDate>
-  </item><item>
-    <title>Premade Character Sheets</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Sat, 30 May 2026 20:57:29 GMT</pubDate>
+    <pubDate>Sun, 31 May 2026 14:36:59 GMT</pubDate>
   </item><item>
     <title>Character Sheet</title>
     <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
     <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
-    <pubDate>Fri, 29 May 2026 23:40:33 GMT</pubDate>
+    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
+  </item><item>
+    <title>Premade Character Sheets</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
+  </item><item>
+    <title>new_index</title>
+    <link>https://cbennington852.github.io/dnd_website/new_index</link>
+    <guid>https://cbennington852.github.io/dnd_website/new_index</guid>
+    <description><![CDATA[  const min_radius = 50; let blip_radius = min_radius; let moldSpeed = 0.01; const maxMoldSpeed = 0.2; const moldAcceleration = 0.01; const moldSpeedIncreaseInterval = 200; // We could have the mold speed &quot;accelrate&quot; slowly. ]]></description>
+    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
   </item><item>
     <title>Create A Character</title>
     <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
