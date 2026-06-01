@@ -1,3 +1,11 @@
+---
+
+title: "My Secret Note"
+
+unlisted: true
+
+---
+
 A young blonde woman. She wears a black trench coat, and and an automatic UZI in her right gun holster. She sounds a little bit insane. Agent Cotton is a "skinwalker"
 
 __Stats__

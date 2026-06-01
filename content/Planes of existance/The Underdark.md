@@ -1,3 +1,8 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
+
 The underdark is a underground location, buried deep within the earth, the walls hear pulse orange, and this area requires a flashlight to see properly. Long hallways stretch in many directions, and a almost alien society lurks below. 
 # Creatures
 * [[Shog`a-lite]]  Act as citizens. 

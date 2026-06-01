@@ -1,3 +1,8 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
+
 These are large human sized shrimp that live in the shrimp dimension. They are usually not aggressive, and will babble at the players in "shrimp language".
 
 ### Understanding the shrimp

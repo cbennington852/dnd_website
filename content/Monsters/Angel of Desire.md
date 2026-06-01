@@ -1,3 +1,8 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
+
 These are human-like statues, their body is frozen in place, however they can still do a sort of "gliding action."
 
 These "creatures" simply want to be as close to a human as possible. They will "glide" toward the closest person that they can see. The further away, the faster they will glide.

@@ -1,3 +1,8 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
+
 ___Description___
 * Avg. 5 ft
 * Grey skin

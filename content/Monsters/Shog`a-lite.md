@@ -1,3 +1,7 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
 
 ___Description___
 * Tall. 8 ft

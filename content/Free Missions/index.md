@@ -1,3 +1,8 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
+
 Purposed Order for missions
 1. [[Walk in the Park]]
 2. [[The Bird Mission]]

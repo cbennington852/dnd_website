@@ -1,3 +1,8 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
+
 A Mannequin, these exist within the [[The Shopping Mall]]. They will pretend to be the person whose personal information they have stole, matching that person in appearance and voice.
 
 They do not, however, replicate a persons memories, and know nothing about outside the mall. This can be used to "sniff" them out. 
