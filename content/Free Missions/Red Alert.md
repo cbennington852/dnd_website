@@ -1,0 +1,46 @@
+---
+title: "My Secret Note"
+unlisted: true
+---
+
+## Hook
+Right after a particularly messy operation. The handler calls you to a IHOP at 8pm at night. This might be the normal location, this might be out of the ordinary, either way is fine. He sits you down at the IHOP, you can smell the pancakes on him, maybe even see some crumbs on his shirt. 
+
+He gives you the rundown, the players need to move a small box from one greenbox to another. (See greenboxes).  The handler then takes the players into the parking lot. There's a U-Haul in the IHOP parking lot. 
+
+BANG
+
+A gunshot rings out, the handler collapses, on the other side of the parking lot you see a man in a black hoodie, holding a smoking gun. 
+
+## The Man with the Gun
+
+A normal sized man holding a firearm. He will attempt to leave via his dodge charger, which he is standing next to. 
+
+- FIREARMS : 60%  --- 1d10 (Glock)
+- DRIVE    : 50% 
+- All other stats 50%
+
+Inventory: 
+    Black hoodie, and small walkies talkie. 
+
+
+**Giving Chase**
+    Giving chase is difficult, but the characters could pursue him in the U-Haul. This would result in multiple drive rolls, 
+
+**Crashing**
+    If either party gets a critical fail (You can have the man crash for fun) They crash. Taking each person 1d8 of damage, with 1d12 if they forgot their seatbelt. 
+
+**Capturing:**
+    if the part manages to capture him(alive), they will find that he has very little of his mind left. (See Tall Men mind control). He's being brain controlled and is very dangerous. 
+
+
+## The handler 
+
+[[The Handler]] is bleeding out, very fast. He will die unless given immediate medical attention or taken to a hospital. 
+
+
+**If stabilized:**
+    If you establish the handler he will attempt to make a call on his cell phone, he will then give to the GPS co-ordantes to the [[Handlers RV]], where he will meet a waiting [[Agent Cotton]], who will patch him up, if possible. 
+
+
+

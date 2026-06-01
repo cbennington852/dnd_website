@@ -10,61 +10,61 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 31 May 2026 14:36:59 GMT</pubDate>
+    <pubDate>Sun, 31 May 2026 22:59:06 GMT</pubDate>
+  </item><item>
+    <title>NPCs</title>
+    <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
+    <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sun, 31 May 2026 22:59:06 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 31 May 2026 14:36:59 GMT</pubDate>
+    <pubDate>Sun, 31 May 2026 22:59:06 GMT</pubDate>
   </item><item>
-    <title>Character Sheet</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
-    <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
+    <title>The Bird Mission</title>
+    <link>https://cbennington852.github.io/dnd_website/free-missions/the-bird-mission</link>
+    <guid>https://cbennington852.github.io/dnd_website/free-missions/the-bird-mission</guid>
+    <description><![CDATA[ Hook A delta green friendly, Professor Parsons was killed yesterday at his workplace (Oregon state university). His research was primarily into birds. ]]></description>
+    <pubDate>Sun, 31 May 2026 22:41:40 GMT</pubDate>
   </item><item>
-    <title>Premade Character Sheets</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</guid>
+    <title>Shog`a-puter</title>
+    <link>https://cbennington852.github.io/dnd_website/monsters/shog%60a-puter</link>
+    <guid>https://cbennington852.github.io/dnd_website/monsters/shog%60a-puter</guid>
+    <description><![CDATA[ Description Avg. 5 ft Grey skin Red eyes Fused with a rdesk / computer made of rocks. They are immobile. ]]></description>
+    <pubDate>Sun, 31 May 2026 22:34:49 GMT</pubDate>
+  </item><item>
+    <title>Shog`a-wrath</title>
+    <link>https://cbennington852.github.io/dnd_website/monsters/shog%60a-wrath</link>
+    <guid>https://cbennington852.github.io/dnd_website/monsters/shog%60a-wrath</guid>
+    <description><![CDATA[ Description Tall. ]]></description>
+    <pubDate>Sun, 31 May 2026 22:34:39 GMT</pubDate>
+  </item><item>
+    <title>Shog`a-neir</title>
+    <link>https://cbennington852.github.io/dnd_website/monsters/shog%60a-neir</link>
+    <guid>https://cbennington852.github.io/dnd_website/monsters/shog%60a-neir</guid>
+    <description><![CDATA[ Description Short. 4 ft Grey skin Red eyes Rock hardhat. ]]></description>
+    <pubDate>Sun, 31 May 2026 22:34:33 GMT</pubDate>
+  </item><item>
+    <title>Shog`a-lite</title>
+    <link>https://cbennington852.github.io/dnd_website/monsters/shog%60a-lite</link>
+    <guid>https://cbennington852.github.io/dnd_website/monsters/shog%60a-lite</guid>
+    <description><![CDATA[ Description Tall. ]]></description>
+    <pubDate>Sun, 31 May 2026 22:34:24 GMT</pubDate>
+  </item><item>
+    <title>Human Sized Shrimp</title>
+    <link>https://cbennington852.github.io/dnd_website/monsters/human-sized-shrimp</link>
+    <guid>https://cbennington852.github.io/dnd_website/monsters/human-sized-shrimp</guid>
+    <description><![CDATA[ These are large human sized shrimp that live in the shrimp dimension. ]]></description>
+    <pubDate>Sun, 31 May 2026 18:48:58 GMT</pubDate>
+  </item><item>
+    <title>Underdark</title>
+    <link>https://cbennington852.github.io/dnd_website/underdark</link>
+    <guid>https://cbennington852.github.io/dnd_website/underdark</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
-  </item><item>
-    <title>new_index</title>
-    <link>https://cbennington852.github.io/dnd_website/new_index</link>
-    <guid>https://cbennington852.github.io/dnd_website/new_index</guid>
-    <description><![CDATA[  const min_radius = 50; let blip_radius = min_radius; let moldSpeed = 0.01; const maxMoldSpeed = 0.2; const moldAcceleration = 0.01; const moldSpeedIncreaseInterval = 200; // We could have the mold speed &quot;accelrate&quot; slowly. ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
-  </item><item>
-    <title>Create A Character</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
-    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* width : 40vw; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
-    <pubDate>Fri, 29 May 2026 23:40:33 GMT</pubDate>
-  </item><item>
-    <title>Combat</title>
-    <link>https://cbennington852.github.io/dnd_website/core-rules/combat</link>
-    <guid>https://cbennington852.github.io/dnd_website/core-rules/combat</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 29 May 2026 21:24:55 GMT</pubDate>
-  </item><item>
-    <title>Home Scenes</title>
-    <link>https://cbennington852.github.io/dnd_website/core-rules/home-scenes</link>
-    <guid>https://cbennington852.github.io/dnd_website/core-rules/home-scenes</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 29 May 2026 21:24:55 GMT</pubDate>
-  </item><item>
-    <title>Close combat specialist</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</guid>
-    <description><![CDATA[ A Delta green specialist focusing mostly on melee abilities. ]]></description>
-    <pubDate>Fri, 29 May 2026 21:24:55 GMT</pubDate>
-  </item><item>
-    <title>Scholar of The Great Machine</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/scholar-of-the-great-machine</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/scholar-of-the-great-machine</guid>
-    <description><![CDATA[ 1. Dive into the machine +50% to unnatural. Your willpower can be reduced to 1 before you feel any effects. Gain a new action: Concentration on Spell. ]]></description>
-    <pubDate>Fri, 29 May 2026 21:24:55 GMT</pubDate>
+    <pubDate>Sun, 31 May 2026 18:41:48 GMT</pubDate>
   </item>
     </channel>
   </rss>

@@ -231,7 +231,9 @@ function make_gradient_circle(c_start, c_end) {
 .link-wrapper:hover {
     background-color : #620202;
 }
-
+.good-link {
+    background : none;
+}
 </style>
 
 
@@ -239,15 +241,16 @@ HERE WE WILL HAVE SOME SORT OF P5js element that is moving and grooving.
 Oh, also a summary with some cool text. 
 
 <div style="display: flex; gap: 20px;">
-  <div style="flex: 1; border: white 2px solid;">
+  <div style="flex: 1; ">
     <!-- <h3>Graphic / Image</h3>
     <p>Your left side content goes here.</p> -->
+    <img src="./interactive_char_sheet.png" >
   </div>
   <div style="flex: 1;">
     <h3>Create a Character!</h3>
-    <p>Talk about how you should create a charier.</p>
+    <p>Interactive and fast character creator. Create a character and view it without making an account! </p>
     <div class='link-wrapper'>
-        <a class="good-link" >Create a Character →</a>
+        <a class="good-link" href="./Classes/Create-A-Character.html" >Create a Character →</a>
     </div>
   </div>
 </div>
@@ -267,15 +270,20 @@ Oh, also a summary with some cool text.
 </div>
 
 <div style="display: flex; gap: 20px;">
-  <div style="flex: 1; border: white 2px solid;">
+  <div style="flex: 1; ">
     <!-- <h3>Graphic / Image</h3>
     <p>Your left side content goes here.</p> -->
+    <img src="./play_testers.jpg" >
   </div>
   <div style="flex: 1;">
     <h3>Made by Humans for humans</h3>
-    <p>Generative AI was not used during the creative processes for making {NAMMMMME LATTEERRR}</p>
+    <p>Generative AI was not used during the creative processes for making {NAMMMMME LATTEERRR}. All source code and materials are open source and available at <a href="https://github.com/cbennington852/dnd_website" >GitHub</a></p>
+    <p> ← The original playtesters. </p>
     <div class='link-wrapper'>
         <a class="good-link" >View Free Missions! →</a>
     </div>
   </div>
 </div>
+
+
+
