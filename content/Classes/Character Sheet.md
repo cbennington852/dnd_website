@@ -298,6 +298,40 @@ table {
 
 }
 
+/* Target the specific scrollable element or use html/body for global scrollbars */
+.scrollable-container {
+  /* 1. Modern Standard (Firefox and modern Safari) */
+  /* Syntax: scrollbar-color: <thumb-color> <track-color>; */
+  scrollbar-color: #888888 transparent; 
+
+  /* Define scrollbar width for modern standard engines */
+  scrollbar-width: thin; 
+}
+
+/* 2. WebKit Engines (Chrome, Edge, older Safari, Opera) */
+/* You must explicitly set a width or height for WebKit custom scrollbars to render */
+.scrollable-container::-webkit-scrollbar {
+  width: 8px;          /* Width of vertical scrollbar */
+  height: 8px;         /* Height of horizontal scrollbar */
+}
+
+/* This targets the scrollbar background */
+.scrollable-container::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* This targets the draggable handle */
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: #888888;    /* Color of the handle */
+  border-radius: 4px;           /* Round the corners of the handle */
+}
+
+/* Optional: Darken the thumb on hover */
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555555; 
+}
+
+
 @media print {
   html, body, section {
     -webkit-print-color-adjust: exact !important; /* Safari and Chrome/Edge */
