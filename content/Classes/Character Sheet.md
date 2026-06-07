@@ -587,10 +587,10 @@ table {
       <textarea style="width: 100%; height: 100%"  name="class_info" rows="8" cols="100"></textarea>
     </div>
   </section>
-  <div style="display : flex;" >
+  <!-- <div style="display : flex;" >
    <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>Download Character Sheet as  JSON</button>
     <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>Upload Character Sheet as JSON</button>
-  </div>
+  </div> -->
     <!-- labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Willpower (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'], -->
 <div id="editModal" class="modal-overlay">
   <div class="modal-content">
@@ -716,7 +716,6 @@ document.querySelector("#selectSheetBtn").addEventListener('click' , () => {
   loadInputsFromMemory();
 });
 function export_char_sheet () {
-  saveAllInputs();
   let temp_data = localStorage.getItem(currentCharSheetKey);
   let temp_data_parsed = JSON.parse(temp_data);
   console.log(temp_data_parsed['agent_codename']);
@@ -926,19 +925,31 @@ currentWillpowerInput.addEventListener('input', (event) => {
 });
 // SAVING FORM TO LOCAL STORAGE:
 // NOTE: We can make this a savable JSON later for sharing!
-function saveAllInputs() {
-  const inputs = document.querySelectorAll('input, select, textarea');
-  const data = {};
-  inputs.forEach(input => {
-    // Only save if the element has an ID or Name to use as a key
-    if (input.id || input.name) {
+/*
+if (input.id || input.name) {
       const key =  input.name;
       // Handle checkboxes specifically
       data[key] = input.type === 'checkbox' ? input.checked : input.value;
     }
+*/
+function saveAllInputs() {
+  const inputs = document.querySelectorAll('input, select, textarea');
+  inputs.forEach(input => {
+    // Only save if the element has an ID or Name to use as a key
+    input.addEventListener("change" , () => {
+      // Thing!
+      const data = {};
+      inputs.forEach(curr_input => {
+        if (curr_input.id || curr_input.name) {
+          const key =  curr_input.name;
+          // Handle checkboxes specifically
+          data[key] = curr_input.type === 'checkbox' ? curr_input.checked : curr_input.value;
+        }
+      });
+      localStorage.setItem(currentCharSheetKey, JSON.stringify(data));
+    });
   });
   // Convert the object to a string and save
-  localStorage.setItem(currentCharSheetKey, JSON.stringify(data));
 }
 function loadInputsFromMemory() {
   const savedData = localStorage.getItem(currentCharSheetKey);
@@ -962,7 +973,6 @@ function loadInputsFromMemory() {
   }
 }
 function saveCharSheet() {
-  saveAllInputs();
   update_pips();
   updateHealth(currentHealth);
   updateWillpower(currentWillpower);
@@ -970,6 +980,7 @@ function saveCharSheet() {
 // Runs when the page is loading. 
 window.addEventListener('load', () => {
   loadInputsFromMemory();
+  saveAllInputs();
 });
 // Horrible way to handle those a links n'stuff
 let previousURL = "";
@@ -997,15 +1008,11 @@ window.addEventListener('beforeunload', (event) => {
 });
 const myBtn = document.getElementById('save-testing');
 const myBtn2 = document.getElementById('print-local-data');
-const myBtn3 = document.getElementById('clear-local-data-button');
 function clearCharSheet() {
 document.querySelectorAll('input, select, textarea').forEach(input => {
     input.value = "";
   });
 } 
-myBtn3.addEventListener('click', function(event) {
-  clearCharSheet();
-});
 function registerPopupModal(modalId , openModelButtonId , modalSubmissionButtonId) {
   const modal = document.getElementById(modalId);
   const openModalBtn = document.getElementById(openModelButtonId);

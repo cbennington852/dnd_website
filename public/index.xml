@@ -10,31 +10,43 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 01 Jun 2026 01:03:36 GMT</pubDate>
+    <pubDate>Sun, 07 Jun 2026 00:46:15 GMT</pubDate>
   </item><item>
     <title>Free Missions</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 01 Jun 2026 01:03:36 GMT</pubDate>
+    <pubDate>Sun, 07 Jun 2026 00:46:15 GMT</pubDate>
   </item><item>
     <title>NPCs</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 01 Jun 2026 01:03:36 GMT</pubDate>
+    <pubDate>Sun, 07 Jun 2026 00:46:15 GMT</pubDate>
+  </item><item>
+    <title>3_hrs</title>
+    <link>https://cbennington852.github.io/dnd_website/tags/3_hrs</link>
+    <guid>https://cbennington852.github.io/dnd_website/tags/3_hrs</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sun, 07 Jun 2026 00:46:15 GMT</pubDate>
+  </item><item>
+    <title>4_players</title>
+    <link>https://cbennington852.github.io/dnd_website/tags/4_players</link>
+    <guid>https://cbennington852.github.io/dnd_website/tags/4_players</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sun, 07 Jun 2026 00:46:15 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 01 Jun 2026 01:03:36 GMT</pubDate>
+    <pubDate>Sun, 07 Jun 2026 00:46:15 GMT</pubDate>
   </item><item>
-    <title>Underdark</title>
-    <link>https://cbennington852.github.io/dnd_website/underdark</link>
-    <guid>https://cbennington852.github.io/dnd_website/underdark</guid>
+    <title>The Biggest Game</title>
+    <link>https://cbennington852.github.io/dnd_website/free-missions/the-biggest-game</link>
+    <guid>https://cbennington852.github.io/dnd_website/free-missions/the-biggest-game</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 01 Jun 2026 00:56:00 GMT</pubDate>
+    <pubDate>Sat, 06 Jun 2026 15:57:38 GMT</pubDate>
   </item><item>
     <title>new_index</title>
     <link>https://cbennington852.github.io/dnd_website/new_index</link>
@@ -51,20 +63,8 @@
     <title>Walk in the Park</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/walk-in-the-park</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/walk-in-the-park</guid>
-    <description><![CDATA[ Hook Park Rangers at Olympia national park recently found a lost child. Face id’s match them to a missing child case… from 45 years ago. ]]></description>
+    <description><![CDATA[ 3_hrs 4_players Hook Park Rangers at Olympia national park recently found a lost child. ]]></description>
     <pubDate>Sun, 31 May 2026 07:00:00 GMT</pubDate>
-  </item><item>
-    <title>Character Sheet</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
-    <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
-  </item><item>
-    <title>Create A Character</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
-    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* width : 40vw; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
-    <pubDate>Sat, 30 May 2026 21:04:38 GMT</pubDate>
   </item>
     </channel>
   </rss>

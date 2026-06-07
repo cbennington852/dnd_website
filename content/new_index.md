@@ -280,7 +280,7 @@ Oh, also a summary with some cool text.
     <p>Generative AI was not used during the creative processes for making {NAMMMMME LATTEERRR}. All source code and materials are open source and available at <a href="https://github.com/cbennington852/dnd_website" >GitHub</a></p>
     <p> ← The original playtesters. </p>
     <div class='link-wrapper'>
-        <a class="good-link" >View Free Missions! →</a>
+        <a class="good-link" href="./free-missions/" >View Free Missions! →</a>
     </div>
   </div>
 </div>

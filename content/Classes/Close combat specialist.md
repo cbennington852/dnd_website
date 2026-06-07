@@ -12,4 +12,4 @@ Once per session, when taking damage greater than a d4, reduce that damage to a 
 ## 5. Lethal blow
 On a successful critical strike, roll again.
 ## 6. Adrenaline Burst
-Once per session, upon being downed, you character can get back up for two turns, during which they can attack, run, or do any action they please. Once those turns are expended, they will 
+Once per session, upon being downed, you character can get back up for two turns, during which they can attack, run, or do any action they please. Once those turns are expended, they will go down again. 

@@ -5,7 +5,7 @@ readTime: "3 min read"
 playerCount: 4
 gameStatus: "Won"
 ---
-
+#3_hrs #4_players
 ## Hook
 Park Rangers at Olympia national park recently found a lost child. Face id's match them to a missing child case... from 45 years ago. The park rangers and the child are currently at a ranger station on the edge of the national park. The time is currently 9am. The players will be given fake FBI badges under the guise that they are investigating the missing child case. 
 
