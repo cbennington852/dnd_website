@@ -10,55 +10,55 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 07 Jun 2026 00:48:59 GMT</pubDate>
+    <pubDate>Mon, 08 Jun 2026 02:02:07 GMT</pubDate>
   </item><item>
     <title>Free Missions</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 07 Jun 2026 00:48:59 GMT</pubDate>
+    <pubDate>Mon, 08 Jun 2026 02:02:07 GMT</pubDate>
   </item><item>
     <title>NPCs</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 07 Jun 2026 00:48:59 GMT</pubDate>
+    <pubDate>Mon, 08 Jun 2026 02:02:07 GMT</pubDate>
   </item><item>
     <title>3_hrs</title>
     <link>https://cbennington852.github.io/dnd_website/tags/3_hrs</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/3_hrs</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 07 Jun 2026 00:48:59 GMT</pubDate>
+    <pubDate>Mon, 08 Jun 2026 02:02:07 GMT</pubDate>
   </item><item>
     <title>4_players</title>
     <link>https://cbennington852.github.io/dnd_website/tags/4_players</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/4_players</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 07 Jun 2026 00:48:59 GMT</pubDate>
+    <pubDate>Mon, 08 Jun 2026 02:02:07 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Sun, 07 Jun 2026 00:48:59 GMT</pubDate>
+    <pubDate>Mon, 08 Jun 2026 02:02:07 GMT</pubDate>
   </item><item>
     <title>Character Sheet</title>
     <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
     <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
-    <pubDate>Sun, 07 Jun 2026 00:47:46 GMT</pubDate>
-  </item><item>
-    <title>The Biggest Game</title>
-    <link>https://cbennington852.github.io/dnd_website/free-missions/the-biggest-game</link>
-    <guid>https://cbennington852.github.io/dnd_website/free-missions/the-biggest-game</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Sat, 06 Jun 2026 15:57:38 GMT</pubDate>
+    <pubDate>Sun, 07 Jun 2026 00:52:25 GMT</pubDate>
   </item><item>
     <title>new_index</title>
     <link>https://cbennington852.github.io/dnd_website/new_index</link>
     <guid>https://cbennington852.github.io/dnd_website/new_index</guid>
     <description><![CDATA[  const min_radius = 50; let blip_radius = min_radius; let moldSpeed = 0.01; const maxMoldSpeed = 0.2; const moldAcceleration = 0.01; const moldSpeedIncreaseInterval = 200; // We could have the mold speed &quot;accelrate&quot; slowly. ]]></description>
-    <pubDate>Mon, 01 Jun 2026 00:56:00 GMT</pubDate>
+    <pubDate>Sun, 07 Jun 2026 00:47:46 GMT</pubDate>
+  </item><item>
+    <title>Close combat specialist</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</guid>
+    <description><![CDATA[ A Delta green specialist focusing mostly on melee abilities. ]]></description>
+    <pubDate>Sun, 07 Jun 2026 00:47:46 GMT</pubDate>
   </item><item>
     <title>The Handler</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/the-handler</link>

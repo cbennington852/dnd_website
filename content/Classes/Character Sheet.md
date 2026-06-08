@@ -740,14 +740,14 @@ cards.forEach(card => {
         });
         card.className = 'char-sheet-card-selected';
         tempCharSheetKey = card.getAttribute('data-value');
+        saveCharSheet();
+        currentCharSheetKey = tempCharSheetKey;
+        localStorage.setItem("currentCharSheetKey" , tempCharSheetKey);
+        clearCharSheet();
+        loadInputsFromMemory();
+        document.getElementById("switchSheetsOverlay").style.display = 'none';
+        load_core_stats_data();
     });
-});
-document.querySelector("#selectSheetBtn").addEventListener('click' , () => {
-  saveCharSheet();
-  currentCharSheetKey = tempCharSheetKey;
-  localStorage.setItem("currentCharSheetKey" , tempCharSheetKey);
-  clearCharSheet();
-  loadInputsFromMemory();
 });
 function export_char_sheet () {
   let temp_data = localStorage.getItem(currentCharSheetKey);
