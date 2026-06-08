@@ -565,6 +565,10 @@ table {
                 key_name: "firearms",
                 percent : 60
             },
+             {
+                key_name: "heavy_weapons",
+                percent : 30
+            },
             {
                 key_name: "stealth",
                 percent : 50
@@ -615,6 +619,10 @@ table {
             {
                 key_name: "demolitions",
                 percent : 50
+            },
+            {
+                key_name: "heavy_weapons",
+                percent : 30
             },
             {
                 key_name: "firearms",
@@ -924,11 +932,11 @@ table {
         drive: 30,
         pilot: 0,
         law: 0,
-        search: 0,
-        demolitions: 0,
+        search: 30,
+        demolitions: 10,
         "computer science": 0,
         stealth: 10,
-        dodge: 30,
+        heavy_weapons: 10,
         science: 0,
         alertness: 30,
         bureaucracy: 10,
@@ -1054,6 +1062,7 @@ table {
         });
         console.log(data);
         // 3. Grab the classname and replace the class detail with it. 
+        // NOTE: Class info and things here!!!
         data['class_info'] = document.querySelector(".class_selection_item.active").textContent;
         // 4. Grab core stats and add those. 
         data['strength'] = coreStatsData[0];

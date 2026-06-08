@@ -240,6 +240,9 @@ function make_gradient_circle(c_start, c_end) {
 HERE WE WILL HAVE SOME SORT OF P5js element that is moving and grooving. 
 Oh, also a summary with some cool text. 
 
+
+Note to self: I don't really like the current unnatrual classes. I like this idea of having a support class, so maybe a medic class or a talker? or a hybrid both. I still want an unnatrual class, however I might change from spell casting to a transformation into a thing (Like Agent Schinzel  in testing group prior. )
+
 <div style="display: flex; gap: 20px;">
   <div style="flex: 1; ">
     <!-- <h3>Graphic / Image</h3>

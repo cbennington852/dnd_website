@@ -208,6 +208,28 @@ table {
   padding : 0;
 }
 
+select {
+  background-color : black;
+    font-family: var(--fontFamily);
+  color: var(--dark);
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;  /* Width of the vertical scrollbar */
+  height: 10px; /* Height of the horizontal scrollbar */
+}
+
+/* 2. Remove the background track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* 3. Style the draggable thumb so it stays visible */
+::-webkit-scrollbar-thumb {
+  background: #303030; 
+  border-radius: 5px; /* Rounds the corners of the thumb */
+}
 
 .borderless-button-charsheet {
   display: flex;
@@ -515,8 +537,8 @@ table {
         <td><input class="detail-input" type="number" id="computer-science" name="computer science" value="0" min="0" max="100"></td>
         <td><label class="detail-label" for="stealth">Stealth:</label></td>
         <td><input class="detail-input" type="number" id="stealth" name="stealth" value="0" min="0" max="100"></td>
-        <td><label class="detail-label" for="dodge">Dodge:</label></td>
-        <td><input class="detail-input" type="number" id="dodge" name="dodge" value="0" min="0" max="100"></td>
+        <td><label class="detail-label" for="dodge">Heavy Weapons:</label></td>
+        <td><input class="detail-input" type="number" id="heavy_weapons" name="heavy_weapons" value="0" min="0" max="100"></td>
       </tr>
       <!-- Row 4 -->
       <tr class="detail-row">
@@ -637,9 +659,9 @@ table {
     </div>
     <div class="column">
       <!--We have a class name + a list of class attributes + link to full page. Also, an edit class modal button-->
-      <h2>Gunslinger</h2>
+      <h2 style="display: inline-flex; align-items: center; gap: 8px;" ><span><img class="borderless-button-charsheet" id="openClassEditor" src='./pencil.png'></span><span id="currClassLabel" >Gunslinger</span></h2>
       <div>
-            <div style="max-height : 400px;" class="class-level-container">
+            <div id="currClassCards" style="max-height : 400px;" class="class-level-container">
               <div class="class-level">
                   <h3>Card One</h3>
                   <p>This is some minimal description text for the first card.</p>
@@ -724,7 +746,34 @@ table {
   </div>
 </div>
 
-
+<div id="editClassModel" class="modal-overlay">
+  <div class="modal-content">
+    <h2>Edit Class</h2>
+    <form id="editForm">
+      <div >
+       <label for="class_name">Class:</label>
+        <select id="class_name" name="class_name">
+          <option value="Close Combat Specialist">Close Combat Specialist</option>
+          <option value="Gunslinger">Gunslinger</option>
+          <option value="Prepper">Prepper</option>
+          <option value="Scholar of mushroom">Scholar of mushroom</option>
+          <option value="Scholar of The Great Machine">Scholar of the great machine</option>
+        </select>
+        <label for="class_level">Level:</label>
+        <select id="class_level" name="class_level">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+      </div>
+    </form>
+  </div>
+</div>
 
 
 
@@ -1037,6 +1086,7 @@ function loadInputsFromMemory() {
       updateHealth(currentHealth);
       updateWillpower(currentWillpower);
       load_core_stats_data();
+      update_class_information();
   }
 }
 function saveCharSheet() {
@@ -1062,6 +1112,7 @@ setInterval(() => {
     loadInputsFromMemory();
     registerPopupModal('editModal' , 'openModalBtn', 'editForm');
     registerPopupModal('switchSheetsOverlay' , 'switchSheetsBtn', 'saveBtn');
+    registerPopupModal('editClassModel' , 'openClassEditor', 'saveBtn');
     updateCardDisplay();
   }
   else {
@@ -1098,8 +1149,164 @@ function registerPopupModal(modalId , openModelButtonId , modalSubmissionButtonI
     load_core_stats_data();
   });
 }
-
-
+const classLevel = document.querySelector("#class_level");
+const className = document.querySelector("#class_name");
+const CLASS_INFO = {
+  "Gunslinger" : [
+      {
+        "name": "Quick Draw",
+        "body": "Add half your firearms stat to your dexterity when rolling a contested quickdraw."
+      },
+      {
+        "name": "Base Level up",
+        "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
+      },
+      {
+        "name": "Lethal Burst",
+        "body": "Add +10% lethality to all firearms rolls."
+      },
+      {
+        "name": "Killer Instincts",
+        "body": "Killing monsters results in a 1d6 sanity gain. Monsters surviving a fight with your character results in a 1d6 sanity loss."
+      },
+      {
+        "name": "Trained Shooter",
+        "body": "Aiming bonus is now +40% (was +20% previously)."
+      },
+      {
+        "name": "Burst fire",
+        "body": "Once per session, shoot twice on a single turn."
+      }
+    ],
+    "Close Combat Specialist" : [
+    {
+      "name": "Mean right hook",
+      "body": "Unarmed combat rolls and melee weapons can be replaced by strength rolls."
+    },
+    {
+      "name": "Base Level up",
+      "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
+    },
+    {
+      "name": "Killer Instincts",
+      "body": "Killing monsters results in a 1d6 sanity gain. Monsters surviving a fight with your character results in a 1d6 sanity loss."
+    },
+    {
+      "name": "Tough it out",
+      "body": "Once per session, when taking damage greater than a d4, reduce that damage to a d4."
+    },
+    {
+      "name": "Lethal blow",
+      "body": "On a successful critical strike, roll again."
+    },
+    {
+      "name": "Adrenaline Burst",
+      "body": "Once per session, upon being downed, your character can get back up for two turns, during which they can attack, run, or do any action they please. Once those turns are expended, they will go down again."
+    }
+  ],
+"Prepper" : [
+    {
+      "name": "Tinker",
+      "body": "Engineering, Demolitions, and Heavy Weapons rolls can be replaced with INT rolls."
+    },
+    {
+      "name": "Stat Buff",
+      "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
+    },
+    {
+      "name": "Inside buyers",
+      "body": "Weapons purchases are processed at one level cheaper (e.g., Unusual → Standard)."
+    },
+    {
+      "name": "Ghost Guns",
+      "body": "Military Restricted weapons are no longer restricted and can be manufactured at home."
+    },
+    {
+      "name": "My baby",
+      "body": "Creation of a custom weapon, Major Expense or below. This has the following buffs: 30% more accurate OR 1d6 more damaging."
+    },
+    {
+      "name": "Improvements",
+      "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
+    }
+  ],
+"Scholar of mushroom" : [
+    {
+      "name": "Dive into madness",
+      "body": "50% to unnatural. Your willpower can be reduced to 1 before you feel any effects. Note: If you already have unnatural this does not go above 65% Note: this will reduce your sanity capacity to your unnatural.."
+    },
+    {
+      "name": "Arcane Spells I",
+      "body": "Choose 1 level 1 spell from the class list."
+    },
+    {
+      "name": "Feel Good Fuzziness",
+      "body": "Weapons purchases are processed at one level cheaper (e.g., Unusual → Standard)."
+    },
+    {
+      "name": "Arcane Spells II",
+      "body": "Choose 2 level 1 spells and 1 level 2 spell."
+    },
+    {
+      "name": "Delve into madness",
+      "body": "As a bonus home scene you can now do the “staying on the case” action, in addition to a normal home scene."
+    },
+    {
+      "name": "Arcane Spells III",
+      "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
+    }
+  ],
+ "Scholar of The Great Machine" : [
+    {
+      "name": "Dive into madness",
+      "body": "50% to unnatural. Your willpower can be reduced to 1 before you feel any effects. Note: If you already have unnatural this does not go above 65% Note: this will reduce your sanity capacity to your unnatural.."
+    },
+    {
+      "name": "Arcane Spells I",
+      "body": "Choose 1 level 1 spell from the class list."
+    },
+    {
+      "name": "Feel Good Fuzziness",
+      "body": "Weapons purchases are processed at one level cheaper (e.g., Unusual → Standard)."
+    },
+    {
+      "name": "Arcane Spells II",
+      "body": "Choose 2 level 1 spells and 1 level 2 spell."
+    },
+    {
+      "name": "The machine beckons",
+      "body": "As a bonus home scene you can now do the “staying on the case” action, in addition to a normal home scene."
+    },
+    {
+      "name": "Arcane Spells III",
+      "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
+    }
+  ]
+}
+function update_class_information() {
+  const curr_class = className.value;
+  const curr_level = parseInt(classLevel.value , 10);
+  const currClassLabel = document.querySelector("#currClassLabel");
+  const currClassCards = document.querySelector("#currClassCards");
+  const selected_class = CLASS_INFO[curr_class];
+  let new_cards = "";
+  for (let i = 0; i < curr_level; i++) {
+    new_cards += `
+              <div class="class-level">
+                  <h3>${selected_class[i].name}</h3>
+                  <p>${selected_class[i].body}</p>
+              </div>
+    `;
+  }
+  currClassCards.innerHTML = new_cards;
+  currClassLabel.innerHTML = curr_class;
+}
+classLevel.addEventListener('change' , () => {
+  update_class_information();
+});
+className.addEventListener('change' , () => {
+  update_class_information();
+});
 </script>
 
 

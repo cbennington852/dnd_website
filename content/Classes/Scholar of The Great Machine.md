@@ -34,7 +34,7 @@ Choose
 | Wide Space      | Open a doorway sized portal to a 400ft square feet cube dimension. You can store things in this which can be retrieved later.                                                                                                                                                            | 1d2 willpower                                                                                                                                                     | Make a pinching motion.                                                                                  | -20% offset. |
 | Paralyzing Gaze | Target creature gets -55% penalty to all actions it tries to take on the next turn Critical success deals 1d12 of damage in addition.                                                                                                                                                    | 1d4 willpower                                                                                                                                                     | MUST make a face at the DM.                                                                              | -5% offset   |
 
-## 5. The machine becons 
+## 5. The machine beckons  
 As a bonus home scene you can now do the "staying on the case" action, in addition to a normal home scene. 
 
 ## 6. Arcane Spells III
