@@ -1064,6 +1064,9 @@ table {
         // 3. Grab the classname and replace the class detail with it. 
         // NOTE: Class info and things here!!!
         data['class_info'] = document.querySelector(".class_selection_item.active").textContent;
+        console.log("Class info" + data['class_info']);
+        data['class_level'] = "Gunslinger";
+        data['class_name'] = "0";
         // 4. Grab core stats and add those. 
         data['strength'] = coreStatsData[0];
         data['constitution'] = coreStatsData[1];
