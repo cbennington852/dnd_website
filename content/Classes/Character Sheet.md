@@ -293,8 +293,6 @@ table {
 .char-sheet-card-selected {
   background-color : #535454;
   width: 100%;
-  padding-top : 10px;
-  padding-bottom:10px;
 
 }
 
@@ -329,6 +327,27 @@ table {
 /* Optional: Darken the thumb on hover */
 .scrollable-container::-webkit-scrollbar-thumb:hover {
   background-color: #555555; 
+}
+
+
+.class-level-container {
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+   overflow: scroll;
+  min-height: auto
+
+}
+
+/* Base card styling */
+.class-level {
+    box-shadow: 0 4px 6px rgba(87, 87, 87, 0.1);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Hover effect */
+.class-level:hover {
+    transform: translateY(-5px);
 }
 
 
@@ -617,15 +636,32 @@ table {
       </table>
     </div>
     <div class="column">
-      <label for="comments">Class Information:</label>
-      <textarea style="width: 100%; height: 100%"  name="class_info" rows="8" cols="100"></textarea>
+      <!--We have a class name + a list of class attributes + link to full page. Also, an edit class modal button-->
+      <h2>Gunslinger</h2>
+      <div>
+            <div style="max-height : 400px;" class="class-level-container">
+              <div class="class-level">
+                  <h3>Card One</h3>
+                  <p>This is some minimal description text for the first card.</p>
+              </div>
+              <div class="class-level">
+                  <h3>Card Two</h3>
+                  <p>This is some minimal description text for the second card.</p>
+              </div>
+              <div class="class-level">
+                  <h3>Card Three</h3>
+                  <p>This is some minimal description text for the third card.</p>
+              </div>
+              <div class="class-level">
+                  <h3>Card Four</h3>
+                  <p>This is some minimal description text for the third card.</p>
+              </div>
+          </div>
+      </div>
+      <!-- <label for="comments">Class Information:</label>
+      <textarea style="width: 100%; height: 100%"  name="class_info" rows="8" cols="100"></textarea> -->
     </div>
   </section>
-  <!-- <div style="display : flex;" >
-   <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>Download Character Sheet as  JSON</button>
-    <button  id=clear-local-data-button style="font-size : small;" class="borderless-button-charsheet" type="button" onclick=export_char_sheet(); ><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M440-200h80v-167l64 64 56-57-160-160-160 160 57 56 63-63v167ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>Upload Character Sheet as JSON</button>
-  </div> -->
-    <!-- labels: ['Strength (' + coreStatsData[0] +')', 'Constitution (' + coreStatsData[1] +')', 'Dexterity (' + coreStatsData[2] +')', 'Intelligence (' + coreStatsData[3] +')', 'Willpower (' + coreStatsData[4] +')', 'Charisma (' + coreStatsData[5] +')'], -->
 <div id="editModal" class="modal-overlay">
   <div class="modal-content">
     <h2>Edit Core Stats</h2>
@@ -683,9 +719,6 @@ table {
           <li class="char-sheet-card" data-value="TTRPGCharSheet8"></li>
           <li class="char-sheet-card" data-value="TTRPGCharSheet9"></li>
         </ul>
-      </div>
-      <div class="modal-actions">
-        <button type="submit" id="selectSheetBtn" class="btn-form">Save Changes</button>
       </div>
     </form>
   </div>

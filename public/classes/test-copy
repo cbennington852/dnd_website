@@ -22,7 +22,6 @@
     margin : 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, border-color 0.2s;
-    cursor: pointer;
     border: 2px solid transparent;
 }
 
@@ -31,11 +30,6 @@
     transform: translateY(-5px);
 }
 
-/* Active/Selected state managed by JavaScript */
-.card.active {
-    border-color: #007bff;
-    background-color: #e6f2ff;
-}
 </style>
 <body>
 
@@ -55,20 +49,5 @@
     </div>
 
 </body>
-<script>
-// Select all elements with the class 'card'
-const cards = document.querySelectorAll('.card');
 
-// Add a click event listener to each card
-cards.forEach(card => {
-    card.addEventListener('click', (event) => {
-        cards.forEach( (curr_card) =>  {
-          curr_card.classList.remove('active');
-
-        });
-        card.classList.add('active');
-    });
-});
-
-</script>
 </html>
