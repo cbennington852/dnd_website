@@ -5,8 +5,8 @@ Example:
 50% Dextarity
 ~(90%) Quick Draw
 
-## 2. Base Level up 
-+10% (2 pts) to any base stat. Example STR, CON, DEX...
+## 2. Stat Buff
++10% to any base stat. Example STR, CON, DEX...
 
 ## 3. Lethal Burst
 Add +10% lethality to all firearms rolls. 

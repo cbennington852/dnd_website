@@ -1,8 +1,8 @@
 ## 1. Tinker
-Artillery, Demolitions, and Heavy Weapons rolls can be replaced with INT rolls
+Demolitions, and Heavy Weapons rolls can be replaced with INT rolls
 
 ## 2. Stat Buff
-+10% (2 pts) to any base stat. Example STR, CON, DEX...
++10% to any base stat. Example STR, CON, DEX...
 
 ## 3. Inside buyers
 Weapons purchases are processed at one level cheaper. 

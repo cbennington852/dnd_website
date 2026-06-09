@@ -537,7 +537,7 @@ select {
         <td><input class="detail-input" type="number" id="computer-science" name="computer science" value="0" min="0" max="100"></td>
         <td><label class="detail-label" for="stealth">Stealth:</label></td>
         <td><input class="detail-input" type="number" id="stealth" name="stealth" value="0" min="0" max="100"></td>
-        <td><label class="detail-label" for="dodge">Heavy Weapons:</label></td>
+        <td><label class="detail-label" for="heavy_weapons">Heavy Weapons:</label></td>
         <td><input class="detail-input" type="number" id="heavy_weapons" name="heavy_weapons" value="0" min="0" max="100"></td>
       </tr>
       <!-- Row 4 -->
@@ -749,7 +749,7 @@ select {
 <div id="editClassModel" class="modal-overlay">
   <div class="modal-content">
     <h2>Edit Class</h2>
-    <form id="editForm">
+    <form id="editClassForm">
       <div >
        <label for="class_name">Class:</label>
         <select id="class_name" name="class_name">
@@ -761,6 +761,7 @@ select {
         </select>
         <label for="class_level">Level:</label>
         <select id="class_level" name="class_level">
+          <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -785,6 +786,8 @@ MULTIPLE SHEETS PLAN:
 - 2. Have a localStorage key "characterSheetData", which points to those preset keys.
 - 3. Button to open and manage character sheets. 
 */
+const classLevel = document.querySelector("#class_level");
+const className = document.querySelector("#class_name");
 let currentCharSheetKey = localStorage.getItem("currentCharSheetKey");
 if (!currentCharSheetKey) {
   currentCharSheetKey = "TTRPGCharSheet0";
@@ -1082,6 +1085,11 @@ function loadInputsFromMemory() {
       //Handling the Health Bar
       currentHealth = data['current_health'];
       currentWillpower = data['current_willpower'];
+      className.text = data['class_name'];
+      classLevel.text = data['class_level'];
+      className.dispatchEvent(new Event('change'));
+      classLevel.dispatchEvent(new Event('change'));
+      console.log("Hello!!!!" + classLevel.value + " : " +   data['class_level'] + " Node : " + className);
       update_pips();
       updateHealth(currentHealth);
       updateWillpower(currentWillpower);
@@ -1149,8 +1157,6 @@ function registerPopupModal(modalId , openModelButtonId , modalSubmissionButtonI
     load_core_stats_data();
   });
 }
-const classLevel = document.querySelector("#class_level");
-const className = document.querySelector("#class_name");
 const CLASS_INFO = {
   "Gunslinger" : [
       {

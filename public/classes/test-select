@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Select Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f4f7f6;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <label for="continent">1. Choose a Continent:</label>
+    <select id="continent">
+        <option value="">-- Select Continent --</option>
+        <option value="na">North America</option>
+        <option value="eu">Europe</option>
+    </select>
+
+    <label for="country">2. Choose a Country:</label>
+    <select id="country" disabled>
+        <option value="">-- First choose a continent --</option>
+    </select>
+</div>
+
+<script>
+    // 1. Define the data object mapping continents to countries
+    const countryData = {
+        na: [
+            { value: "us", text: "United States" },
+            { value: "ca", text: "Canada" },
+            { value: "mx", text: "Mexico" }
+        ],
+        eu: [
+            { value: "fr", text: "France" },
+            { value: "de", text: "Germany" },
+            { value: "it", text: "Italy" }
+        ]
+    };
+
+    // 2. Get references to the DOM elements
+    const continentSelect = document.getElementById('continent');
+    const countrySelect = document.getElementById('country');
+
+    // 3. Listen for changes on the first dropdown
+    continentSelect.addEventListener('change', function() {
+        const selectedContinent = this.value;
+
+        // Clear out previous options completely
+        countrySelect.innerHTML = '';
+
+        // If no continent is selected, reset and disable the country dropdown
+        if (!selectedContinent) {
+            const defaultOption = document.createElement('option');
+            defaultOption.text = '-- First choose a continent --';
+            defaultOption.value = '';
+            countrySelect.appendChild(defaultOption);
+            countrySelect.disabled = true;
+            return;
+        }
+
+        // Enable the dropdown since a valid continent was chosen
+        countrySelect.disabled = false;
+
+        // 4. Programmatically build and add the new options
+        const countries = countryData[selectedContinent];
+        
+        countries.forEach((country, index) => {
+            const option = document.createElement('option');
+            option.value = country.value;
+            option.text = country.text;
+            
+            // Programmatically set the second option (index 1) as default selected
+            if (index === 1) {
+                option.selected = true; 
+            }
+
+            countrySelect.appendChild(option);
+        });
+    });
+</script>
+
+</body>
+</html>

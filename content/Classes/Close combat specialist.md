@@ -2,8 +2,9 @@
 A Delta green specialist focusing mostly on melee abilities. 
 ## 1  Mean right hook
  Unarmed combat rolls and melee weapons can be replaced by strength rolls. 
-## 2. Base Level up 
-+10% (2 pts) to any base stat. Example STR, CON, DEX...
+## 2. Stat Buff
++10% to any base stat. Example STR, CON, DEX...
+
 ## 3. Killer Instincts
 * Killing monsters results in a 1d6 sanity gain
 * Monsters surviving a fight with your charicter results in a 1d6 sanity loss.

@@ -328,8 +328,8 @@ table {
                 <td><button class="detail-boost-button" type="number" id="computer-science" name="computer science" ></td>
                 <td><label class="detail-label" for="stealth">Stealth:</label></td>
                 <td><button class="detail-boost-button" type="number" id="stealth" name="stealth" ></td>
-                <td><label class="detail-label" for="dodge">Dodge:</label></td>
-                <td><button class="detail-boost-button" type="number" id="dodge" name="dodge" ></td>
+                <td><label class="detail-label" for="heavy_weapons">Heavy Weapons:</label></td>
+                <td><button class="detail-boost-button" type="number" id="heavy_weapons" name="heavy_weapons" ></td>
             </tr>
             <!-- Row 4 -->
             <tr class="detail-row">
@@ -360,8 +360,8 @@ table {
             </tr>
             <!-- Row 7 -->
             <tr class="detail-row">
-                <td><label class="detail-label" for="unnatural">Unnatural:</label></td>
-                <td><button class="detail-boost-button" type="number" id="unnatural" name="unnatural" ></td>
+                <td><label style="pointer-events: none; cursor: not-allowed; opacity: 0.6; " class="detail-label" for="unnatural">Unnatural:</label></td>
+                <td><button style="pointer-events: none; cursor: not-allowed; opacity: 0.6; " class="detail-boost-button" type="number" id="unnatural" name="unnatural" ></td>
                 <td><label class="detail-label" for="melee">Melee:</label></td>
                 <td><button class="detail-boost-button" type="number" id="melee" name="melee" ></td>
                 <td><label class="detail-label" for="financial-literacy">Finance:</label></td>
@@ -1060,13 +1060,12 @@ table {
             const key =  curr_button.name;
             data[key] = curr_button.textContent;
         });
-        console.log(data);
         // 3. Grab the classname and replace the class detail with it. 
         // NOTE: Class info and things here!!!
-        data['class_info'] = document.querySelector(".class_selection_item.active").textContent;
-        console.log("Class info" + data['class_info']);
-        data['class_level'] = "Gunslinger";
-        data['class_name'] = "0";
+        //data['class_info'] = document.querySelector(".class_selection_item.active").textContent;
+        //console.log("Class info" + data['class_info']);
+        data['class_level'] = "0";
+        data['class_name'] = "Gunslinger";
         // 4. Grab core stats and add those. 
         data['strength'] = coreStatsData[0];
         data['constitution'] = coreStatsData[1];
@@ -1080,6 +1079,7 @@ table {
         data['breaking_point'] = data['power'] / (data['power']/5);
         data['inventory'] = "Cell Phone, Wallet, Drivers License, Car Keys."
         // 6. serializing and saving the json as a string.
+        console.log(data);
         return JSON.stringify(data);
     }
     updateCardDisplay();
