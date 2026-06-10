@@ -10,37 +10,49 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 10 Jun 2026 03:00:44 GMT</pubDate>
+    <pubDate>Wed, 10 Jun 2026 03:03:22 GMT</pubDate>
   </item><item>
     <title>Free Missions</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 10 Jun 2026 03:00:44 GMT</pubDate>
+    <pubDate>Wed, 10 Jun 2026 03:03:22 GMT</pubDate>
   </item><item>
     <title>NPCs</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 10 Jun 2026 03:00:44 GMT</pubDate>
+    <pubDate>Wed, 10 Jun 2026 03:03:22 GMT</pubDate>
   </item><item>
     <title>3_hrs</title>
     <link>https://cbennington852.github.io/dnd_website/tags/3_hrs</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/3_hrs</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 10 Jun 2026 03:00:44 GMT</pubDate>
+    <pubDate>Wed, 10 Jun 2026 03:03:22 GMT</pubDate>
   </item><item>
     <title>4_players</title>
     <link>https://cbennington852.github.io/dnd_website/tags/4_players</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/4_players</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 10 Jun 2026 03:00:44 GMT</pubDate>
+    <pubDate>Wed, 10 Jun 2026 03:03:22 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 10 Jun 2026 03:00:44 GMT</pubDate>
+    <pubDate>Wed, 10 Jun 2026 03:03:22 GMT</pubDate>
+  </item><item>
+    <title>Create A Character</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
+    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* width : 40vw; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
+    <pubDate>Wed, 10 Jun 2026 03:01:23 GMT</pubDate>
+  </item><item>
+    <title>Premade Character Sheets</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/premade-character-sheets</guid>
+    <description><![CDATA[  .btn-form { font-family: var(--fontFamily); color: var(--dark); align-items: center; /* Centers vertically */ justify-content: center; display: flex; background-color : black; border-radius : 15px; font-size : medium } /* Background overlay (hidden by default) */ .modal-overlay { display: none; pos... ]]></description>
+    <pubDate>Wed, 10 Jun 2026 03:01:23 GMT</pubDate>
   </item><item>
     <title>Abomination</title>
     <link>https://cbennington852.github.io/dnd_website/classes/abomination</link>
@@ -52,18 +64,6 @@
     <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
     <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
-    <pubDate>Tue, 09 Jun 2026 20:41:20 GMT</pubDate>
-  </item><item>
-    <title>Close combat specialist</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</guid>
-    <description><![CDATA[ A Delta green specialist focusing mostly on melee abilities. ]]></description>
-    <pubDate>Tue, 09 Jun 2026 20:41:20 GMT</pubDate>
-  </item><item>
-    <title>Create A Character</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/create-a-character</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/create-a-character</guid>
-    <description><![CDATA[  #shell { display: grid; grid-template-rows: auto 1fr auto; /* width : 40vw; */ } header, footer { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid #ddd; } footer { border-top: 1px solid #ddd; border-bottom: none; } #dots { display: fle... ]]></description>
     <pubDate>Tue, 09 Jun 2026 20:41:20 GMT</pubDate>
   </item>
     </channel>

@@ -1000,6 +1000,7 @@ table {
     class_selection_data.forEach((item , index) => {
         let el = document.createElement('div');
         el.className = 'class_selection_item';
+        el.dataset.class_name = item.title;
         el.dataset.index = index;
         el.innerHTML = `<strong>${item.title}</strong><br><small>${item.sub}</small>`;
         el.addEventListener('click', () => {
@@ -1060,10 +1061,10 @@ table {
         });
         // 3. Grab the classname and replace the class detail with it. 
         // NOTE: Class info and things here!!!
-        //data['class_info'] = document.querySelector(".class_selection_item.active").textContent;
-        //console.log("Class info" + data['class_info']);
+        data['class_name'] = document.querySelector(".class_selection_item.active").class_name;
+        console.log("Class info" + data['class_name']);
         data['class_level'] = "0";
-        data['class_name'] = "Gunslinger";
+        // data['class_name'] = "Gunslinger";
         // 4. Grab core stats and add those. 
         data['strength'] = coreStatsData[0];
         data['constitution'] = coreStatsData[1];
