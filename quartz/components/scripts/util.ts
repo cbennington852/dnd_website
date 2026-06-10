@@ -78,13 +78,22 @@ var history_of_pages_we_have_been = [];
 //   document.body.appendChild(newScript);
 //   newScript.parentNode.removeChild(newScript);
 // }
+const pages_to_auto_reload = [
+  "character-sheet",
+  "create-a-character",
+  "premade-character-sheets"
+]
 
 function run_on_page_load() {
   const currentUrl = window.location.href;
   history_of_pages_we_have_been.push(currentUrl);
   console.log(history_of_pages_we_have_been);
-  if ((currentUrl.includes("character-sheet") || (currentUrl.includes("create-a-character"))) && (history_of_pages_we_have_been.length > 1)) {
-    location.reload();
+  if (history_of_pages_we_have_been.length > 1) {
+    pages_to_auto_reload.forEach(curr_page => {
+      if (currentUrl.includes(curr_page)) {
+        location.reload();
+      }
+    })
   }
 }
 

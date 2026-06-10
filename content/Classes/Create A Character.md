@@ -388,7 +388,6 @@ table {
                 </ul>
             </div>
             <div class="modal-actions">
-                <button type="submit" id="selectSheetBtn" class="btn-form">Save Changes</button>
             </div>
       </div>
     </div>
@@ -457,7 +456,7 @@ table {
         {
         title: "Law Enforcement Officer",
         sub: "Government",
-        body: `You protect and serve. Law enforcement officers have access to official badges, handcuffs, and police scanners`,
+        body: `You protect and serve. This can range from a local small town sherif to a hard boiled inner city detective. Law enforcement officers have access to official badges, handcuffs, and police scanners`,
         skills: [
             {
                 key_name: "alertness",
@@ -497,7 +496,7 @@ table {
             },
             {
                 key_name: "finance",
-                percent : 25
+                percent : 35
             },
         ]
         },
@@ -551,7 +550,7 @@ table {
         {
         title: "Soldier / Marine / Swat",
         sub: "Government",
-        body: "Capable. Tough. Combat Ready.",
+        body: "Capable. Tough. Combat Ready. ",
         skills: [
             {
                 key_name: "alertness",
@@ -598,7 +597,7 @@ table {
         {
         title: "Engineer",
         sub: "Private",
-        body: "Fixes things.",
+        body: "A carer based in engineering, your day to day is fixing things. This can range from an engineering professor all the way down to a car mechanic. ",
         skills: [
             {
                 key_name: "computer science",
@@ -637,7 +636,7 @@ table {
          {
         title: "Doctor",
         sub: "Private",
-        body: "Does medicine. ",
+        body: "A medical practicer, with extensive skills and knowledge in the field. You're not sure how, but you made it through medical school somehow. ",
         skills: [
             {
                 key_name: "first_aid",
@@ -672,8 +671,7 @@ table {
         {
         title: "Scientist",
         sub: "Academia",
-        body: `Does science?
-        This class has the best starting finance of all of the classes.`,
+        body: ` As a scientist you work with numbers, statistics, and research papers. Maybe you work at a university, or maybe you work at a private lab.`,
         skills: [
             {
                 key_name: "science",
@@ -712,7 +710,7 @@ table {
         {
         title: "Anthropologist",
         sub: "Academia",
-        body: "Does anthropology. ",
+        body: "An academic, you have a PhD and teach classes at a university. This class has the best starting finance of all of the classes. ",
         skills: [
             {
                 key_name: "history",
@@ -909,18 +907,18 @@ table {
         data_slug : "classes/prepper",
         },
         {
-        title: "Scholar of Mushroom",
-        sub: "Magic",
-        body: `Curiosity and a need to understand is what has driven humanity to create great gifts. We should use those gifts to help others \n\n Scholars of mushroom would be classified as a support class, they specialize in mind control, teleportation, and knowledge in the unnatural. They are often the first to uncover secrets and have a dark convoluted past.  `,
-        href: "/classes/scholar-of-mushroom",
-        data_slug : "classes/scholar-of-mushroom",
+        title: "Abomination",
+        sub: "Unnatural",
+        body: `Something went wrong, maybe it was a failed experiment, maybe it was by complete accident. You can feel your insides changing, and not in a good way. \n\n Abominations are the freakiest when compared to other classes, these are often both the most versatile and brittle of the classes. Abominations suffer from the classic problem of \"I can take out a whole squad of terrorists by my self, but ordering a coffee is hard.\"`,
+        href: "/classes/abomination",
+        data_slug : "classes/abomination",
         },
         {
-        title: "Scholar of The Great Machine",
-        sub: "Magic",
-        body: `We live in a machine, it takes us in, and spits us out. It's time to make that machine work for us. \n\n The silliest of all of the classes. Classified more into support, with the ability to create storage (great for dead bodies!) and the ability to create animated objects that can do tasks for you.   `,
-        href: "/classes/scholar-of-the-great-machine",
-        data_slug : "classes/scholar-of-the-great-machine",
+        title: "Slick Talker",
+        sub: "Support",
+        body: `You specialise in getting people out of sticky situations, no matter how dire. \n\n Slick Talkers would be classified as a support class, focusing on soft skills, medical abilities, and charisma.`,
+        href: "/classes/slick-talker",
+        data_slug : "classes/slick-talker",
         },
         /*
         It would be cool to have a stretchy monster class!!!
@@ -1076,9 +1074,11 @@ table {
         data['current_health'] = coreStatsData[1]/5;
         data['current_willpower'] = coreStatsData[4]/5;
         data['current_sanity'] = data['power'];
-        data['breaking_point'] = data['power'] / (data['power']/5);
+        data['breaking_point'] = data['current_sanity'] - (data['power']/5);
         data['inventory'] = "Cell Phone, Wallet, Drivers License, Car Keys."
         // 6. serializing and saving the json as a string.
+        // 7. Fix a bug
+        data['search_dnd_thing'] = data['search'];
         console.log(data);
         return JSON.stringify(data);
     }

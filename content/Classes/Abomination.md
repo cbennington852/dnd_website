@@ -2,7 +2,7 @@
 ## 1. Investigate the Unnatural
 Gain an extra 30% to your unnatural stat.
 
-## 2. Unnatural Developments
+## 2. Unnatural Developments I
 Choose one of the following to add. Note that this can allow you to go over your max in any of the base stats. 
 
 | Development Name | Description                                   |

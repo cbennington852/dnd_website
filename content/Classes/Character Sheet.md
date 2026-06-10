@@ -756,8 +756,8 @@ select {
           <option value="Close Combat Specialist">Close Combat Specialist</option>
           <option value="Gunslinger">Gunslinger</option>
           <option value="Prepper">Prepper</option>
-          <option value="Scholar of mushroom">Scholar of mushroom</option>
-          <option value="Scholar of The Great Machine">Scholar of the great machine</option>
+          <option value="Abomination">Abomination</option>
+          <option value="Slick Talker">Slick Talker</option>
         </select>
         <label for="class_level">Level:</label>
         <select id="class_level" name="class_level">
@@ -1236,56 +1236,56 @@ const CLASS_INFO = {
       "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
     }
   ],
-"Scholar of mushroom" : [
+"Abomination" : [
     {
-      "name": "Dive into madness",
-      "body": "50% to unnatural. Your willpower can be reduced to 1 before you feel any effects. Note: If you already have unnatural this does not go above 65% Note: this will reduce your sanity capacity to your unnatural.."
+      "name": "Investigate the Unnatural",
+      "body": "Gain an extra 30% to your unnatural stat."
     },
     {
-      "name": "Arcane Spells I",
-      "body": "Choose 1 level 1 spell from the class list."
-    },
-    {
-      "name": "Feel Good Fuzziness",
-      "body": "Weapons purchases are processed at one level cheaper (e.g., Unusual → Standard)."
-    },
-    {
-      "name": "Arcane Spells II",
-      "body": "Choose 2 level 1 spells and 1 level 2 spell."
+      "name": "Unnatural Developments",
+      "body": "Choose one of the <a href='./abomination' >following developments</a>"
     },
     {
       "name": "Delve into madness",
       "body": "As a bonus home scene you can now do the “staying on the case” action, in addition to a normal home scene."
     },
     {
-      "name": "Arcane Spells III",
-      "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
+      "name": "Unnatural Developments II",
+      "body": "Choose one of the <a href='./abomination' >following developments</a>"
+    },
+    {
+      "name": "Numb mind",
+      "body": "Gain an +30% bonus when rolling sanity."
+    },
+    {
+      "name": "Unnatural Developments III",
+      "body": "Choose one of the <a href='./abomination'd >following developments</a>"
     }
   ],
- "Scholar of The Great Machine" : [
+"Slick Talker" : [
     {
-      "name": "Dive into madness",
-      "body": "50% to unnatural. Your willpower can be reduced to 1 before you feel any effects. Note: If you already have unnatural this does not go above 65% Note: this will reduce your sanity capacity to your unnatural.."
+      "name": "Quick Talking",
+      "body": "Replace Psychotherapy and Criminology with charisma rolls."
     },
     {
-      "name": "Arcane Spells I",
-      "body": "Choose 1 level 1 spell from the class list."
+      "name": "Stat Buff",
+      "body": "+10% to any base stat. Example STR, CON, DEX..."
     },
     {
-      "name": "Feel Good Fuzziness",
-      "body": "Weapons purchases are processed at one level cheaper (e.g., Unusual → Standard)."
+      "name": "Mogging",
+      "body": "Cause a distraction or do something out of ordinary to stun another creature. Roll contested Charisma against the target creatures Intelligence. On a success that creature receives a -30% debuff to it's next action. On a critical success double this debuff. Note: Players are REQUIRED to make a face at the DM while performing this action."
     },
     {
-      "name": "Arcane Spells II",
-      "body": "Choose 2 level 1 spells and 1 level 2 spell."
+      "name": "Quick Sew",
+      "body": "When rolling first aid, roll two dice for the medical effect, and keep the higher one. AND Ignore the bleed out penalty when rolling first aid on a teammate."
     },
     {
-      "name": "The machine beckons",
-      "body": "As a bonus home scene you can now do the “staying on the case” action, in addition to a normal home scene."
+      "name": "Stat Buff II",
+      "body": "+15% to any base stat. Example STR, CON, DEX..."
     },
     {
-      "name": "Arcane Spells III",
-      "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
+      "name": "The Magnum",
+      "body": "Player can now perform the action from level 3 (Mogging) while doing another action. Note this is a bonus action."
     }
   ]
 }
