@@ -23,3 +23,16 @@ Level 10 Luck class.
 - Charisma (60%)
 - Unnatural (50%)
 - All other stats 50%
+
+22hp
+1ap
+
+
+
+
+
+0hp
+
+1hp 
+
+1d10 - 65%

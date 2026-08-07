@@ -161,7 +161,7 @@ function setup() {
     canvas.parent("canvas-container"); // Attach to the div
     angleMode(DEGREES);
     d = pixelDensity();
-    text_points = myFont.textToPoints('Uncover the Unnatural', 0, 0, 70, {
+    text_points = myFont.textToPoints('R e d l i n e', 0, 0, 70, {
         sampleFactor: 0.1,
         simplifyThreshold: 0
     });
@@ -242,6 +242,8 @@ Oh, also a summary with some cool text.
 
 
 Note to self: I don't really like the current unnatrual classes. I like this idea of having a support class, so maybe a medic class or a talker? or a hybrid both. I still want an unnatrual class, however I might change from spell casting to a transformation into a thing (Like Agent Schinzel  in testing group prior. )
+
+NOTE: We could try a name like "Redline" ttrpg
 
 <div style="display: flex; gap: 20px;">
   <div style="flex: 1; ">

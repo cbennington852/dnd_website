@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: Redline
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -20,8 +20,8 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Special Elite
-      body: Syne Mono
+      header: Open Sans
+      body: Open Sans
       code: IBM Plex Mono
       # header: IBM Plex Mono
       # body: Courier Prime 

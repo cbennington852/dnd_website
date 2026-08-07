@@ -5,7 +5,25 @@ readTime: "3 min read"
 playerCount: 4
 gameStatus: "Won"
 ---
-#3_hrs #4_players
+
+<style>
+img {
+  /* Forces blocky, pixelated scaling instead of blurring */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  
+  /* Creates the wavy distortion effect */
+  filter: url('#wavy-distortion');
+}
+</style>
+<svg width="0" height="0">
+  <filter id="wavy-distortion">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+
 ## Hook
 Park Rangers at Olympia national park recently found a lost child. Face id's match them to a missing child case... from 45 years ago. The park rangers and the child are currently at a ranger station on the edge of the national park. The time is currently 9am. The players will be given fake FBI badges under the guise that they are investigating the missing child case. 
 
@@ -21,7 +39,7 @@ critical fail -> Car Crash
 # The Ranger Station
 The rangers station is a somewhat new wooden building with a metal roof. The building has several glass windows, which are currently closed. There is a gravel parking lot, which could seat up to ~40 cars. This parking lot contains only three vehicles, a Subaru, and two park ranger trucks. 
 
-![[Ranger Station(1).png|697]]
+![[Ranger Station(4).png]]
 
 There are four people within the Ranger station. Note that either ranger can give you a map of the area.
 
@@ -42,13 +60,13 @@ A small boy, appears to be about 11 years old. He has wet hair and is wearing a 
 
 He is crying constantly, without saying anything. He will curl up into a ball and refuse to be moved if agents try to move him. He has very very little memory, he doesn't remember who his parents are, or how he got here. 
 
-> [!danger]- Successful Search Roll (Searching John)
-> He has a strange circular scar on the back of his neck. 
+> **Searching John**
+> A successful search or forensics roll will reveal that he has a strange circular scar on the back of his neck. 
 
-> [!danger]- Psychotherapy Roll (Calming John Down)
->He calms down, and will listen to player instructions, even during combat. 
+> **Calming John Down**
+>On a successful Psychotherapy roll He calms down, and will listen to player instructions, even during combat. 
 
-> [!danger]- Successful First Aid Roll (Tending to John)
+> **Successful First Aid Roll (Tending to John)** 
 >He had a scrape on his knee, but it already has been treated. 
 
 #### Ranger Samantha
@@ -72,13 +90,13 @@ A little bit after the agents arrive, one [[Shog`a-lite]] will arrive. These cre
 Once they are done observing, they will attempt (And succeed) at mind controlling ranger rick. Ranger Rick will begin to act mechanical, loose his stutter, and attempt to drag the child outside by any means necessary. If the agents intervene, he will try to shoot them. Ranger Samantha will side with ranger Rick in any conflict, regardless of if she is mind controlled. 
 
 # The Old Fire Watch
-![[Ranger Station Map(1).png]]
+![[Ranger Station Map(4).png]]
 An old rickety fire watch, there is a well worn path from the ranger station to the fire watch.
-> [!danger]- Successful Search Roll
-> While there is a well worn path around the station, you can see a thick layer of dust inside the actual station. No ones been inside for a very long time. 
+> **Searching the station**
+> A successful search roll will reveal there is a well worn path around the station, you can see a thick layer of dust inside the actual station. No ones been inside for a very long time. 
 
-> [!danger]- Successful Forensics Roll (Looking for clues about how John got here)
-> You find a small patch of blood, as well as a small divot in the muddy ground. This is likely where Ranger Rick found John. 
+> **Looking for clues on how John got here**
+> A successful forensics roll reveals that there small patch of blood, as well as a small divot in the muddy ground. This is likely where Ranger Rick found John. 
 
 ## Hiking there
 Walking to the fire watch should take about 15 minutes uphill. The rain is heavy, and the wind is loud. Players can hear the trees cracking and whistling as they walk there. 
@@ -88,11 +106,11 @@ Two [[Shog`a-lite]]s will ambush the players as they return to the ranger statio
 ## Inside the Fire Watch
 The inside of the fire watch is damp, and smells vaguely of mold. There is a small [marmot](https://en.wikipedia.org/wiki/Marmot) living in the fire watch tower, which has Taken residence in the fire watch. There is also some file cabinets with various stacks of papers.
 
-> [!danger]- Successful Search Roll
+>  **Searching inside the fire watch**
 > There is a small box on the floor with a single grenade inside of it. Note, throwing this grenade requires a dexterity check. 
 
-> [!danger]- Successful Bureaucracy Roll (Inspecting the file cabinet)
-> You find that this fire watch used to be a cover for the same organisation that you work for. They were using this fire watch to "keep watch" on some nearby fungal growths. Gain 1d6 in unnatural skill. 
+> **Searching in the fire watch**
+> A successful Bureaucracy roll reveals this fire watch used to be a cover for the Redline organisation. They were using this fire watch to "keep watch" on some nearby fungal growths. Gain 1d6 in unnatural skill. 
 
 # Resolutions
 Assuming the Players kill all of the [[Shog`a-lite]]s and retrieve John, they can simply return to [[The Handler]]. He will hand John off to an unnamed female agent with blonde hair (This is [[Agent Cotton]], but if you haven't done [[Cottons Catastrophe]] don't introduce her). 

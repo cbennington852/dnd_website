@@ -12,12 +12,18 @@ Recover the briefcase. Recover Agent Cotton.
 ## Prelude
 The group of agents in trouble was last reported investigating a temp worker agency located in Moses Lake, Washington. The fine details of the investigation are classified. 
 
-If you've never been to Moses lake, don't go. The town it self is comprised of trailer parks, golf courses, and crumbing administrative buildings. The other group of agents were last seen entering and investigating wellborn temp agency. That was 6 hours ago. 
+If you've never been to Moses lake, don't go. The town it self is comprised of trailer parks, golf courses, and crumbing administrative buildings. The other group of agents were last seen entering and investigating Wellborn temp agency. That was 6 hours ago. 
 
 
 # The story
 
-## 
+## Outside of the building
+The building looks like a visibly aged brick office building. It has two stories, and several thick windows on the sides. It also has an old fire escape on the backside of the building. 
+
+The glass front door is locked, and the lights are off. Peering inside the building agents cannot see anything out of the ordinary. 
+
+
+## Entering the building
 
 
 

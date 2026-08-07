@@ -6,7 +6,8 @@ Example:
 ~(90%) Quick Draw
 
 ## 2. Stat Buff
-+10% to any base stat. Example STR, CON, DEX...
++10% to any base stat. Example Strength, Constitution, Dexterity...
+
 
 ## 3. Lethal Burst
 Add +10% lethality to all firearms rolls. 
