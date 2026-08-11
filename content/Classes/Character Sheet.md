@@ -648,7 +648,9 @@ input[type="file"] {
       </table>
       <label for="comments">Inventory:</label>
       <textarea  name="inventory" rows="4" cols="50"></textarea>
-      <table>
+      <label for="notes">Notes:</label>
+      <textarea  name="notes" rows="4" cols="50"></textarea>
+      <!-- <table>
         <thead>
           <tr>
             <th>Spell Name</th>
@@ -658,21 +660,18 @@ input[type="file"] {
           </tr>
         </thead>
         <tbody>
-          <!-- Row 1 -->
           <tr>
             <td><input class="table-input" type="text" name="ability_1_name" ></td>
             <td><input class="table-input" type="text" name="ability_1_desc" ></td>
             <td><input class="table-input" type="text" name="ability_1_wp" ></td>
             <td><input class="table-input" type="text" name="ability_1_diff" ></td>
           </tr>
-          <!-- Row 2 -->
           <tr>
             <td><input class="table-input" type="text" name="ability_2_name" ></td>
             <td><input class="table-input" type="text" name="ability_2_desc" ></td>
             <td><input class="table-input" type="text" name="ability_2_wp" ></td>
             <td><input class="table-input" type="text" name="ability_2_diff" ></td>
           </tr>
-          <!-- Row 3 -->
           <tr>
             <td><input class="table-input" type="text" name="ability_3_name" ></td>
             <td><input class="table-input" type="text" name="ability_3_desc" ></td>
@@ -680,7 +679,7 @@ input[type="file"] {
             <td><input class="table-input" type="text" name="ability_3_diff" ></td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
     <div class="column">
       <!--We have a class name + a list of class attributes + link to full page. Also, an edit class modal button-->

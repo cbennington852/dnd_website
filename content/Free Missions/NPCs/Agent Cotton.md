@@ -1,12 +1,10 @@
 ---
 
-title: "My Secret Note"
 
-unlisted: true
 
 ---
 
-A young blonde woman. She wears a black trench coat, and and an automatic UZI in her right gun holster. She sounds a little bit insane. Agent Cotton is a "skinwalker"
+A young blonde woman. She wears a black trench coat, and and an automatic UZI in her right gun holster. She sounds a little bit insane. Also a tiny bit forgetful. 
 
 __Stats__
 HP: 12 ... Regens at 2hp per hour unless damage is from burning.
@@ -23,16 +21,3 @@ Level 10 Luck class.
 - Charisma (60%)
 - Unnatural (50%)
 - All other stats 50%
-
-22hp
-1ap
-
-
-
-
-
-0hp
-
-1hp 
-
-1d10 - 65%

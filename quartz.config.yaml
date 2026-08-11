@@ -7,48 +7,42 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: "cbennington852.github.io/dnd_website"
+  baseUrl: cbennington852.github.io/dnd_website
   ignorePatterns:
     - private
     - templates
     - .obsidian
   theme:
     js:
-      src: "/custom.js"
-      loadTime: "afterDOMReady"
-      contentType: "external"
+      src: /custom.js
+      loadTime: afterDOMReady
+      contentType: external
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
       header: Open Sans
       body: Open Sans
       code: IBM Plex Mono
-      # header: IBM Plex Mono
-      # body: Courier Prime 
-      # code: IBM Plex Mono
-      # header: Schibsted Grotesk
-      # body: Source Sans Pro
-      # code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#000000"         # Black background
+        light: "#000000"
         lightgray: "#1a1a1a"
         gray: "#444444"
         darkgray: "#cccccc"
-        dark: "#ffffff"          # White text
-        secondary: "#ff4d4d"     # Light Red
-        tertiary: "#ff0000"      # Bright Red
-        highlight: "rgba(255, 77, 77, 0.15)"
+        dark: "#ffffff"
+        secondary: "#ff4d4d"
+        tertiary: "#ff0000"
+        highlight: rgba(255, 77, 77, 0.15)
         textHighlight: "#ff000088"
       darkMode:
-        light: "#000000"         # Black background
+        light: "#000000"
         lightgray: "#1a1a1a"
         gray: "#444444"
         darkgray: "#cccccc"
-        dark: "#ffffff"          # White text
-        secondary: "#ff4d4d"     # Light Red
-        tertiary: "#ff0000"      # Bright Red
-        highlight: "rgba(255, 77, 77, 0.15)"
+        dark: "#ffffff"
+        secondary: "#ff4d4d"
+        tertiary: "#ff0000"
+        highlight: rgba(255, 77, 77, 0.15)
         textHighlight: "#ff000088"
 plugins:
   - source: github:quartz-community/created-modified-date
