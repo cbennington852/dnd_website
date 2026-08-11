@@ -10,61 +10,61 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 15 Jun 2026 00:57:59 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 03:41:38 GMT</pubDate>
   </item><item>
     <title>Free Missions</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 15 Jun 2026 00:57:59 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 03:41:38 GMT</pubDate>
   </item><item>
     <title>Detailed Stats</title>
     <link>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/</link>
     <guid>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 15 Jun 2026 00:57:59 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 03:41:38 GMT</pubDate>
   </item><item>
     <title>NPCs</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 15 Jun 2026 00:57:59 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 03:41:38 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 15 Jun 2026 00:57:59 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 03:41:38 GMT</pubDate>
   </item><item>
-    <title>Dinosaur mission</title>
-    <link>https://cbennington852.github.io/dnd_website/free-missions/dinosaur-mission</link>
-    <guid>https://cbennington852.github.io/dnd_website/free-missions/dinosaur-mission</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 15 Jun 2026 00:57:50 GMT</pubDate>
+    <title>Redline</title>
+    <link>https://cbennington852.github.io/dnd_website/</link>
+    <guid>https://cbennington852.github.io/dnd_website/</guid>
+    <description><![CDATA[ This is a custom, long running TTRG game which has been running for many years. ]]></description>
+    <pubDate>Mon, 10 Aug 2026 15:22:35 GMT</pubDate>
   </item><item>
-    <title>Sanity</title>
-    <link>https://cbennington852.github.io/dnd_website/core-rules/sanity</link>
-    <guid>https://cbennington852.github.io/dnd_website/core-rules/sanity</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Mon, 15 Jun 2026 00:50:25 GMT</pubDate>
+    <title>new_index</title>
+    <link>https://cbennington852.github.io/dnd_website/new_index</link>
+    <guid>https://cbennington852.github.io/dnd_website/new_index</guid>
+    <description><![CDATA[  const min_radius = 50; let blip_radius = min_radius; let moldSpeed = 0.01; const maxMoldSpeed = 0.2; const moldAcceleration = 0.01; const moldSpeedIncreaseInterval = 200; // We could have the mold speed &quot;accelrate&quot; slowly. ]]></description>
+    <pubDate>Fri, 07 Aug 2026 22:25:03 GMT</pubDate>
   </item><item>
-    <title>Untitled</title>
-    <link>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/untitled</link>
-    <guid>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/untitled</guid>
-    <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 12 Jun 2026 22:34:43 GMT</pubDate>
-  </item><item>
-    <title>Psychotherapy</title>
-    <link>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/psychotherapy</link>
-    <guid>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/psychotherapy</guid>
-    <description><![CDATA[ This stat measures how good a character is at calming down others. ]]></description>
-    <pubDate>Fri, 12 Jun 2026 22:34:39 GMT</pubDate>
+    <title>Gunslinger</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/gunslinger</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/gunslinger</guid>
+    <description><![CDATA[ 1. Quick draw Add half your firearms stat to your dex when rolling quickdraw. Example: 80% Firearms 50% Dextarity ~(90%) Quick Draw 2. ]]></description>
+    <pubDate>Fri, 07 Aug 2026 22:25:03 GMT</pubDate>
   </item><item>
     <title>Core Stats</title>
     <link>https://cbennington852.github.io/dnd_website/core-rules/core-stats</link>
     <guid>https://cbennington852.github.io/dnd_website/core-rules/core-stats</guid>
     <description><![CDATA[  Stat NameDescriptionStrengthA creatures brute strength. ]]></description>
-    <pubDate>Fri, 12 Jun 2026 22:25:42 GMT</pubDate>
+    <pubDate>Fri, 07 Aug 2026 22:25:03 GMT</pubDate>
+  </item><item>
+    <title>Home Scenes</title>
+    <link>https://cbennington852.github.io/dnd_website/core-rules/home-scenes</link>
+    <guid>https://cbennington852.github.io/dnd_website/core-rules/home-scenes</guid>
+    <description><![CDATA[ Throughout the day, the normal adult tends to have this thing called “free time”. Typically they spend this time doing fun or relaxing things. ]]></description>
+    <pubDate>Fri, 07 Aug 2026 22:25:03 GMT</pubDate>
   </item>
     </channel>
   </rss>

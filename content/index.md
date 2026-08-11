@@ -1,17 +1,13 @@
 ---
-title: Code Red
+title: Redline
 ---
-Delta Green is a covert group inside the United States federal government. Its mission is to investigate, contain, and conceal unnatural events, because the unnatural is real and it kills. The world of Delta Green is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. Sometimes those powers bleed through into our world and destroy every- thing they touch.
+This is a custom, long running TTRG game which has been running for many years. Below the dropdown menus and buttons is a long list of mission reports. I have a ton of fun maintaining and writing these reports, and I encourage you to read some of them.  
 
-*This is a long running dnd(dungeons and dragons ) campaign that has been going for several years, each session gets a "mission report", I encourage you read them!*
-
-
+*Redline is a covert group inside the United States federal government. Its mission is to investigate, contain, and conceal unnatural events, because the unnatural is real and it kills. The world of Redline is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. Sometimes those powers bleed through into our world and destroy every- thing they touch.*
 
 *Note: This is a work of fiction*
 > [!danger]- <img width=auto height=16px src="red_icon.png" style="margin: 0"> Rules and Character Sheets
 > * [Rule Book](https://drive.google.com/file/d/1W9C5KGsTEMV-eJ3NJrSMtyKMdkrzk6hQ/view?usp=sharing)
-> * [Pre-gen character sheets](https://www.theredactedfiles.com/?page_id=2607)
-> * [Google Sheets Template Character](https://docs.google.com/spreadsheets/d/1lfiLtJhwWQa7F1NnUGCJCtUR_BadOU3FgkpMliLIpwY/edit?usp=sharing)
 
  >[!danger]- <img width=auto height=16px src="red_upgrade.png" style="margin: 0px;"> Classes
  >* [[Gunslinger]] 
@@ -26,6 +22,37 @@ Delta Green is a covert group inside the United States federal government. Its m
 > * **Learn a new Skill:** Increase your skill in an area, roll INT, on a success Add 1d10 on a failure add 1d6.
 > * **Restore Sanity:** Conduct some sort of sanity regaining activity. Roll Sanity, on success gain 1d10, on failure gain 1d4 sanity.
 > * **Purchase Items:** Your Character purchases things, and items. (Look at rulebook page 88)
+
+<style>
+    
+.button-container {
+  display: flex;
+  gap: 16px;
+}
+.button-container button {
+  flex: 1;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: #8e1519;
+  border: 1px solid #8e1519;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.button-container button:hover,
+.button-container button:focus {
+  background-color: #51020270;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+</style>
+<div class="button-container">
+  <button onclick="window.location.href='./Classes/Create-A-Character.html';"><img width=auto height=16px src="create_sheet.png" style="margin: 0px;">       Create a Character</button>
+  <button onclick="window.location.href='./Classes/Character-Sheet.html';"><img width=auto height=16px src="sheet.png" style="margin: 0px;">       View Character Sheet</button>
+</div>
 
 
 # Mission Reports :: The Monster Drinkers
