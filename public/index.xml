@@ -10,61 +10,61 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>Free Missions</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>Detailed Stats</title>
     <link>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/</link>
     <guid>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>NPCs</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>3-to-5-players</title>
     <link>https://cbennington852.github.io/dnd_website/tags/3-to-5-players</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/3-to-5-players</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>easy</title>
     <link>https://cbennington852.github.io/dnd_website/tags/easy</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/easy</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>my-tag</title>
     <link>https://cbennington852.github.io/dnd_website/tags/my-tag</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/my-tag</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>another-tag</title>
     <link>https://cbennington852.github.io/dnd_website/tags/another-tag</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/another-tag</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:39 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 19:31:01 GMT</pubDate>
   </item><item>
-    <title>2. Cottons Catastrophe</title>
-    <link>https://cbennington852.github.io/dnd_website/free-missions/2.-cottons-catastrophe</link>
-    <guid>https://cbennington852.github.io/dnd_website/free-missions/2.-cottons-catastrophe</guid>
-    <description><![CDATA[  img { /* Forces blocky, pixelated scaling instead of blurring */ image-rendering: pixelated; image-rendering: crisp-edges; /* Creates the wavy distortion effect */ filter: url(&#039;#wavy-distortion&#039;); } Hook All of the agents receive a call at 1am at night. ]]></description>
-    <pubDate>Tue, 11 Aug 2026 18:41:38 GMT</pubDate>
+    <title>Character Sheet</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
+    <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
+    <pubDate>Tue, 11 Aug 2026 18:41:58 GMT</pubDate>
   </item>
     </channel>
   </rss>
