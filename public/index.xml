@@ -10,37 +10,43 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 15:01:17 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 17:15:19 GMT</pubDate>
   </item><item>
     <title>Free Missions</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 15:01:17 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 17:15:19 GMT</pubDate>
   </item><item>
     <title>Detailed Stats</title>
     <link>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/</link>
     <guid>https://cbennington852.github.io/dnd_website/core-rules/detailed-stats/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 15:01:17 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 17:15:19 GMT</pubDate>
   </item><item>
     <title>NPCs</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 15:01:17 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 17:15:19 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Tue, 11 Aug 2026 15:01:17 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 17:15:19 GMT</pubDate>
   </item><item>
     <title>Redline</title>
     <link>https://cbennington852.github.io/dnd_website/</link>
     <guid>https://cbennington852.github.io/dnd_website/</guid>
     <description><![CDATA[ This is a custom, long running TTRG game which has been running for many years. ]]></description>
-    <pubDate>Tue, 11 Aug 2026 03:46:09 GMT</pubDate>
+    <pubDate>Tue, 11 Aug 2026 15:05:42 GMT</pubDate>
+  </item><item>
+    <title>Character Sheet</title>
+    <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
+    <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
+    <description><![CDATA[  .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-radius: 2px; transition: background-co... ]]></description>
+    <pubDate>Tue, 11 Aug 2026 15:05:42 GMT</pubDate>
   </item><item>
     <title>new_index</title>
     <link>https://cbennington852.github.io/dnd_website/new_index</link>
@@ -58,12 +64,6 @@
     <link>https://cbennington852.github.io/dnd_website/core-rules/core-stats</link>
     <guid>https://cbennington852.github.io/dnd_website/core-rules/core-stats</guid>
     <description><![CDATA[  Stat NameDescriptionStrengthA creatures brute strength. ]]></description>
-    <pubDate>Fri, 07 Aug 2026 22:25:03 GMT</pubDate>
-  </item><item>
-    <title>Home Scenes</title>
-    <link>https://cbennington852.github.io/dnd_website/core-rules/home-scenes</link>
-    <guid>https://cbennington852.github.io/dnd_website/core-rules/home-scenes</guid>
-    <description><![CDATA[ Throughout the day, the normal adult tends to have this thing called “free time”. Typically they spend this time doing fun or relaxing things. ]]></description>
     <pubDate>Fri, 07 Aug 2026 22:25:03 GMT</pubDate>
   </item>
     </channel>
