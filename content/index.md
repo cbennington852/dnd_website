@@ -55,6 +55,14 @@ This is a custom, long running TTRG game which has been running for many years. 
 </div>
 
 
+<style>
+  /*PHONE ONLY*/
+  @media only screen and (max-width: 767px) {
+  table {
+    font-size : x-small;
+  }
+}
+</style>
 # Mission Reports :: The Monster Drinkers
 
 | **Mission Name**              | **Description**                                                                                                                                                                    | **Summary**                                                                                                                                                                               | **Casualties** | **Result**                                                                                                                      |

@@ -412,11 +412,30 @@ select {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
-
+/*PHONE ONLY*/
+  @media only screen and (max-width: 767px) {
+    .grid-container {
+      /* background-color: pink; */
+      font-size : small;
+      max-width : 100%;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr ; 
+      gap: 20px; /* Optional: adds space between the two columns */
+    }
+    .grid-container-3 {
+      display: grid;
+      grid-template-columns: 1fr  ; 
+      gap: 20px; /* Optional: adds space between the two columns */
+    }
+  }
 </style>
   <div style="display: flex" >
     <button class="borderless-button-charsheet" id="switchSheetsBtn"> <img width=20px; src='../red_icon.png'> Switch Character Sheet</button>
     <button class="borderless-button-charsheet" onclick="window.print()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M640-640v-120H320v120h-80v-200h480v200h-80Zm-480 80h640-640Zm560 100q17 0 28.5-11.5T760-500q0-17-11.5-28.5T720-540q-17 0-28.5 11.5T680-500q0 17 11.5 28.5T720-460Zm-80 260v-160H320v160h320Zm80 80H240v-160H80v-240q0-51 35-85.5t85-34.5h560q51 0 85.5 34.5T880-520v240H720v160Zm80-240v-160q0-17-11.5-28.5T760-560H200q-17 0-28.5 11.5T160-520v160h80v-80h480v80h80Z"/></svg>Print Sheet</button>
+    <button class="borderless-button-charsheet" id="download-button"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>Download Sheet</button>
+    <button class="borderless-button-charsheet" onclick="window.print()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>Upload Sheet</button>
   </div>
   <section>
   <div class="divider-sheet"><h3>General Skills</h3></div>
@@ -840,6 +859,10 @@ function export_char_sheet () {
   console.log(temp_data_parsed['agent_codename']);
   saveFile(temp_data , temp_data_parsed['agent_codename']);
 }
+const downloadButton = document.querySelector('#download-button');
+downloadButton.addEventListener('click' , () => {
+  export_char_sheet();
+});
 async function saveFile(obj , suggested_name) {
   const jsonString = JSON.stringify(obj, null, 2);
   const fileName =  suggested_name +'.json';
