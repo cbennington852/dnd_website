@@ -1,3 +1,19 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+
+// h1:not(.article-title , .page-title) , h2 {
+//   font-family: monospace; /* CRITICAL: Requires a monospace font to prevent text distortion */
+//   white-space: nowrap;    /* Prevents the text from wrapping to a new line */
+//   overflow: hidden;       /* Hides the characters until the width expands */
+//   width: 30ch; 
+//   margin:  10px;
+
+//   animation: 
+//     typing 1.3s steps(30) forwards, 
+// }
+
+// /* The Typing Animation: Reveals text from left to right */
+// @keyframes typing {
+//   from { width: 0; }
+// }
+

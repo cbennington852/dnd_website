@@ -1,4 +1,5 @@
-A middle aged man with a potbelly, he wears a cowboy hat. He also has an affinity for donuts.  
+A middle aged man with a potbelly, he wears a cowboy hat. He also has an affinity for donuts. Thick southern accent.
+
 
 __Stats__
 HP: 17

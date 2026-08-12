@@ -1,3 +1,9 @@
+<style>
+ p.content-meta {
+    display : None;
+}
+</style>
+  
   <style>
 
 

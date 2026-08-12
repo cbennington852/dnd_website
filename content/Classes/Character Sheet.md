@@ -1,3 +1,10 @@
+<!-- Hides the header information (So Obama can't see it). -->
+<style>
+ p.content-meta {
+    display : None;
+}
+</style>
+
 
   <style>
     .health-bar {
