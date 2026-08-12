@@ -17,3 +17,48 @@
 //   from { width: 0; }
 // }
 
+
+button.title-button.explorer-toggle.desktop-explorer {
+    display: none;
+}
+
+/* Modern Standard (Firefox & standard browsers) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4a4a4a #1e1e1e; /* thumb | track */
+}
+
+/* WebKit Engine (Chrome, Edge, Safari, Opera) */
+
+/* 1. Set scrollbar width and height (for horizontal scrollbars) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* 2. Track background (the track the thumb slides on) */
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+/* 3. Scrollbar Thumb (the moveable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a;
+  border-radius: 6px;
+  border: 2px solid #1e1e1e; /* Creates spacing inside the track */
+}
+
+/* 4. Hover state for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6e6e6e;
+}
+
+/* 5. Active state (when holding/dragging the scrollbar) */
+::-webkit-scrollbar-thumb:active {
+  background-color: #888888;
+}
+
+/* 6. Corner square where horizontal & vertical scrollbars meet */
+::-webkit-scrollbar-corner {
+  background: #1e1e1e;
+}

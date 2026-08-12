@@ -249,6 +249,47 @@ function make_gradient_circle(c_start, c_end) {
     background : none;
 }
 </style>
+<style>
+.button-container {
+  display: flex;
+  gap: 16px;
+}
+.nice-hover-button {
+  flex: 1;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: #8e1519;
+  border: 1px solid #8e1519;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.nice-hover-button:hover,
+.nice-hover-button:focus {
+  background-color: #51020270;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+</style>
+
+<!-- This is also a really cool, but unreadable effect!!! Maybe this could be used for a future graphic in a mission? -->
+<!-- <style>
+canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  filter: url('#wavy-distortion');
+}
+</style>
+<svg width="0" height="0">
+  <filter id="wavy-distortion">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="33" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg> -->
+
 
 
 **Redline** is a covert group inside the United States federal government. Its mission is to investigate, contain, and conceal unnatural events, because the unnatural is real and it kills. The world of Redline is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. Sometimes those powers bleed through into our world and destroy every- thing they touch. It is your job to identify, secure and destroy these excursions before they can harm people.
@@ -262,9 +303,7 @@ function make_gradient_circle(c_start, c_end) {
   <div style="flex: 1;">
     <h3>Create a Character!</h3>
     <p>Interactive character creator. Create a character and view it without making an account! </p>
-    <div class='link-wrapper'>
-        <a class="good-link" href="./Classes/Create-A-Character.html" >Create a Character →</a>
-    </div>
+    <button class='nice-hover-button' onclick="window.location.href='./Classes/Create-A-Character.html';">Create a Character →</button>
   </div>
 </div>
 
@@ -272,9 +311,8 @@ function make_gradient_circle(c_start, c_end) {
   <div style="flex: 1;">
     <h3>Read the rulebook</h3>
     <p>Blah, Blah, Blah. All the good stuff that the DM's want to read. Don't worry, you have all the dice, and the rules are easy to understand, I promise. </p>
-    <div class='link-wrapper'>
-        <a class="good-link"  href="./Core Rules/Introduction.html" >Read Online Rulebook →</a>
-    </div>
+    <button class='nice-hover-button' onclick="window.location.href='./core-rules/introduction.html';">Read Online Rulebook →</button>
+
   </div>
   <div style="flex: 1;">
     <img src="./second_image_main.png" >
@@ -288,9 +326,7 @@ function make_gradient_circle(c_start, c_end) {
   <div style="flex: 1;">
     <h3>Made by Humans for humans</h3>
     <p>Generative AI was not used during the creative processes for making Redline. All source code and materials are open source and available at <a href="https://github.com/cbennington852/dnd_website" >GitHub</a></p>
-    <div class='link-wrapper'>
-        <a class="good-link" href="./free-missions/" >View Free Missions! →</a>
-    </div>
+    <button class='nice-hover-button' onclick="window.location.href='./free-missions/';">View Free Missions! →</button>
   </div>
 </div>
 
@@ -310,35 +346,10 @@ Convenient Links for returning players
 > * **Restore Sanity:** Conduct some sort of sanity regaining activity. Roll Sanity, on success gain 1d10, on failure gain 1d4 sanity.
 > * **Purchase Items:** Your Character purchases things, and items. (Look at rulebook page 88)
 
-<style>
-    
-.button-container {
-  display: flex;
-  gap: 16px;
-}
-.button-container button {
-  flex: 1;
-  padding: 12px 20px;
-  background-color: transparent;
-  color: #8e1519;
-  border: 1px solid #8e1519;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.2s ease-in-out;
-}
-.button-container button:hover,
-.button-container button:focus {
-  background-color: #51020270;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
-  transform: translateY(-2px);
-}
-</style>
+
 <div class="button-container">
-  <button onclick="window.location.href='./Classes/Create-A-Character.html';"><img width=auto height=16px src="create_sheet.png" style="margin: 0px;">       Create a Character</button>
-  <button onclick="window.location.href='./Classes/Character-Sheet.html';"><img width=auto height=16px src="sheet.png" style="margin: 0px;">       View Character Sheet</button>
+  <button class='nice-hover-button' onclick="window.location.href='./Classes/Create-A-Character.html';"><img width=auto height=16px src="create_sheet.png" style="margin: 0px;">       Create a Character</button>
+  <button class='nice-hover-button' onclick="window.location.href='./Classes/Character-Sheet.html';"><img width=auto height=16px src="sheet.png" style="margin: 0px;">       View Character Sheet</button>
 </div>
 <style>
   /*PHONE ONLY*/
@@ -352,9 +363,7 @@ Convenient Links for returning players
 # Playtests
 
 Redline was originally a homebrew campaign before it was published online. Below are mission reports from the original playtesters. Each table is a different group. Missions where players seemed to have the most fun are published as free missions for Redline.
-<div class='link-wrapper'>
-    <a class="good-link" href="./free-missions/" >View Free Missions! →</a>
-</div>
+
 <!-- 
 | Catagory                                                                                                                        | Description                                                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
