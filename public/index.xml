@@ -10,61 +10,61 @@
     <link>https://cbennington852.github.io/dnd_website/classes/</link>
     <guid>https://cbennington852.github.io/dnd_website/classes/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
     <title>Free Missions</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
     <title>NPCs</title>
     <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/</link>
     <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
     <title>3-to-5-players</title>
     <link>https://cbennington852.github.io/dnd_website/tags/3-to-5-players</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/3-to-5-players</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
     <title>easy</title>
     <link>https://cbennington852.github.io/dnd_website/tags/easy</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/easy</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
     <title>3-4-hrs</title>
     <link>https://cbennington852.github.io/dnd_website/tags/3-4-hrs</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/3-4-hrs</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
     <title>hard</title>
     <link>https://cbennington852.github.io/dnd_website/tags/hard</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/hard</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
     <title>Tag Index</title>
     <link>https://cbennington852.github.io/dnd_website/tags/</link>
     <guid>https://cbennington852.github.io/dnd_website/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Wed, 12 Aug 2026 23:52:53 GMT</pubDate>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
-    <title>Assistant Proffessor Aki</title>
-    <link>https://cbennington852.github.io/dnd_website/free-missions/npcs/assistant-proffessor-aki</link>
-    <guid>https://cbennington852.github.io/dnd_website/free-missions/npcs/assistant-proffessor-aki</guid>
-    <description><![CDATA[ Assistant Professor Aki A younger asian woman, she looks nervous and twitchy. English is not her native language. ]]></description>
-    <pubDate>Wed, 12 Aug 2026 20:58:51 GMT</pubDate>
+    <title>Creative Processes &amp; Reference Materials</title>
+    <link>https://cbennington852.github.io/dnd_website/creative-processes--and--reference-materials</link>
+    <guid>https://cbennington852.github.io/dnd_website/creative-processes--and--reference-materials</guid>
+    <description><![CDATA[ Generative AI was not used in the creative process. This is because I want this TTRPG to be an authentic, open experience. ]]></description>
+    <pubDate>Thu, 13 Aug 2026 17:54:41 GMT</pubDate>
   </item><item>
-    <title>Character Sheet</title>
-    <link>https://cbennington852.github.io/dnd_website/classes/character-sheet</link>
-    <guid>https://cbennington852.github.io/dnd_website/classes/character-sheet</guid>
-    <description><![CDATA[  p.content-meta { display : None; } .health-bar { display: flex; gap: 4px; /* Space between pips */ background-color: #333; /* Border/background color */ padding: 5px; border-radius: 5px; width: 200px; } .pip { flex-grow: 1; height: 20px; background-color: #555; /* Inactive/empty color */ border-rad... ]]></description>
-    <pubDate>Wed, 12 Aug 2026 19:21:54 GMT</pubDate>
+    <title>Redline</title>
+    <link>https://cbennington852.github.io/dnd_website/</link>
+    <guid>https://cbennington852.github.io/dnd_website/</guid>
+    <description><![CDATA[  nav.breadcrumb-container , p.content-meta , h1.article-title { display : None; } const min_radius = 50; let blip_radius = min_radius; let moldSpeed = 0.01; const maxMoldSpeed = 0.2; const moldAcceleration = 0.01; const moldSpeedIncreaseInterval = 200; // We could have the mold speed &quot;accelrate... ]]></description>
+    <pubDate>Wed, 12 Aug 2026 23:56:19 GMT</pubDate>
   </item>
     </channel>
   </rss>

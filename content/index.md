@@ -315,17 +315,17 @@ canvas {
 
   </div>
   <div style="flex: 1;">
-    <img src="./second_image_main.png" >
+    <img src="./free_missions.png" >
   </div>
 </div>
 
 <div style="display: flex; gap: 20px;">
   <div style="flex: 1; ">
-    <img src="./free_missions.png" >
+    <img src="./second_image_main_drawings.png" >
   </div>
   <div style="flex: 1;">
     <h3>Made by Humans for humans</h3>
-    <p>Generative AI was not used during the creative processes for making Redline. All source code and materials are open source and available at <a href="https://github.com/cbennington852/dnd_website" >GitHub</a></p>
+    <p>Generative AI was not used during the creative processes for making Redline. All source code and materials are open source and available at <a href="https://github.com/cbennington852/dnd_website" >GitHub</a>. We also have a <a href="./Creative Processes & Reference Materials.html" >Creative Processes & Reference Materials</a> page.</p>
     <button class='nice-hover-button' onclick="window.location.href='./free-missions/';">View Free Missions! →</button>
   </div>
 </div>
