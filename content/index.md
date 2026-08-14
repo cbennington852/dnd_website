@@ -11,6 +11,31 @@ nav.breadcrumb-container , p.content-meta , h1.article-title {
 }
 </style>
 
+<!-- Mobilr suport things -->
+<style>
+.my-row {
+  display: flex;
+  gap: 20px;
+}
+
+.my-col {
+  flex : 1;
+}
+
+@media screen and (max-width: 767px) {
+  .my-row {
+    flex-direction: column; /* Stack items vertically on mobile */
+  }
+  #middle-row {
+    flex-direction: column-reverse;
+  }
+  img {
+    max-width : 90%;
+  }
+}
+
+</style>
+
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div id="canvas-container">
@@ -18,7 +43,7 @@ nav.breadcrumb-container , p.content-meta , h1.article-title {
 </div>
 <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
-<script>
+<script data-position=0  class="on-load-run-script-charlesbennington" >
 const min_radius = 50;
 let blip_radius = min_radius;
 let moldSpeed = 0.01;
@@ -154,8 +179,18 @@ function getDistance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
 }
 let d; let molds = []; let moldNum = 500;
-const viewportWidth = (window.innerWidth * 0.50);
-const viewportHeight = (window.innerHeight * 0.20);
+// Mobile Screens are 767px and below.
+let IS_MOBILE = null;
+const MOBILE_SCREEN_THRESH = 767;
+let viewportWidth = (window.innerWidth * 0.50);
+let viewportHeight = (window.innerHeight * 0.20);
+let fontSizeSpawn = 70;
+if (window.innerWidth < MOBILE_SCREEN_THRESH) {
+    IS_MOBILE = true;
+    viewportWidth =  (window.innerWidth * 0.90);
+    viewportHeight = (window.innerHeight * 0.10);
+    fontSizeSpawn = 50;
+}
 let points = [];
 let spawnPoints = [];
 let moldColor = 150;
@@ -175,7 +210,7 @@ function setup() {
     canvas.parent("canvas-container"); // Attach to the div
     angleMode(DEGREES);
     d = pixelDensity();
-    text_points = myFont.textToPoints('R e d l i n e', 0, 0, 70, {
+    text_points = myFont.textToPoints('R e d l i n e', 0, 0, fontSizeSpawn, {
         sampleFactor: 0.1,
         simplifyThreshold: 0
     });
@@ -292,38 +327,38 @@ canvas {
 
 
 
-**Redline** is a covert group inside the United States federal government. Its mission is to investigate, contain, and conceal unnatural events, because the unnatural is real and it kills. The world of Redline is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. Sometimes those powers bleed through into our world and destroy every- thing they touch. It is your job to identify, secure and destroy these excursions before they can harm people.
+**Redline** is a covert group inside the United States federal government. Its mission is to investigate, contain, and conceal unnatural events, because the unnatural is real and it kills. The world of Redline is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. Sometimes those powers bleed through into our world and destroy every- thing they touch. It is your job to identify, secure, and destroy these excursions before they can harm people.
 
-<div style="display: flex; gap: 20px;">
-  <div style="flex: 1; ">
+<div class='my-row'>
+  <div class='my-col'>
     <!-- <h3>Graphic / Image</h3>
     <p>Your left side content goes here.</p> -->
     <img src="./interactive_char_sheet.png" >
   </div>
-  <div style="flex: 1;">
+  <div class='my-col'>
     <h3>Create a Character!</h3>
     <p>Interactive character creator. Create a character and view it without making an account! </p>
     <button class='nice-hover-button' onclick="window.location.href='./Classes/Create-A-Character.html';">Create a Character →</button>
   </div>
 </div>
 
-<div style="display: flex; gap: 20px;">
-  <div style="flex: 1;">
+<div  id='middle-row' class='my-row'>
+  <div class='my-col'>
     <h3>Read the rulebook</h3>
     <p>Blah, Blah, Blah. All the good stuff that the DM's want to read. Don't worry, you have all the dice, and the rules are easy to understand, I promise. </p>
     <button class='nice-hover-button' onclick="window.location.href='./core-rules/introduction.html';">Read Online Rulebook →</button>
 
   </div>
-  <div style="flex: 1;">
+  <div class='my-col'>
     <img src="./free_missions.png" >
   </div>
 </div>
 
-<div style="display: flex; gap: 20px;">
+<div class='my-row'>
   <div style="flex: 1; ">
     <img src="./second_image_main_drawings.png" >
   </div>
-  <div style="flex: 1;">
+  <div class='my-col'>
     <h3>Made by Humans for humans</h3>
     <p>Generative AI was not used during the creative processes for making Redline. All source code and materials are open source and available at <a href="https://github.com/cbennington852/dnd_website" >GitHub</a>. We also have a <a href="./Creative Processes & Reference Materials.html" >Creative Processes & Reference Materials</a> page.</p>
     <button class='nice-hover-button' onclick="window.location.href='./free-missions/';">View Free Missions! →</button>

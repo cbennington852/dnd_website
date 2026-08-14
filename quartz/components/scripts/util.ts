@@ -81,16 +81,20 @@ var history_of_pages_we_have_been = [];
 const pages_to_auto_reload = [
   "character-sheet",
   "create-a-character",
-  "premade-character-sheets"
+  "premade-character-sheets",
+  "agent-cotton",
+  "index",
+  "the-handler",
 ]
 
 function run_on_page_load() {
   const currentUrl = window.location.href;
   history_of_pages_we_have_been.push(currentUrl);
   console.log(history_of_pages_we_have_been);
+  const isIndexPage = ['/', '/index.html', '/index.htm'].includes(window.location.pathname);
   if (history_of_pages_we_have_been.length > 1) {
     pages_to_auto_reload.forEach(curr_page => {
-      if (currentUrl.includes(curr_page)) {
+      if (currentUrl.includes(curr_page) || isIndexPage) {
         location.reload();
       }
     })

@@ -623,17 +623,17 @@ input[type="file"] {
             <th>DAMAGE</th>
             <th>ARMOUR PIERCING</th>
             <th>LETHALITY</th>
-            <th>KILL RADIUS</th>
+            <th>HIT CHANCE BONUS</th>
           </tr>
         </thead>
         <tbody>
           <tr class="weapon-row">
-            <td class="weapon-box" ><input class="table-input text-input" type="text" name="weapon_1" value="Pistol"></td>
+            <td class="weapon-box" ><input class="table-input text-input" type="text" name="weapon_1" value="Uzi"></td>
             <td><input class="table-input" type="text" name="weapon_1_range" value="15m"></td>
             <td><input class="table-input" type="text" name="weapon_1_damage" value="1D10"></td>
             <td><input class="table-input" type="number" name="weapon_1_ap" value="0" min="0"></td>
-            <td><input class="table-input" type="number" name="weapon_1_lethal" value="0" min="0" max="100"></td>
-            <td><input class="table-input" type="text" name="weapon_1_radius" value="-"></td>
+            <td><input class="table-input" type="number" name="weapon_1_lethal" value="20" min="0" max="100"></td>
+            <td><input class="table-input" type="number" name="weapon_1_hit_c"  min="0" max="100"></td>
           </tr>
           <tr class="weapon-row">
             <td><input class="table-input text-input" type="text" name="weapon_2" ></td>
@@ -641,7 +641,7 @@ input[type="file"] {
             <td><input class="table-input" type="text" name="weapon_2_damage" ></td>
             <td><input class="table-input" type="number" name="weapon_2_ap" min="0"></td>
             <td><input class="table-input" type="number" name="weapon_2_lethal"  min="0" max="100"></td>
-            <td><input class="table-input" type="text" name="weapon_2_radius" ></td>
+            <td><input class="table-input" type="number" name="weapon_2_hit_c"  min="0" max="100"></td>
           </tr>
           <tr class="weapon-row">
             <td><input class="table-input text-input" type="text" name="weapon_3" ></td>
@@ -649,7 +649,7 @@ input[type="file"] {
             <td><input class="table-input" type="text" name="weapon_3_damage" ></td>
             <td><input class="table-input" type="number" name="weapon_3_ap"  min="0"></td>
             <td><input class="table-input" type="number" name="weapon_3_lethal"  min="0" max="100"></td>
-            <td><input class="table-input" type="text" name="weapon_3_radius" ></td>
+            <td><input class="table-input" type="number" name="weapon_3_hit_c"  min="0" max="100"></td>
           </tr>
         </tbody>
       </table>
