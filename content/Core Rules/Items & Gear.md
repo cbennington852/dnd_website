@@ -2,7 +2,7 @@
 ### Buying things. 
 Buying things requires good finances. Upon buying things, Agents are required to make a finance roll. 
 
-Purchasing items is done though a finance roll. If players desire to increase their finance, they can purchase an investment, or they can level up their finance skills.
+Purchasing items is done though a finance roll. If players desire to increase their finance, they can purchase an investment, or they can level up their finance skills. If an item is not below on the items and gear list, DM's can make the items stats whatever they deem fair, and the cost difficulty should reflect the approximant real world value. 
 
 > **Critical Success on finance:** 
 > Player get the object they were looking for easily, and at a lower price than expected. The player also acquires a free "short term investment" item.

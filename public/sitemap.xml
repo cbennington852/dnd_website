@@ -1,9 +1,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
     <loc>https://cbennington852.github.io/dnd_website/creative-processes--and--reference-materials</loc>
-    <lastmod>2026-08-13T18:13:35.000Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/</loc>
-    <lastmod>2026-08-13T18:13:35.000Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/old_index</loc>
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
@@ -12,7 +12,7 @@
     <lastmod>2026-06-10T03:01:23.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/classes/character-sheet</loc>
-    <lastmod>2026-08-12T19:21:54.000Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/classes/close-combat-specialist</loc>
     <lastmod>2026-06-10T03:01:23.000Z</lastmod>
@@ -47,9 +47,6 @@
     <loc>https://cbennington852.github.io/dnd_website/core-rules/items--and--gear</loc>
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
   </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/core-rules/mental-disorders</loc>
-    <lastmod>2026-08-12T19:21:54.000Z</lastmod>
-  </url><url>
     <loc>https://cbennington852.github.io/dnd_website/core-rules/rolling-dice</loc>
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
   </url><url>
@@ -59,6 +56,9 @@
     <loc>https://cbennington852.github.io/dnd_website/core-rules/</loc>
     <lastmod>2026-05-27T19:37:00.000Z</lastmod>
   </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/free-missions/0.-introduction</loc>
+    <lastmod>2026-08-19T19:50:36.922Z</lastmod>
+  </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/1.-walk-in-the-park</loc>
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
   </url><url>
@@ -66,10 +66,10 @@
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/3.-the-bird-mission</loc>
-    <lastmod>2026-08-12T23:56:19.000Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/4.-red-alert</loc>
-    <lastmod>2026-08-11T18:41:58.000Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/5.-doomscrolling</loc>
     <lastmod>2026-08-11T18:41:58.000Z</lastmod>
@@ -77,11 +77,41 @@
     <loc>https://cbennington852.github.io/dnd_website/free-missions/6.-sketchway</loc>
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
   </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/angel-of-desire</loc>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/human-sized-shrimp</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/hungry-mannequin</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/impersonator-mannequin</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/shog%60a-slicer</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/shog%60a-lite</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/shog%60a-neir</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/shog%60a-puter</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/shog%60a-wrath</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
+  </url><url>
     <loc>https://cbennington852.github.io/dnd_website/monsters/swarm-of-birds</loc>
-    <lastmod>2026-08-14T00:02:12.626Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/monsters/</loc>
+    <lastmod>2026-06-01T01:04:19.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/npcs/agent-cotton</loc>
-    <lastmod>2026-08-13T18:13:35.000Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/npcs/dave-the-wizard</loc>
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
@@ -90,35 +120,41 @@
     <lastmod>2026-08-12T19:21:54.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/npcs/the-handler</loc>
-    <lastmod>2026-08-13T18:13:35.000Z</lastmod>
+    <lastmod>2026-08-14T17:23:50.000Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/classes/</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
-  </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/monsters/</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/free-missions/npcs/</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
-  </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/tags/3-to-5-players</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/tags/easy</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/tags/3-4-hrs</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <loc>https://cbennington852.github.io/dnd_website/tags/3-4hrs</loc>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url><url>
-    <loc>https://cbennington852.github.io/dnd_website/tags/2-3-hrs</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <loc>https://cbennington852.github.io/dnd_website/tags/medium</loc>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/tags/2-3hrs</loc>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/tags/hard</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/tags/3-to-5-players</loc>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/tags/3-4-hrs</loc>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
+  </url><url>
+    <loc>https://cbennington852.github.io/dnd_website/tags/2-3-hrs</loc>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url><url>
     <loc>https://cbennington852.github.io/dnd_website/tags/</loc>
-    <lastmod>2026-08-14T17:23:27.841Z</lastmod>
+    <lastmod>2026-08-19T22:19:52.303Z</lastmod>
   </url></urlset>

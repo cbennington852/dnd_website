@@ -1,7 +1,23 @@
----
-title: "My Secret Note"
-unlisted: true
----
+
+<style>
+img {
+  /* Forces blocky, pixelated scaling instead of blurring */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  
+  /* Creates the wavy distortion effect */
+  filter: url('#wavy-distortion');
+}
+</style>
+<svg width="0" height="0">
+  <filter id="wavy-distortion">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+![[shot-a-lite.png]]
+
 
 ___Description___
 * Tall. 8 ft

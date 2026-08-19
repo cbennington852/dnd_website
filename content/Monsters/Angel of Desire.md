@@ -1,12 +1,4 @@
----
-title: "My Secret Note"
-unlisted: true
----
 
-
-r/ttrpg
-r/creative coding
-r/antiai
 
 These are human-like statues, their body is frozen in place, however they can still do a sort of "gliding action."
 

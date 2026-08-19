@@ -1,7 +1,4 @@
----
-title: "My Secret Note"
-unlisted: true
----
+
 
 A Mannequin, these exist within the [[The Shopping Mall]], these Mannequins often stand out from the others, settling down in the middle of a path, or leaning against a wall. They are pale white, and often have clothes from the wrong time period on them.
 

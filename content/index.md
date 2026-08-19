@@ -4,6 +4,12 @@ cssclasses:
   - no-header
 ---
 
+<meta property="og:title" content="Redline">
+<meta property="og:description" content="A new human made TTRPG called redline. ">
+<meta property="og:image" content="./second_image_main_drawings.png">
+<meta property="og:type" content="website">
+
+
 <!-- Hides the header information (So Obama can't see it). -->
 <style>
 nav.breadcrumb-container , p.content-meta , h1.article-title {

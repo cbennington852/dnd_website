@@ -1,7 +1,4 @@
----
-title: "My Secret Note"
-unlisted: true
----
+
 ___Description___
 * Short. 4 ft
 * Grey skin

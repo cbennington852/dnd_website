@@ -25,12 +25,6 @@ The handler (The DM), is a physical character who delegates missions to the play
 
 There is however, one stipulation. If the handler is killed or otherwise incapacitated, the campaign ends. No more missions. All Agents return to being normal citizens or are killed. Due to this reason, handlers usually live in seclusion, and leave the [[Combat]] and the risky [[Rolling Dice|dice rolls]] to the agents.
 
-## How do Agents level up?
-
-
-- [[Home Scenes]]
-- [[Items & Gear]]
-- 
 
 
 > [!danger]- <img width=auto height=16px src="red_home.png" style="margin: 0px;"> Home life options

@@ -1,7 +1,4 @@
----
-title: "My Secret Note"
-unlisted: true
----
+
 
 A Mannequin, these exist within the [[The Shopping Mall]]. They will pretend to be the person whose personal information they have stole, matching that person in appearance and voice.
 
