@@ -79,6 +79,15 @@ All drawings are created using [google draw](https://docs.google.com/drawings/).
   </div>
 </div>
 
+<div class='my-row'>
+  <div class='my-col'>
+    <h3>Old firewatch</h3>
+   <p>Traced an image from a  <a href="https://www.marketplace.org/story/2023/08/21/fire-lookout-tower-home" >marketplace story </a> about living in a firewatch.</p>
+  </div>
+  <div class='my-col'>
+    <img src="./firewatch.png" >
+  </div>
+</div>
 
 <!-- <div class='my-row'>
   <div class='my-col'>
