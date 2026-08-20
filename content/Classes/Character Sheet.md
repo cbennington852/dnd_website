@@ -313,8 +313,8 @@ select {
 }
 
 .selector-container {
-  list-style-type: none; /* Removes the dots */
-  padding: 0;            /* Optional: Removes indentation */
+  list-style-type: none; 
+  padding: 0;            
   margin: 0;  
   width: 100%;
 }
@@ -325,18 +325,11 @@ select {
 
 }
 
-/* Target the specific scrollable element or use html/body for global scrollbars */
 .scrollable-container {
-  /* 1. Modern Standard (Firefox and modern Safari) */
-  /* Syntax: scrollbar-color: <thumb-color> <track-color>; */
   scrollbar-color: #888888 transparent; 
-
-  /* Define scrollbar width for modern standard engines */
   scrollbar-width: thin; 
 }
 
-/* 2. WebKit Engines (Chrome, Edge, older Safari, Opera) */
-/* You must explicitly set a width or height for WebKit custom scrollbars to render */
 .scrollable-container::-webkit-scrollbar {
   width: 8px;          /* Width of vertical scrollbar */
   height: 8px;         /* Height of horizontal scrollbar */

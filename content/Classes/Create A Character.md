@@ -222,6 +222,60 @@ table {
   padding : 0;
 }
 
+
+ @media only screen and (max-width: 767px) {
+    #sidebar,#class_selection_sidebar {
+        font-size : x-small;
+        width: 25%;
+    }
+    .grid-container {
+      /* background-color: pink; */
+      font-size : small;
+      max-width : 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+  /* Force table structural elements to behave like block/flex items */
+  table, 
+  tbody, 
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Make each table cell take up its own full line */
+  .detail-row td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ensure labels and buttons fill the available space */
+  .detail-label,
+  .detail-boost-button {
+    display: block;
+    width: 100%;
+  }
+
+
+
+
+
+.detail-boost-button.active,.detail-boost-button:hover.active,.detail-boost-button:hover {
+  display: block;
+    width: 100%;
+    color: var(--dark);
+  font-size : large;
+}
+
+
+  /* Optional: Add spacing so inputs don't crowd label pairs */
+  .detail-row td:nth-child(even) {
+    margin-bottom: 12px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -308,7 +362,7 @@ table {
         <h1>Detailed Stats</h1>
         <p>Select which stats you would like to boost.</p>
         <p style="text-align : center; font-size : large;" id=number-of-boosts-label >Number of Boosts Left: -</p>
-        <table>
+        <table id="detailed-stats-table">
             <tbody>
             <!-- Row 1 -->
             <tr class="detail-row">
@@ -821,6 +875,15 @@ table {
         let holdTimer;
         let holdTimer2;
         let button_time = 70;
+        increment_button.addEventListener('click', () => {
+            adjustCoreStat(index , 1);
+            curr_value_indicator.textContent = coreStatsData[index];
+        });
+        decrement_button.addEventListener('click', () => {
+            adjustCoreStat(index , -1);
+            curr_value_indicator.textContent = coreStatsData[index];
+        });
+        /*
         increment_button.addEventListener('mousedown', () => {
             holdTimer = setInterval(() => {
                 adjustCoreStat(index , 1);
@@ -845,6 +908,7 @@ table {
         decrement_button.addEventListener('mouseleave', () => {
             clearTimeout(holdTimer2);
         });
+        */
         item.appendChild(label);
         item.appendChild(increment_button);
         item.appendChild(curr_value_indicator);
@@ -907,7 +971,7 @@ table {
         },
         {
         title: "Prepper",
-        sub: "All Around",
+        sub: "Heavy Weapons",
         body: `Initially, this was classified as a form of hoarding. Excepting instead of hoarding things like newspapers, these agents would hoard high-power rifles, explosives, and armour. \n\nPrepper agents generally have access to a significantly larger arsenal of military gear, high-grade armor, and heavy weaponry than any other class. While other classes rely on specialized or minimalist loadouts, the Prepper functions as a walking armory, keeping a massive surplus of combat-ready supplies on hand for almost any engagement.`,
         href: "/classes/prepper",
         data_slug : "classes/prepper",
