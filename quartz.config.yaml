@@ -147,7 +147,7 @@ plugins:
       position: left
       priority: 50
     folderClickBehavior: collapse
-    folderDefaultState: "open"
+    folderDefaultState: open
     useSavedState: false
   - source: github:quartz-community/graph
     enabled: true
