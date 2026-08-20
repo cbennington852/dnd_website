@@ -2,7 +2,7 @@
 
 Generative AI was not used in the creative process. This is because I want this TTRPG to be an authentic, open experience. 
 
-All drawings are created using [google draw](https://docs.google.com/drawings/). I usually take reference images, and then trace over them using polyline. This is because I possess no artistic skills whatsoever. Tracing over images using polyline has a similar difficulty level to coloring books, making it much more accessible to 
+All drawings are created using [google draw](https://docs.google.com/drawings/). I usually take reference images, and then trace over them using polyline. This is because I possess no artistic skills whatsoever. Tracing over images using polyline has a similar difficulty level to coloring books, making it closer to my skill level.
 
 <style>
 .my-row {
@@ -61,17 +61,6 @@ All drawings are created using [google draw](https://docs.google.com/drawings/).
 
 <div class='my-row'>
   <div class='my-col'>
-    <h3>Shog-a-lite</h3>
-   <p>Heavily inspired by this  <a href="https://www.facebook.com/drewbinsky/videos/the-worlds-tallest-man-251-cm-8-feet-2-inches/808690549947736/"> facebook post</a> featuring the tallest man in the world; Sultan Kosen. This photo was discovered by googling "sfw image of tall man holding head of other person." This image was used for reference and is not meant to dehumanize Kosen. </p>
-   <p>Honestly, this image didn't turn out as good as I had hoped it would.</p>
-  </div>
-  <div class='my-col'>
-    <img src="./shot-a-lite.png" >
-  </div>
-</div>
-
-<div class='my-row'>
-  <div class='my-col'>
     <h3>Night Drive</h3>
    <p>Traced a <a href="https://www.shutterstock.com/shutterstock/videos/1019818789/thumb/1.jpg?ip=x480" >shutterstock photo. </a> Somehow freehand drew the gun on the dashboard. Realized later I forgot to draw stars.</p>
   </div>
@@ -79,6 +68,29 @@ All drawings are created using [google draw](https://docs.google.com/drawings/).
     <img src="./night-drive.png" >
   </div>
 </div>
+
+<div class='my-row'>
+  <div class='my-col'>
+    <h3>Night Walk</h3>
+   <p>Traced a <a href="https://pixnio.com/media/photo-black-and-white-walking-sidewalk-person" >pixno photo. </a> Remembered stars.</p>
+  </div>
+  <div class='my-col'>
+    <img src="./night-walk.png" >
+  </div>
+</div>
+
+
+<!-- <div class='my-row'>
+  <div class='my-col'>
+    <h3>Shog-a-lite</h3>
+   <p>Heavily inspired by this  <a href="https://www.facebook.com/drewbinsky/videos/the-worlds-tallest-man-251-cm-8-feet-2-inches/808690549947736/"> facebook post</a> featuring the tallest man in the world; Sultan Kosen. This photo was discovered by googling "sfw image of tall man holding head of other person." This image was used for reference and is not meant to dehumanize Kosen. </p>
+   <p>Honestly, this image didn't turn out as good as I had hoped it would.</p>
+  </div>
+  <div class='my-col'>
+    <img src="./shot-a-lite.png" >
+  </div>
+</div> -->
+
 
 ## Battlemaps
 

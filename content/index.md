@@ -333,7 +333,7 @@ canvas {
 
 
 
-**Redline** is a covert group inside the United States federal government. Its mission is to investigate, contain, and conceal unnatural events, because the unnatural is real and it kills. The world of Redline is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. Sometimes those powers bleed through into our world and destroy every- thing they touch. It is your job to identify, secure, and destroy these excursions before they can harm people.
+**Redline** is a covert organization deep within the United states federal government. It's mission is to locate, conceal, and destroy unnatural events. The world of Redline is like our own, but beyond the edges of reality are powers that outstrip the human mind’s capacity for understanding. As an agent your job is to hunt down monsters, contain threats, and contain problems before they spiral out of control.
 
 <div class='my-row'>
   <div class='my-col'>

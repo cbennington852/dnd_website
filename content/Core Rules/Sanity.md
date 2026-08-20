@@ -1,3 +1,20 @@
+<style>
+img {
+  /* Forces blocky, pixelated scaling instead of blurring */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  
+  /* Creates the wavy distortion effect */
+  filter: url('#wavy-distortion');
+}
+</style>
+<svg width="0" height="0">
+  <filter id="wavy-distortion">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
 
 ## Loosing Sanity
 Agents loose sanity over time. Agents roll sanity when they encounter something they don't understand or are horrified by. What this is is up to DM discretion. Agents make a sanity roll by rolling their "Current Sanity". This can result in several things.
@@ -31,6 +48,7 @@ The agent rolls a 1d4, and then one of the following happens. This occurs when a
 ## Mental Disorders
 These are semi-permanent affections that an agent takes. 
 
+![[night-walk.png]]
 
 | Mental Disorder       | Details                                                                                                                                                                                                           |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

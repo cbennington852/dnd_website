@@ -7,7 +7,7 @@
 
 Agents are players. These are people who have been brought into Redline, usually at the recommendation of a friendly supervisor. Your Agents agreed to be a part of the Redline organization, and are now on the hook 24/7 for protecting the world against unnatural threats. Agents are not paid per say, but if they make it to retirement, the agents will be rewarded with a large lump sum of money, tucked away in an investment account for them.  
 
-Overtime this exposure to the unnatural world will eat away at agent's [[Sanity]], and sometimes even augment their bodes. Agents will loose or gain (mostly loose) sanity by their actions in game. This sanity loss will overtime manifest as [[Mental Disorders]], altering character behavior and abilities.
+Overtime this exposure to the unnatural world will eat away at agent's [[Sanity]], and sometimes even augment their bodes. Agents will loose or gain (mostly lose) sanity by their actions in game. This sanity loss will overtime manifest as mental disorders, altering character behavior and abilities.
 
 Agents come from a variety of backgrounds and specialties. [MORE HERE]
 
