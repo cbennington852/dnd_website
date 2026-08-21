@@ -48,16 +48,6 @@ All drawings are created using [google draw](https://docs.google.com/drawings/).
   </div>
 </div>
 
-<div class='my-row'>
-  <div class='my-col'>
-    <h3>Human-sized Shrimp</h3>
-   <p>Heavily inspired by this <a href="https://www.amazon.com/Rasta-Imposta-Shrimp-Costume-Adult/dp/B07F6JP34D"> shrimp costume from amazon </a>.</p>
-  </div>
-  <div class='my-col'>
-    <img src="./human-shrimp.png" >
-  </div>
-</div>
-
 
 <div class='my-row'>
   <div class='my-col'>
@@ -89,6 +79,27 @@ All drawings are created using [google draw](https://docs.google.com/drawings/).
   </div>
 </div>
 
+<div class='my-row'>
+  <div class='my-col'>
+    <h3>The Ultimate Weapon</h3>
+   <p>Traced an image image of a breifcase from <a href="https://chawedrosin.wordpress.com/2014/03/02/marcellus-wallaces-briefcase/
+   " >this blog</a>. Then traced <a href="https://www.colormotion.com.hk/colormotion-kitchen-timer/449-kitchen-timer-duck.html" >this duck kitchen timer</a>.</p>
+  </div>
+  <div class='my-col'>
+    <img src="./duck-suitcase.png" >
+  </div>
+</div>
+
+<div class='my-row'>
+  <div class='my-col'>
+    <h3>Human-sized Shrimp</h3>
+   <p>Heavily inspired by this <a href="https://www.amazon.com/Rasta-Imposta-Shrimp-Costume-Adult/dp/B07F6JP34D"> shrimp costume from amazon </a>.</p>
+  </div>
+  <div class='my-col'>
+    <img src="./human-shrimp.png" >
+  </div>
+</div>
+
 <!-- <div class='my-row'>
   <div class='my-col'>
     <h3>Shog-a-lite</h3>
@@ -106,7 +117,7 @@ All drawings are created using [google draw](https://docs.google.com/drawings/).
 All battlemaps and other materials are created using Google Draw. 
 
 ## CSS Effects
-Many of these images have a CSS fractal noise effect applied. This is done to create visual interest. The code to replicate this is below.
+Many of these images have a CSS fractal noise effect applied. This is done to create visual interest. 
 
 <style>
 .with-frac-noise {
@@ -132,6 +143,8 @@ Many of these images have a CSS fractal noise effect applied. This is done to cr
     <img class='with-frac-noise' src="./Ranger Station(4).png" >
   </div>
 </div>
+
+The code to replicate this is below.
 
 ```html
 <style>

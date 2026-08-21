@@ -129,10 +129,6 @@ Spells:
 
 
 
-
--------------------------------------------------------------------
-This is a work of fiction for the purpose of DND(dungeons and dragons). Do not eat lead. Follow all government laws.    
--------------------------------------------------------------------
-
+s
 
 
