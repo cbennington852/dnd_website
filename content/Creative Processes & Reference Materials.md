@@ -2,7 +2,7 @@
 
 Generative AI was not used in the creative process. This is because I want this TTRPG to be an authentic, open experience. 
 
-All drawings are created using [google draw](https://docs.google.com/drawings/). I usually take reference images, and then trace over them using polyline. This is because I possess no artistic skills whatsoever. Tracing over images using polyline has a similar difficulty level to coloring books, making it closer to my skill level.
+All drawings are created using [google draw](https://docs.google.com/drawings/). I usually take reference images, and then trace over them using polyline. This is because I possess no artistic skills whatsoever. Tracing over images using polyline has a similar difficulty level to coloring books, making it at my skill level.
 
 <style>
 .my-row {

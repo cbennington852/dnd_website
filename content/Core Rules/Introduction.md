@@ -1,3 +1,20 @@
+<style>
+img:not(.opt-out) {
+  /* Forces blocky, pixelated scaling instead of blurring */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  
+  /* Creates the wavy distortion effect */
+  filter: url('#wavy-distortion');
+}
+</style>
+<svg width="0" height="0">
+  <filter id="wavy-distortion">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
 
 ## Welcome to Redline
 
@@ -9,14 +26,16 @@ Agents are players. These are people who have been brought into Redline, usually
 
 Overtime this exposure to the unnatural world will eat away at agent's [[Sanity]], and sometimes even augment their bodes. Agents will loose or gain (mostly lose) sanity by their actions in game. This sanity loss will overtime manifest as mental disorders, altering character behavior and abilities.
 
-Agents come from a variety of backgrounds and specialties. [MORE HERE]
 
->[!danger]- <img width=auto height=16px src="red_upgrade.png" style="margin: 0px;"> Classes
+>[!danger]- <img class="opt-out" width=auto height=16px src="red_upgrade.png" style="margin: 0px;"> Classes
  >* [[Gunslinger]] 
 > * [[Prepper]]
 > * [[Close combat specialist]]
 > * [[Slick Talker]]
 > * [[Abomination]]
+
+![[stairs-forever-woman.png]]
+*An artistic depiction of Agent Lomen, one of our playtesters, as she realizes she forgot her gun upstairs and is now trapped in the basement. Alone and unarmed.*
 
 
 ## The handler and Missions
@@ -27,7 +46,7 @@ There is however, one stipulation. If the handler is killed or otherwise incapac
 
 
 
-> [!danger]- <img width=auto height=16px src="red_home.png" style="margin: 0px;"> Home life options
+> [!danger]- <img class="opt-out" width=auto height=16px src="red_home.png" style="margin: 0px;"> Home life options
 > Throughout the day, the normal adult tends to have this thing called "free time". Typically they spend this time doing fun or relaxing things. Not you. As a secret agent you spend this time preparing for the next mission.
 > * **Stay on the case:** Your agent remains on the case, researching unknown objects they have collected at the expense of their own sanity.
 > * **Learn a new Skill:** Increase your skill in an area, roll INT, on a success Add 1d10 on a failure add 1d6.
