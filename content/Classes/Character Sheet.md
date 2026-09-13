@@ -617,16 +617,18 @@ input[type="file"] {
             <th>ARMOUR PIERCING</th>
             <th>LETHALITY</th>
             <th>HIT CHANCE BONUS</th>
+            <th>CONCEALABLE</th>
           </tr>
         </thead>
         <tbody>
           <tr class="weapon-row">
-            <td class="weapon-box" ><input class="table-input text-input" type="text" name="weapon_1" value="Uzi"></td>
+            <td class="weapon-box" ><input class="table-input text-input" type="text" name="weapon_1" value="Glock"></td>
             <td><input class="table-input" type="text" name="weapon_1_range" value="15m"></td>
-            <td><input class="table-input" type="text" name="weapon_1_damage" value="1D10"></td>
+            <td><input class="table-input" type="text" name="weapon_1_damage" value="1D8"></td>
             <td><input class="table-input" type="number" name="weapon_1_ap" value="0" min="0"></td>
-            <td><input class="table-input" type="number" name="weapon_1_lethal" value="20" min="0" max="100"></td>
+            <td><input class="table-input" type="number" name="weapon_1_lethal" value="0" min="0" max="100"></td>
             <td><input class="table-input" type="number" name="weapon_1_hit_c"  min="0" max="100"></td>
+            <td><input class="table-input" type="text" name="weapon_1_conc"  value="Yes"></td>
           </tr>
           <tr class="weapon-row">
             <td><input class="table-input text-input" type="text" name="weapon_2" ></td>
@@ -635,6 +637,7 @@ input[type="file"] {
             <td><input class="table-input" type="number" name="weapon_2_ap" min="0"></td>
             <td><input class="table-input" type="number" name="weapon_2_lethal"  min="0" max="100"></td>
             <td><input class="table-input" type="number" name="weapon_2_hit_c"  min="0" max="100"></td>
+            <td><input class="table-input" type="text" name="weapon_2_conc"  ></td>
           </tr>
           <tr class="weapon-row">
             <td><input class="table-input text-input" type="text" name="weapon_3" ></td>
@@ -643,6 +646,7 @@ input[type="file"] {
             <td><input class="table-input" type="number" name="weapon_3_ap"  min="0"></td>
             <td><input class="table-input" type="number" name="weapon_3_lethal"  min="0" max="100"></td>
             <td><input class="table-input" type="number" name="weapon_3_hit_c"  min="0" max="100"></td>
+            <td><input class="table-input" type="text" name="weapon_3_conc"  ></td>
           </tr>
         </tbody>
       </table>
@@ -650,40 +654,10 @@ input[type="file"] {
       <textarea  name="inventory" rows="4" cols="50"></textarea>
       <label for="notes">Notes:</label>
       <textarea  name="notes" rows="4" cols="50"></textarea>
-      <!-- <table>
-        <thead>
-          <tr>
-            <th>Spell Name</th>
-            <th>Description</th>
-            <th>Willpower Cost</th>
-            <th>Difficulty</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input class="table-input" type="text" name="ability_1_name" ></td>
-            <td><input class="table-input" type="text" name="ability_1_desc" ></td>
-            <td><input class="table-input" type="text" name="ability_1_wp" ></td>
-            <td><input class="table-input" type="text" name="ability_1_diff" ></td>
-          </tr>
-          <tr>
-            <td><input class="table-input" type="text" name="ability_2_name" ></td>
-            <td><input class="table-input" type="text" name="ability_2_desc" ></td>
-            <td><input class="table-input" type="text" name="ability_2_wp" ></td>
-            <td><input class="table-input" type="text" name="ability_2_diff" ></td>
-          </tr>
-          <tr>
-            <td><input class="table-input" type="text" name="ability_3_name" ></td>
-            <td><input class="table-input" type="text" name="ability_3_desc" ></td>
-            <td><input class="table-input" type="text" name="ability_3_wp" ></td>
-            <td><input class="table-input" type="text" name="ability_3_diff" ></td>
-          </tr>
-        </tbody>
-      </table> -->
     </div>
     <div class="column">
       <!--We have a class name + a list of class attributes + link to full page. Also, an edit class modal button-->
-      <h2 style="display: inline-flex; align-items: center; gap: 8px;" ><span><img class="borderless-button-charsheet" id="openClassEditor" src='./pencil.png'></span><span id="currClassLabel" >Gunslinger</span></h2>
+      <h2 style="display: inline-flex; align-items: center; gap: 8px;" ><span><img class="borderless-button-charsheet" id="openClassEditor" src='./pencil.png'></span><span id="currClassLabel" ></span></h2>
       <div>
             <div id="currClassCards" style="max-height : 400px;" class="class-level-container">
               <div class="class-level">
@@ -835,6 +809,162 @@ MULTIPLE SHEETS PLAN:
 */
 const classLevel = document.querySelector("#class_level");
 const className = document.querySelector("#class_name");
+const CLASS_INFO = {
+  "Gunslinger" : [
+      {
+        "name": "Quick Draw",
+        "body": "Add half your firearms stat to your dexterity when rolling a contested quickdraw."
+      },
+      {
+        "name": "Base Level up",
+        "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
+      },
+      {
+        "name": "Lethal Burst",
+        "body": "Add +10% lethality to all firearms rolls."
+      },
+      {
+        "name": "Killer Instincts",
+        "body": "Killing monsters results in a 1d6 sanity gain. Monsters surviving a fight with your character results in a 1d6 sanity loss."
+      },
+      {
+        "name": "Trained Shooter",
+        "body": "Aiming bonus is now +40% (was +20% previously)."
+      },
+      {
+        "name": "Burst fire",
+        "body": "Once per session, shoot twice on a single turn."
+      }
+    ],
+    "Close Combat Specialist" : [
+    {
+      "name": "Mean right hook",
+      "body": "Unarmed combat rolls and melee weapons can be replaced by strength rolls."
+    },
+    {
+      "name": "Base Level up",
+      "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
+    },
+    {
+      "name": "Killer Instincts",
+      "body": "Killing monsters results in a 1d6 sanity gain. Monsters surviving a fight with your character results in a 1d6 sanity loss."
+    },
+    {
+      "name": "Tough it out",
+      "body": "Once per session, when taking damage greater than a d4, reduce that damage to a d4."
+    },
+    {
+      "name": "Lethal blow",
+      "body": "On a successful critical strike, roll again."
+    },
+    {
+      "name": "Adrenaline Burst",
+      "body": "Once per session, upon being downed, your character can get back up for two turns, during which they can attack, run, or do any action they please. Once those turns are expended, they will go down again."
+    }
+  ],
+"Prepper" : [
+    {
+      "name": "Tinker",
+      "body": "Engineering, Demolitions, and Heavy Weapons rolls can be replaced with INT rolls."
+    },
+    {
+      "name": "Stat Buff",
+      "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
+    },
+    {
+      "name": "Inside buyers",
+      "body": "Weapons purchases are processed at one level cheaper (e.g., Unusual → Standard)."
+    },
+    {
+      "name": "Ghost Guns",
+      "body": "Military Restricted weapons are no longer restricted and can be manufactured at home."
+    },
+    {
+      "name": "My baby",
+      "body": "Creation of a custom weapon, Major Expense or below. This has the following buffs: 30% more accurate OR 1d6 more damaging."
+    },
+    {
+      "name": "Improvements",
+      "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
+    }
+  ],
+"Abomination" : [
+    {
+      "name": "Investigate the Unnatural",
+      "body": "Gain an extra 30% to your unnatural stat."
+    },
+    {
+      "name": "Unnatural Developments",
+      "body": "Choose one of the <a href='./abomination' >following developments</a>"
+    },
+    {
+      "name": "Delve into madness",
+      "body": "As a bonus home scene you can now do the “staying on the case” action, in addition to a normal home scene."
+    },
+    {
+      "name": "Unnatural Developments II",
+      "body": "Choose one of the <a href='./abomination' >following developments</a>"
+    },
+    {
+      "name": "Numb mind",
+      "body": "Gain an +30% bonus when rolling sanity."
+    },
+    {
+      "name": "Unnatural Developments III",
+      "body": "Choose one of the <a href='./abomination'd >following developments</a>"
+    }
+  ],
+"Slick Talker" : [
+    {
+      "name": "Quick Talking",
+      "body": "Replace Psychotherapy and Criminology with charisma rolls."
+    },
+    {
+      "name": "Stat Buff",
+      "body": "+10% to any base stat. Example STR, CON, DEX..."
+    },
+    {
+      "name": "Mogging",
+      "body": "Cause a distraction or do something out of ordinary to stun another creature. Roll contested Charisma against the target creatures Intelligence. On a success that creature receives a -30% debuff to it's next action. On a critical success double this debuff. Note: Players are REQUIRED to make a face at the DM while performing this action."
+    },
+    {
+      "name": "Quick Sew",
+      "body": "When rolling first aid, roll two dice for the medical effect, and keep the higher one. AND Ignore the bleed out penalty when rolling first aid on a teammate."
+    },
+    {
+      "name": "Stat Buff II",
+      "body": "+15% to any base stat. Example STR, CON, DEX..."
+    },
+    {
+      "name": "The Magnum",
+      "body": "Player can now perform the action from level 3 (Mogging) while doing another action. Note this is a bonus action."
+    }
+  ]
+}
+function update_class_information() {
+  const curr_class = className.value;
+  const curr_level = parseInt(classLevel.value , 10);
+  const currClassLabel = document.querySelector("#currClassLabel");
+  const currClassCards = document.querySelector("#currClassCards");
+  const selected_class = CLASS_INFO[curr_class];
+  let new_cards = "";
+  for (let i = 0; i < curr_level; i++) {
+    new_cards += `
+              <div class="class-level">
+                  <h3>${selected_class[i].name}</h3>
+                  <p>${selected_class[i].body}</p>
+              </div>
+    `;
+  }
+  currClassCards.innerHTML = new_cards;
+  currClassLabel.innerHTML = curr_class;
+}
+classLevel.addEventListener('change' , () => {
+  update_class_information();
+});
+className.addEventListener('change' , () => {
+  update_class_information();
+});
 let currentCharSheetKey = localStorage.getItem("currentCharSheetKey");
 if (!currentCharSheetKey) {
   currentCharSheetKey = "TTRPGCharSheet0";
@@ -1174,6 +1304,7 @@ function loadInputsFromMemory() {
       updateWillpower(currentWillpower);
       load_core_stats_data();
       update_class_information();
+      update_class_information();
   }
 }
 function saveCharSheet() {
@@ -1242,162 +1373,7 @@ function registerPopupModal(modalId , openModelButtonId , modalSubmissionButtonI
     load_core_stats_data();
   });
 }
-const CLASS_INFO = {
-  "Gunslinger" : [
-      {
-        "name": "Quick Draw",
-        "body": "Add half your firearms stat to your dexterity when rolling a contested quickdraw."
-      },
-      {
-        "name": "Base Level up",
-        "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
-      },
-      {
-        "name": "Lethal Burst",
-        "body": "Add +10% lethality to all firearms rolls."
-      },
-      {
-        "name": "Killer Instincts",
-        "body": "Killing monsters results in a 1d6 sanity gain. Monsters surviving a fight with your character results in a 1d6 sanity loss."
-      },
-      {
-        "name": "Trained Shooter",
-        "body": "Aiming bonus is now +40% (was +20% previously)."
-      },
-      {
-        "name": "Burst fire",
-        "body": "Once per session, shoot twice on a single turn."
-      }
-    ],
-    "Close Combat Specialist" : [
-    {
-      "name": "Mean right hook",
-      "body": "Unarmed combat rolls and melee weapons can be replaced by strength rolls."
-    },
-    {
-      "name": "Base Level up",
-      "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
-    },
-    {
-      "name": "Killer Instincts",
-      "body": "Killing monsters results in a 1d6 sanity gain. Monsters surviving a fight with your character results in a 1d6 sanity loss."
-    },
-    {
-      "name": "Tough it out",
-      "body": "Once per session, when taking damage greater than a d4, reduce that damage to a d4."
-    },
-    {
-      "name": "Lethal blow",
-      "body": "On a successful critical strike, roll again."
-    },
-    {
-      "name": "Adrenaline Burst",
-      "body": "Once per session, upon being downed, your character can get back up for two turns, during which they can attack, run, or do any action they please. Once those turns are expended, they will go down again."
-    }
-  ],
-"Prepper" : [
-    {
-      "name": "Tinker",
-      "body": "Engineering, Demolitions, and Heavy Weapons rolls can be replaced with INT rolls."
-    },
-    {
-      "name": "Stat Buff",
-      "body": "+10% (2 pts) to any base stat (e.g., STR, CON, DEX)."
-    },
-    {
-      "name": "Inside buyers",
-      "body": "Weapons purchases are processed at one level cheaper (e.g., Unusual → Standard)."
-    },
-    {
-      "name": "Ghost Guns",
-      "body": "Military Restricted weapons are no longer restricted and can be manufactured at home."
-    },
-    {
-      "name": "My baby",
-      "body": "Creation of a custom weapon, Major Expense or below. This has the following buffs: 30% more accurate OR 1d6 more damaging."
-    },
-    {
-      "name": "Improvements",
-      "body": "Upgrade your custom weapon once again. Add 10% lethality to the weapon OR add a 1d6 per turn (poison, fire, or radiation) effect. OR Add a once per session detonator which destroys your weapon (you can spend a home scene to make a new one) which deals 2d20 to anyone in a 30m radius."
-    }
-  ],
-"Abomination" : [
-    {
-      "name": "Investigate the Unnatural",
-      "body": "Gain an extra 30% to your unnatural stat."
-    },
-    {
-      "name": "Unnatural Developments",
-      "body": "Choose one of the <a href='./abomination' >following developments</a>"
-    },
-    {
-      "name": "Delve into madness",
-      "body": "As a bonus home scene you can now do the “staying on the case” action, in addition to a normal home scene."
-    },
-    {
-      "name": "Unnatural Developments II",
-      "body": "Choose one of the <a href='./abomination' >following developments</a>"
-    },
-    {
-      "name": "Numb mind",
-      "body": "Gain an +30% bonus when rolling sanity."
-    },
-    {
-      "name": "Unnatural Developments III",
-      "body": "Choose one of the <a href='./abomination'd >following developments</a>"
-    }
-  ],
-"Slick Talker" : [
-    {
-      "name": "Quick Talking",
-      "body": "Replace Psychotherapy and Criminology with charisma rolls."
-    },
-    {
-      "name": "Stat Buff",
-      "body": "+10% to any base stat. Example STR, CON, DEX..."
-    },
-    {
-      "name": "Mogging",
-      "body": "Cause a distraction or do something out of ordinary to stun another creature. Roll contested Charisma against the target creatures Intelligence. On a success that creature receives a -30% debuff to it's next action. On a critical success double this debuff. Note: Players are REQUIRED to make a face at the DM while performing this action."
-    },
-    {
-      "name": "Quick Sew",
-      "body": "When rolling first aid, roll two dice for the medical effect, and keep the higher one. AND Ignore the bleed out penalty when rolling first aid on a teammate."
-    },
-    {
-      "name": "Stat Buff II",
-      "body": "+15% to any base stat. Example STR, CON, DEX..."
-    },
-    {
-      "name": "The Magnum",
-      "body": "Player can now perform the action from level 3 (Mogging) while doing another action. Note this is a bonus action."
-    }
-  ]
-}
-function update_class_information() {
-  const curr_class = className.value;
-  const curr_level = parseInt(classLevel.value , 10);
-  const currClassLabel = document.querySelector("#currClassLabel");
-  const currClassCards = document.querySelector("#currClassCards");
-  const selected_class = CLASS_INFO[curr_class];
-  let new_cards = "";
-  for (let i = 0; i < curr_level; i++) {
-    new_cards += `
-              <div class="class-level">
-                  <h3>${selected_class[i].name}</h3>
-                  <p>${selected_class[i].body}</p>
-              </div>
-    `;
-  }
-  currClassCards.innerHTML = new_cards;
-  currClassLabel.innerHTML = curr_class;
-}
-classLevel.addEventListener('change' , () => {
-  update_class_information();
-});
-className.addEventListener('change' , () => {
-  update_class_information();
-});
+
 </script>
 
 

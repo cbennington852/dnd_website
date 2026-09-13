@@ -367,7 +367,7 @@ canvas {
   <div class='my-col'>
     <h3>Made by Humans for humans</h3>
     <p>Generative AI was not used during the creative processes for making Redline. All source code and materials are open source and available at <a href="https://github.com/cbennington852/dnd_website" >GitHub</a>. We also have a <a href="./Creative Processes & Reference Materials.html" >Creative Processes & Reference Materials</a> page.</p>
-    <button class='nice-hover-button' onclick="window.location.href='./free-missions/';">View Free Missions! →</button>
+    <button class='nice-hover-button' onclick="window.location.href='./free-missions/0.-introduction';">View Free Missions! →</button>
   </div>
 </div>
 
