@@ -45,7 +45,7 @@ The handler (The DM), is a physical character who delegates missions to the play
 There is however, one stipulation. If the handler is killed or otherwise incapacitated, the campaign ends. No more missions. All Agents return to being normal citizens or are killed. Due to this reason, handlers usually live in seclusion, and leave the [[Combat]] and the risky [[Rolling Dice|dice rolls]] to the agents.
 
 ![[gunfight.png]]
-*An artistic depection of Agent Sausage successfully convincing the local officer that he is a part of the Yorkjersey swat team.*
+*An artistic depection of Agent Sausage successfully convincing the local officer that he is also totally a police officer from the ligma county.*
 
 > [!danger]- <img class="opt-out" width=auto height=16px src="red_home.png" style="margin: 0px;"> Home life options
 > Throughout the day, the normal adult tends to have this thing called "free time". Typically they spend this time doing fun or relaxing things. Not you. As a secret agent you spend this time preparing for the next mission.
