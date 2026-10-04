@@ -46,7 +46,7 @@ The agent rolls a 1d4, and then one of the following happens. This occurs when a
 
 
 ## Mental Disorders
-These are semi-permanent affections that an agent takes. 
+These are semi-permanent affections that an agent takes. Note that these can be cured by a critical success on a Restore Sanity home scene, or by [[Drastic Measures]]
 
 ![[night-walk.png]]
 
@@ -56,8 +56,8 @@ These are semi-permanent affections that an agent takes.
 | Anxious panic attacks | Agent experiences panic attacks. If an agent critically fails a roll  reduce their willpower by a 1d4. If willpower gets to zero, the agent resets it to full and experiences temporary insanity.                 |
 | Minor Addiction       | Your agent is addicted to a substance of their choice. If they are unable to access their addiction for 24hrs, they receive a -20% stat de-buff. Their nest mental disorder will be a guaranteed Major addiction. |
 | Major Addiction       | The agents physical health is starting to receive the damaging effects of a major addiction. Strength, charisma, and dexterity are at a permanent -10%. Requires a minor addiction first.                         |
-| Claustrophobia        | For every 10 minutes an agent is inside a enclosed space they take 1d4 willpower damage. If willpower gets to zero, the agent resets it to full and experiences temporary insanity.                               |
-| Agoraphobic           | For every 10 minutes an agent is inside a open space they take 1d4 willpower damage.  If willpower gets to zero, the agent resets it to full and experiences temporary insanity.                                  |
+| Claustrophobia        | For every 30 minutes an agent is inside a enclosed space they take 1d4 willpower damage. If willpower gets to zero, the agent resets it to full and experiences temporary insanity. Note that car rides do not count.                               |
+| Agoraphobic           | For every 30 minutes an agent is inside a open space they take 1d4 willpower damage.  If willpower gets to zero, the agent resets it to full and experiences temporary insanity.                                  |
 | Anorexia              | The Agent has difficulty eating food, as a result they are anemic, and have reduced core stats.<br>Strength at -5%<br>Dexterity at -5%                                                                            |
 | PTSD                  | The agent experiences PTSD. At the start of each combat, reduce their willpower by 1d6. If willpower gets to zero, the agent resets it to full and experiences temporary insanity.                                |
 | Depression            | During a home scene, roll sanity. If a critical failure, their home scene is cancelled. Otherwise, nothing happens.                                                                                               |

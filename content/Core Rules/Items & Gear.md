@@ -33,7 +33,7 @@ Below is a chart of the various different classifications of purchases.
 | <p style="background-color: grey; border-radius: 15px; padding: 10px; color: white;">Simple</p>        | Pistol         | 22lr Ruger. 9mm Glock 22.                                   | 10m   | Yes         | 1d8    | N/A | N/A       |
 | <p style="background-color: orange; border-radius: 15px; padding: 10px; color: white;">Expensive</p>   | Heavy Pistol   | .50 AE desert eagle. 356 Magnum.                            | 15m   | Yes         | 1d10   | N/A | N/A       |
 | <p style="background-color: grey; border-radius: 15px; padding: 10px; color: white;">Simple</p>        | Shotgun        | Mossberg Model 500, Remington Model 870, Ruger Red Label.   | 30m   | No          | 2d6    | N/A | N/A       |
-| <p style="background-color: orange; border-radius: 15px; padding: 10px; color: white;">Expensive</p>   | Submachine gun | MP9, FN P90, H&K MP5, IMI Uzi, MAC-Ingram M10.              | 50m   | No          | 1d10   | N/A | 10%       |
+| <p style="background-color: orange; border-radius: 15px; padding: 10px; color: white;">Expensive</p>   | Submachine gun | MP9, FN P90, H&K MP5, IMI Uzi, MAC-Ingram M10.              | 50m   | Yes          | 1d10   | N/A | 10%       |
 | <p style="background-color: grey; border-radius: 15px; padding: 10px; color: white;">Simple</p>        | Rifle          | 7.62x39mm: AK-47, AR-15, Colt M4, FN SCAR-L, Winchester 94. | 100m  | No          | 1d12   | 3   | 10%       |
 | <p style="background-color: red; border-radius: 15px; padding: 10px; color: white;">Very Expensive</p> | Heavy Rifle    | .408 CheyTac, .50 cal                                       | 250m  | No          | 2d10   | 5   | 20%       |
 
