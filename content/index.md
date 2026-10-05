@@ -406,6 +406,7 @@ Convenient Links for returning players
 Redline was originally a homebrew campaign before it was published online. Below are mission reports from the original playtesters. Each table is a different group. Missions where players seemed to have the most fun are published as free missions for Redline.
 
 
+
 ## The Cheddar Ruffles
 | **Mission Name**               | **Description**                                                                                                                                   | **Summary**                                                                                                        | **Result**                                                                                                                   |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
